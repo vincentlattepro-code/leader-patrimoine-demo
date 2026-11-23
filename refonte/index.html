@@ -1101,7 +1101,7 @@ const FAQ=[
 
 /* Défilement fluide */
 let lenis=null;
-if(!reduce&&window.Lenis){lenis=new Lenis({lerp:.085,wheelMultiplier:.9,anchors:{offset:-70},autoRaf:true})}
+if(!reduce&&window.Lenis){lenis=new Lenis({lerp:.12,wheelMultiplier:1,smoothWheel:true,anchors:{offset:-70},autoRaf:true})}
 const scrollToY=(y,d=1.6)=>lenis?lenis.scrollTo(y,{duration:d}):scrollTo({top:y,behavior:reduce?'auto':'smooth'});
 
 /* En-tête */
