@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#07081A">
+<title>Conseiller en gestion de patrimoine en Normandie | Leader Patrimoine</title>
+<meta name="description" content="Serkan Bulut, conseiller en gestion de patrimoine indépendant près d’Évreux. Audit patrimonial offert dès 150 000 € à investir ou à réorganiser.">
+<style>
+@font-face{font-family:'Gloock';src:url('fonts/gloock-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('fonts/outfit-300.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('fonts/outfit-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Outfit';src:url('fonts/outfit-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@property --dim{syntax:'<number>';inherits:true;initial-value:.7}
+:root{
+  --nuit:#0F112D; --abysse:#07081A;
+  --or:#E9C16B; --or-clair:#FFE3A3;
+  --clair:#F4F1EA; --clair-2:rgba(244,241,234,.78); --brume:#A9ABC2;
+  --hair:rgba(255,255,255,.12);
+  --grad-or:linear-gradient(100deg,#FFD565 0%,#E9C16B 45%,#C7905E 100%);
+  --display:'Gloock',Georgia,'Times New Roman',serif;
+  --sans:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ital:'Gilroy LI','Outfit',sans-serif;
+  --wrap:1280px; --gut:clamp(18px,4.4vw,64px);
+  --sec:clamp(88px,10vw,144px); --head:clamp(40px,4.6vw,64px); --block:clamp(56px,6.5vw,96px);
+  --col:clamp(40px,6vw,96px); --gap:clamp(20px,2.4vw,32px); --pad:clamp(24px,2.6vw,34px); --rc:24px; --ri:20px;
+  --bg-a:#07081A; --bg-b:#0B0D24; --surface:#0F1230; --line:rgba(255,255,255,.09);
+  --ease:cubic-bezier(.2,.7,.2,1); --lux:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--abysse);scroll-behavior:smooth;scroll-padding-top:110px;-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+html.lenis{scroll-behavior:auto}
+.lenis.lenis-stopped{overflow:clip}
+.lenis [data-lenis-prevent]{overscroll-behavior:contain}
+body{margin:0;background:transparent;font:300 16.5px/1.72 var(--sans);letter-spacing:.005em;color:var(--clair);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+strong,b{font-weight:500}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.015em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+::selection{background:rgba(233,193,107,.35)}
+:focus-visible{outline:1.5px solid var(--or);outline-offset:4px;border-radius:12px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+
+/* ---------- Ambiance : les pièces du film, en fond, d'une section à l'autre ---------- */
+.ambient{position:fixed;inset:0;z-index:-1;background:var(--abysse);overflow:hidden;--dim:.7}
+.amb{position:absolute;inset:-3%;background-size:cover;background-position:center;opacity:0;transform:scale(1.07);transition:opacity 1.8s var(--lux),transform 9s cubic-bezier(.2,.6,.2,1)}
+.amb.on{opacity:1;transform:scale(1)}
+.ambient::before{content:"";position:absolute;inset:0;z-index:1;transition:--dim 1.6s var(--lux);background:radial-gradient(130% 95% at 72% 18%,rgba(7,8,26,calc(var(--dim) - .3)),rgba(7,8,26,var(--dim)) 62%,rgba(7,8,26,calc(var(--dim) + .12)))}
+.ambient::after{content:"";position:absolute;inset:0;z-index:2;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- Matière verre ---------- */
+.glass{
+  --tint:rgba(14,17,44,.40); --blur:26px; --sat:170%; --rad:32px;
+  position:relative;isolation:isolate;border-radius:var(--rad);
+  background:linear-gradient(155deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.035) 30%,rgba(255,255,255,0) 58%,rgba(255,255,255,.045) 100%),var(--tint);
+  -webkit-backdrop-filter:blur(var(--blur)) saturate(var(--sat));backdrop-filter:blur(var(--blur)) saturate(var(--sat));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.30),inset 0 0 0 1px rgba(255,255,255,.06),inset 0 -24px 48px -36px rgba(255,255,255,.16),0 30px 70px -34px rgba(0,0,0,.65);
+}
+.glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg,rgba(255,255,255,.62),rgba(255,255,255,.1) 26%,rgba(255,255,255,0) 52%,rgba(255,224,160,.32) 84%,rgba(255,255,255,.2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.glass::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .7s var(--lux);
+  background:radial-gradient(560px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.11),rgba(255,255,255,0) 46%)}
+.glass:hover::after,.glass.is-lit::after{opacity:1}
+.glass.clear{--tint:rgba(14,17,44,.16);--blur:18px}
+.glass.deep{--tint:rgba(10,12,34,.58);--blur:34px}
+.glass.light{--tint:rgba(244,241,234,.78);--blur:22px;color:var(--nuit);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.4),0 24px 60px -30px rgba(0,0,0,.6)}
+/* réfraction (Chrome) : le fond se déforme légèrement à travers la lentille */
+html.refract .lens{-webkit-backdrop-filter:url(#lgRefract) blur(7px) saturate(190%);backdrop-filter:url(#lgRefract) blur(7px) saturate(190%)}
+
+/* ---------- Boutons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:52px;padding:0 28px;border-radius:999px;border:0;background:transparent;font:400 15px/1 var(--sans);letter-spacing:.025em;text-decoration:none;white-space:nowrap;transition:transform .5s var(--lux),filter .5s,box-shadow .5s}
+.btn svg{width:16px;height:16px;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-or{color:#1A1405;font-weight:500;background:linear-gradient(180deg,rgba(255,250,232,.55),rgba(255,255,255,0) 52%),var(--grad-or);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -3px 8px rgba(140,90,30,.32),0 14px 34px -16px rgba(233,193,107,.6)}
+.btn-or:hover{filter:brightness(1.06)}
+.btn-glass{color:var(--clair);background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 0 0 1px rgba(255,255,255,.12),0 12px 30px -14px rgba(0,0,0,.55)}
+.btn-glass:hover{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.07))}
+.btn-sm{min-height:42px;padding:0 20px;font-size:14px}
+.link{display:inline-block;color:var(--or);text-decoration:none;font-size:14.5px;letter-spacing:.02em;padding-bottom:3px;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:background-size .6s var(--lux)}
+.link:hover{background-size:0 1px;background-position:100% 100%}
+button.link{border:0;background-color:transparent;padding-left:0;padding-right:0}
+
+/* ---------- Logo ---------- */
+.logo{display:block;height:auto}
+.logo .ink{fill:var(--logo-ink,#0f112d)}
+.logo .tag{display:var(--logo-tag,inline)}
+
+/* ---------- Barre de navigation flottante ---------- */
+.head{position:fixed;top:14px;left:0;right:0;z-index:50;pointer-events:none}
+.head-in{pointer-events:auto;width:calc(100% - 2*var(--gut) + 44px);max-width:calc(var(--wrap) - 2*var(--gut) + 44px);margin:0 auto;display:flex;align-items:center;gap:26px;height:62px;padding:0 10px 0 22px;--rad:999px;--tint:rgba(10,12,32,.34);--blur:18px;transition:--tint .6s}
+.head.is-solid .head-in{--tint:rgba(10,12,32,.56)}
+.brand{--logo-ink:#ECE7DA;--logo-tag:none;display:block;flex:none}
+.brand .logo{height:34px;width:auto}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{white-space:nowrap;color:rgba(244,241,234,.8);text-decoration:none;font-size:14px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;transition:background-color .4s,color .4s}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.head-tel{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;color:var(--or);text-decoration:none}
+.head-tel:hover{background:rgba(255,255,255,.08)}
+.head-tel svg{width:17px;height:17px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:var(--clair);align-items:center;justify-content:center}
+.burger svg{width:19px;height:19px}
+.menu{display:none}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:clamp(140px,18vh,180px) 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,6vw,96px);align-items:center;padding-bottom:clamp(56px,8vh,88px)}
+.hero h1{font-size:clamp(38px,4.4vw,66px);line-height:1.03;letter-spacing:-.022em;max-width:12ch;text-shadow:0 2px 30px rgba(7,8,26,.5)}
+.hero-lead{margin-top:30px;max-width:46ch;font-size:17.5px;line-height:1.72;color:var(--clair-2)}
+.hero-lead strong{color:var(--clair)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-proof{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:52px;font-size:13px;letter-spacing:.02em;color:var(--brume)}
+.hero-proof li{display:flex;align-items:baseline;gap:9px}
+.hero-proof b{font:400 24px/1 var(--display);color:var(--or);letter-spacing:-.01em}
+
+.picker{padding:30px 30px 24px}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:46px;height:46px;border-radius:50%;object-fit:cover;background:#2a2d52;box-shadow:0 0 0 1px rgba(233,193,107,.6),0 0 0 4px rgba(255,255,255,.06)}
+.who strong{display:block;font-weight:400;font-size:15px;color:var(--clair)}
+.who span{display:block;font-size:13px;line-height:1.45;color:var(--brume)}
+.picker-meta{display:flex;justify-content:space-between;align-items:center;margin:24px 4px 10px;font-size:12.5px;letter-spacing:.03em;color:var(--brume)}
+.dots{display:flex;gap:4px}
+.dots i{width:14px;height:3px;border-radius:3px;background:rgba(255,255,255,.16)}
+.dots i:first-child{background:var(--or)}
+.picker h2{font-size:clamp(22px,1.8vw,27px);line-height:1.12;margin:0 4px 14px}
+.picker-list{display:grid;gap:4px}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;padding:12px 14px;border:0;border-radius:16px;background:rgba(255,255,255,.035);font-size:14.5px;line-height:1.35;color:rgba(244,241,234,.9);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);transition:background-color .4s,box-shadow .4s,transform .5s var(--lux)}
+.opt svg{width:14px;height:14px;flex:none;color:var(--or);opacity:.5;transition:opacity .4s,transform .6s var(--lux)}
+.opt:hover{background:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(255,255,255,.1)}
+.opt:hover svg{opacity:1;transform:translateX(3px)}
+.picker-foot{margin:16px 4px 0;font-size:12.5px;letter-spacing:.02em;color:var(--brume);display:flex;align-items:center;gap:8px}
+.picker-foot svg{width:13px;height:13px;color:var(--or)}
+
+.trust{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding:16px 28px;--rad:999px;--tint:rgba(14,17,44,.3);font-size:13px;letter-spacing:.02em;color:var(--clair-2)}
+.trust li{display:flex;align-items:center;gap:10px}
+.trust svg{width:15px;height:15px;color:var(--or);flex:none}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(22px);filter:blur(6px);animation:rise 1.3s var(--lux) forwards}
+  .rise.d1{animation-delay:.14s}.rise.d2{animation-delay:.28s}.rise.d3{animation-delay:.42s}.rise.d4{animation-delay:.56s}
+  @keyframes rise{to{opacity:1;transform:none;filter:none}}
+}
+
+/* ---------- Film au défilement ---------- */
+.film{position:relative;height:2000vh;margin-top:clamp(40px,6vw,80px)}
+.film-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;color:var(--clair);background:var(--abysse);--mx:62%;--my:44%}
+.film-segs,.seg{position:absolute;inset:0}
+.seg{opacity:0}
+.seg img,.seg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.seg video{opacity:0;transition:opacity .25s}
+.seg video.is-on{opacity:1}
+.film-light{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx) var(--my),rgba(255,213,101,.12),rgba(255,213,101,0) 65%);mix-blend-mode:screen;pointer-events:none}
+.film-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,8,26,.5) 0%,rgba(7,8,26,.15) 45%,rgba(7,8,26,0) 70%),linear-gradient(180deg,var(--abysse) 0%,rgba(7,8,26,0) 14%,rgba(7,8,26,0) 86%,var(--abysse) 100%)}
+.film-beats{position:relative;height:100%}
+.beat{position:absolute;left:var(--gut);bottom:clamp(104px,15vh,160px);width:min(560px,calc(100% - 2*var(--gut)));padding:32px 34px 30px;opacity:0;visibility:hidden;will-change:opacity,transform}
+.beat-t{font:400 clamp(28px,3.2vw,48px)/1.06 var(--display);letter-spacing:-.022em}
+.beat-t em{font-style:normal;color:var(--or)}
+.beat-s{margin-top:12px;font:300 clamp(18px,1.6vw,22px)/1.4 var(--ital);color:var(--or)}
+.beat-p{margin-top:16px;font-size:16px;line-height:1.7;color:var(--clair-2)}
+.beat-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.beat-pills li{padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 0 0 1px rgba(255,255,255,.08);font-size:13px;letter-spacing:.02em}
+.beat-list{margin-top:16px;display:grid;gap:6px;font-size:15.5px;color:rgba(244,241,234,.9)}
+.beat-list li{display:flex;gap:12px;align-items:baseline}
+.beat-list li::before{content:"";width:14px;height:1px;background:var(--or);flex:none;transform:translateY(-5px)}
+.beat-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;margin-top:24px}
+.film-ui{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;align-items:center;gap:18px;width:min(560px,calc(100% - 2*var(--gut)));padding:10px 10px 10px 22px;--rad:999px;--tint:rgba(10,12,32,.36);--blur:16px}
+.film-prog{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.16);overflow:hidden}
+.film-prog i{display:block;height:100%;width:0;background:var(--grad-or);border-radius:3px}
+.film-skip{font-size:13px;letter-spacing:.03em;color:var(--clair);text-decoration:none;white-space:nowrap;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
+.film-skip:hover{background:rgba(255,255,255,.14)}
+.rail{position:absolute;right:max(var(--gut),calc((100% - var(--wrap))/2 + var(--gut)));top:50%;transform:translateY(-50%);display:grid;gap:2px;padding:10px 8px;--rad:28px;--tint:rgba(10,12,32,.3);--blur:16px}
+.rail button{display:flex;align-items:center;justify-content:flex-end;gap:12px;height:30px;padding:0 10px;border:0;border-radius:999px;background:none;color:var(--brume);font-size:12px;letter-spacing:.04em;transition:background-color .4s}
+.rail button:hover{background:rgba(255,255,255,.07)}
+.rail span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .7s var(--lux),opacity .5s}
+.rail i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);transition:background-color .5s,box-shadow .5s,transform .5s var(--lux)}
+.rail button:hover span,.rail button[aria-current="step"] span{max-width:120px;opacity:1}
+.rail button[aria-current="step"]{color:var(--clair)}
+.rail button[aria-current="step"] i{background:var(--or);box-shadow:0 0 0 4px rgba(233,193,107,.18);transform:scale(1.15)}
+.rail button.is-lit i{background:rgba(233,193,107,.75)}
+.film.is-static{height:auto}
+.film.is-static .film-stage{position:relative;height:auto;min-height:100vh}
+.film.is-static .seg:first-child{opacity:1}
+.film.is-static .film-beats{height:auto;padding:30vh var(--gut) 100px;display:grid;gap:48px}
+.film.is-static .beat{position:relative;left:auto;bottom:auto;opacity:1;visibility:visible}
+.film.is-static .film-ui,.film.is-static .rail{display:none}
+
+/* ---------- Sections : fonds unis, sans verre ---------- */
+.sec{position:relative;padding:var(--sec) 0;background:var(--bg-a)}
+.sec.alt{background:var(--bg-b)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:20px var(--col);align-items:end;margin-bottom:var(--head)}
+.sec-head h2,.h2{font-size:clamp(32px,3.4vw,52px);line-height:1.04;letter-spacing:-.022em;max-width:15ch}
+.sec-head p{font-size:16.5px;line-height:1.72;color:var(--clair-2);max-width:40ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--rc)}
+.btn-ghost{color:var(--clair);box-shadow:inset 0 0 0 1px rgba(255,255,255,.26)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+
+/* ---------- Situations ---------- */
+.sit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--col);align-items:start}
+.sit-group{font:400 12.5px/1.4 var(--sans);letter-spacing:.05em;color:var(--or);margin:0 0 12px}
+.sit-group:not(:first-child){margin-top:40px}
+.sit-list{border-top:1px solid var(--line)}
+.sit-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 20px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:20px 0;transition:padding .6s var(--lux)}
+.sit-row .t{font:400 clamp(19px,1.6vw,23px)/1.2 var(--display);letter-spacing:-.01em;color:rgba(244,241,234,.88);transition:color .4s}
+.sit-row .h{grid-column:1;font:300 15px/1.5 var(--ital);color:var(--brume)}
+.sit-row .ic{grid-row:1/3;grid-column:2;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--clair);transition:background-color .5s,border-color .5s,color .5s}
+.sit-row .ic svg{width:14px;height:14px}
+.sit-row:hover .t{color:#fff}
+.sit-row:hover .ic{border-color:rgba(233,193,107,.55)}
+.sit-row[aria-current="true"]{padding-left:16px}
+.sit-row[aria-current="true"] .t{color:#fff}
+.sit-row[aria-current="true"] .ic{background:var(--grad-or);border-color:transparent;color:var(--nuit)}
+.sit-detail{display:none}
+.sit-panel{position:sticky;top:104px;overflow:hidden}
+.sit-panel figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:#1a1d40}
+.sit-panel figure img{width:100%;height:100%;object-fit:cover;transition:opacity .6s}
+.sit-body{padding:var(--pad)}
+.sit-body h3{font-size:clamp(22px,2vw,28px);line-height:1.12;letter-spacing:-.018em}
+.sit-body p{margin-top:12px;color:var(--clair-2);font-size:15.5px}
+.sit-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:24px}
+
+/* ---------- Simulateur ---------- */
+.sim{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--col);align-items:center}
+.sim .h2{max-width:12ch}
+.sim-intro{margin-top:18px;color:var(--clair-2);max-width:40ch;font-size:16px}
+.range{display:block;margin-top:30px}
+.range-top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;letter-spacing:.02em;color:var(--clair-2)}
+.range-top output{color:var(--or);font-size:15px}
+.range input{width:100%;margin:14px 0 0;-webkit-appearance:none;appearance:none;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--or) var(--p,20%),rgba(255,255,255,.14) var(--p,20%));outline:none}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:20px;border-radius:999px;background:linear-gradient(180deg,#fff,#e6e8f2);box-shadow:0 2px 10px rgba(0,0,0,.45);cursor:grab}
+.range input::-moz-range-thumb{width:28px;height:18px;border:0;border-radius:999px;background:#f2f2f6;box-shadow:0 2px 10px rgba(0,0,0,.45);cursor:grab}
+.range input:focus-visible{outline:1.5px solid var(--or);outline-offset:10px}
+.sim-out{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.sim-big{font:400 clamp(46px,4.8vw,74px)/1 var(--display);letter-spacing:-.03em;background:var(--grad-or);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sim-big .cur{font:300 .55em var(--sans);letter-spacing:0}
+.sim-out p:not(.sim-big){margin-top:12px;color:var(--clair-2);font-size:15.5px}
+.sim-out strong{color:var(--clair)}
+.sim-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.mail{display:flex;gap:6px;flex:1 1 300px;max-width:420px;min-width:0;padding:5px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.mail input{flex:1;min-width:0;height:42px;border:0;background:transparent;color:var(--clair);padding:0 16px;font:inherit;font-size:14.5px}
+.mail input::placeholder{color:rgba(169,171,194,.9)}
+.mail input:focus{outline:none}
+.mail .btn{min-height:42px;padding:0 18px;font-size:14px}
+.mail-ok{display:none;font-size:14.5px;color:var(--or);align-items:center;gap:8px}
+.mail-ok svg{width:17px;height:17px}
+.fine{margin-top:22px;font-size:12px;line-height:1.65;letter-spacing:.01em;color:rgba(169,171,194,.85);max-width:58ch}
+.facade{margin:0;padding:clamp(16px,1.8vw,24px)}
+.street{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr) minmax(0,1.04fr);align-items:end;gap:6px;height:clamp(300px,32vw,440px)}
+.bldg{position:relative;display:flex;flex-direction:column;background:linear-gradient(180deg,#1c1f45,#15183a)}
+.bldg:nth-child(2){height:100%}.bldg:nth-child(1){height:92%}.bldg:nth-child(3){height:96%}.bldg:nth-child(4){height:90%}
+.roof{position:relative;height:13%;background:linear-gradient(180deg,#2a2e5a,#1f2350);clip-path:polygon(8% 100%,14% 0,86% 0,92% 100%);display:flex;justify-content:space-around;align-items:center;padding:0 22%}
+.roof i{width:9%;height:46%;border-radius:40% 40% 1px 1px;background:#2f3463;box-shadow:inset 0 0 0 1px rgba(233,193,107,.12)}
+.cornice{height:5px;background:linear-gradient(90deg,rgba(233,193,107,.12),rgba(233,193,107,.32),rgba(233,193,107,.12))}
+.floors{flex:1;display:grid;grid-template-rows:repeat(5,1fr);padding:6% 9% 0}
+.floor{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 12%;align-items:center;position:relative}
+.floor.balcony::after{content:"";position:absolute;left:-4%;right:-4%;bottom:6%;height:3px;border-top:1px solid rgba(233,193,107,.42);border-bottom:1px dotted rgba(233,193,107,.3)}
+.win{aspect-ratio:1/1.9;border-radius:46% 46% 2px 2px/24% 24% 2px 2px;background:#0d0f29;box-shadow:inset 0 0 0 1px rgba(233,193,107,.12);transition:background .8s var(--ease),box-shadow .8s var(--ease)}
+.win.on{background:linear-gradient(180deg,#FFE29A,#E9C16B 55%,#C7905E);box-shadow:0 0 14px rgba(255,213,101,.3),inset 0 0 0 1px rgba(255,236,180,.6)}
+.ground{height:15%;display:flex;justify-content:space-around;align-items:end;padding:0 10%;border-top:1px solid rgba(233,193,107,.16)}
+.ground i{width:18%;height:78%;border-radius:50% 50% 0 0/30% 30% 0 0;background:#0d0f29;box-shadow:inset 0 0 0 1px rgba(233,193,107,.14)}
+.facade figcaption{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:12.5px;letter-spacing:.02em;color:var(--brume)}
+.facade figcaption i{width:8px;height:14px;border-radius:46% 46% 1px 1px/24% 24% 1px 1px;background:var(--grad-or);flex:none}
+
+/* ---------- Méthode ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.step figure{margin:0 0 24px;aspect-ratio:4/3;border-radius:var(--ri);overflow:hidden;background:#1a1d40}
+.step figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--lux)}
+.step:hover figure img{transform:scale(1.04)}
+.step-n{display:flex;align-items:center;gap:12px;margin-bottom:12px;font:400 14px/1 var(--display);color:var(--or)}
+.step-n::after{content:"";width:32px;height:1px;background:currentColor;opacity:.5}
+.step h3{font-size:clamp(21px,1.8vw,26px);line-height:1.12;letter-spacing:-.018em}
+.step p{margin-top:10px;color:var(--clair-2);font-size:15px;max-width:40ch}
+.step .gets{margin-top:14px;font:300 15px/1.55 var(--ital);color:var(--clair)}
+.axes{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--col);align-items:center;margin-top:var(--block);padding:var(--block) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.axes svg{width:100%;max-width:340px;margin:0 auto;display:block}
+.axes h3{font-size:clamp(24px,2.4vw,36px);line-height:1.08;letter-spacing:-.02em;max-width:18ch}
+.axes dl{display:grid;grid-template-columns:1fr 1fr;gap:22px 36px;margin:28px 0 0}
+.axes dt{font:400 19px/1.2 var(--display);color:var(--or)}
+.axes dd{margin:6px 0 0;font-size:14.5px;color:var(--clair-2)}
+.partners{margin-top:var(--block);display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:20px 48px;align-items:center;padding:24px 32px;background:#ECE8DD;border-radius:var(--rc);color:var(--nuit)}
+.partners p{font-size:14.5px;line-height:1.6;color:#4A4D66;max-width:34ch}
+.partners p strong{color:var(--nuit)}
+.logos{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px}
+.logos li{height:36px;display:flex;align-items:center}
+.logos img{max-height:24px;max-width:96px;width:auto;filter:grayscale(1) contrast(1.1);mix-blend-mode:multiply;opacity:.62;transition:opacity .5s,filter .5s}
+.logos img:hover{opacity:1;filter:none}
+
+/* ---------- Serkan ---------- */
+.me{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--col);align-items:center}
+.me figure{margin:0;position:relative}
+.me figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% 30%;border-radius:var(--rc);background:#1a1d40}
+.me figure figcaption{position:absolute;left:16px;bottom:16px;right:16px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(7,8,26,.78);box-shadow:inset 0 0 0 1px rgba(233,193,107,.3);font-size:12px;letter-spacing:.03em;color:var(--clair)}
+.chip svg{width:13px;height:13px;color:var(--or)}
+.me h2{font-size:clamp(34px,3.6vw,54px);line-height:1;letter-spacing:-.028em}
+.me .motto{margin-top:12px;font:300 clamp(17px,1.4vw,20px)/1.45 var(--ital);color:var(--or)}
+.me .bio{margin-top:24px;color:var(--clair-2);font-size:16px;max-width:50ch}
+.me .bio+.bio{margin-top:12px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:14px 48px;margin-top:32px;padding-top:26px;border-top:1px solid var(--line)}
+.facts dt{font:400 34px/1 var(--display);letter-spacing:-.02em}
+.facts dd{margin:8px 0 0;font-size:12.5px;letter-spacing:.02em;color:var(--brume)}
+.me-links{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-top:32px}
+
+/* ---------- Avis ---------- */
+.quote-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:start;max-width:980px;margin:0 0 var(--head)}
+.quote-top .qm{font:400 96px/.78 var(--display);color:var(--or)}
+.quote-top blockquote{margin:0;font:300 clamp(24px,2.6vw,38px)/1.25 var(--ital);letter-spacing:-.01em;max-width:30ch}
+.quote-top cite{display:block;margin-top:20px;font:400 13px/1.4 var(--sans);letter-spacing:.04em;font-style:normal;color:var(--brume)}
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px var(--gap)}
+.review{margin:0;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column}
+.review blockquote{margin:0;font:300 17px/1.55 var(--ital);flex:1}
+.review figcaption{display:flex;align-items:center;gap:12px;margin-top:20px;font-size:12.5px;line-height:1.45;color:var(--brume)}
+.review figcaption b{display:block;font-weight:400;letter-spacing:.02em;color:var(--clair)}
+.ini{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(233,193,107,.4);color:var(--or);font:400 11.5px/1 var(--sans);letter-spacing:.06em;flex:none}
+.reviews-foot{margin-top:48px}
+
+/* ---------- Engagements ---------- */
+.eng{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.eng figure{margin:0}
+.eng .ph{aspect-ratio:4/5;border-radius:var(--ri);overflow:hidden;background:#1a1d40}
+.eng .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--lux)}
+.eng figure:hover .ph img{transform:scale(1.04)}
+.eng figcaption{margin-top:16px}
+.eng figcaption b{display:block;font:400 19px/1.2 var(--display);letter-spacing:-.01em}
+.eng figcaption span{display:block;margin-top:6px;font-size:14px;line-height:1.5;color:var(--clair-2)}
+
+/* ---------- Zone ---------- */
+.zone{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:var(--col);align-items:center}
+.zone .h2{max-width:13ch}
+.zone-text{margin-top:20px;color:var(--clair-2);max-width:46ch;font-size:16px}
+.depts{display:flex;flex-wrap:wrap;gap:6px;margin-top:26px}
+.depts li{padding:6px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:12.5px;letter-spacing:.03em}
+.cities{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.cities a{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:14.5px;transition:border-color .4s}
+.cities a span{color:var(--brume);font-size:12.5px}
+.cities a:hover{border-color:var(--or)}
+.map{width:100%;height:auto;display:block}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--col);align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side .h2{max-width:11ch}
+.ask{display:flex;gap:16px;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--line);max-width:360px}
+.ask img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#1a1d40}
+.ask p{font-size:13.5px;color:var(--brume)}
+.ask a{display:inline-block;color:var(--clair);text-decoration:none;font:400 18px/1.3 var(--display)}
+.faq-list{border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;cursor:pointer;list-style:none;font:400 clamp(17px,1.4vw,20px)/1.3 var(--display);letter-spacing:-.005em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{position:relative;width:32px;height:32px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);transition:background .5s,box-shadow .5s}
+.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.2px;background:currentColor;transform:translate(-50%,-50%)}
+.qa summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--lux)}
+.qa[open] summary i{background:var(--grad-or);box-shadow:none;color:var(--nuit)}
+.qa[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.qa p{padding:0 56px 24px 0;color:var(--clair-2);font-size:15.5px;max-width:64ch}
+
+/* ---------- CTA final ---------- */
+.final{position:relative;isolation:isolate;overflow:hidden;background:var(--bg-a);padding:clamp(112px,13vw,184px) 0}
+.final-bg{position:absolute;inset:0;z-index:-1}
+.final-bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+.final-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg-a) 8%,rgba(7,8,26,.72) 52%,rgba(7,8,26,.3)),linear-gradient(0deg,var(--bg-a) 0%,rgba(7,8,26,0) 30%)}
+.final h2{font-size:clamp(34px,3.8vw,56px);line-height:1.04;letter-spacing:-.026em;max-width:13ch}
+.final .lead{margin-top:20px;max-width:44ch;font-size:16.5px;color:var(--clair-2)}
+.final ul{display:grid;grid-template-columns:repeat(2,max-content);gap:12px 36px;margin-top:30px}
+.final li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(244,241,234,.88)}
+.final li svg{width:15px;height:15px;color:var(--or)}
+
+/* ---------- Pied de page ---------- */
+.foot{background:var(--bg-a);border-top:1px solid var(--line);padding:clamp(72px,8vw,104px) 0 32px;font-size:14px;color:var(--brume)}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:var(--gap)}
+.foot .logo{--logo-ink:#ECE7DA;width:240px}
+.foot-contact{margin-top:24px;display:grid;gap:6px}
+.foot-contact a{text-decoration:none;color:var(--clair)}
+.foot h3{font:400 13px/1.4 var(--sans);letter-spacing:.05em;color:var(--clair);margin-bottom:14px}
+.foot ul a{display:inline-block;padding:4px 0;text-decoration:none;transition:color .4s}
+.foot ul a:hover{color:var(--or)}
+.legal{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:12px;line-height:1.7;letter-spacing:.01em;color:rgba(169,171,194,.8)}
+.legal-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* ---------- Barre mobile ---------- */
+.mbar{display:none}
+
+/* ---------- Demande d'audit ---------- */
+.funnel{width:min(620px,calc(100vw - 20px));max-height:calc(100dvh - 20px);padding:0;border:0;border-radius:34px;color:var(--clair);overflow:hidden;
+  background:linear-gradient(155deg,rgba(255,255,255,.14),rgba(255,255,255,.03) 30%,rgba(255,255,255,0) 60%),rgba(13,16,42,.62);
+  -webkit-backdrop-filter:blur(40px) saturate(180%);backdrop-filter:blur(40px) saturate(180%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.34),inset 0 0 0 1px rgba(255,255,255,.1),0 60px 140px -40px rgba(0,0,0,.85)}
+.funnel::backdrop{background:rgba(7,8,26,.45);-webkit-backdrop-filter:blur(14px) saturate(120%);backdrop-filter:blur(14px) saturate(120%)}
+.funnel[open]{display:flex;flex-direction:column}
+@media (prefers-reduced-motion:no-preference){.funnel[open]{animation:pop .7s var(--lux)}@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}}}
+.f-form{display:flex;flex-direction:column;min-height:0;flex:1}
+.f-head{display:flex;justify-content:space-between;align-items:center;padding:24px 28px 0}
+.f-close{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);display:grid;place-items:center}
+.f-close svg{width:14px;height:14px}
+.f-close:hover{background:rgba(255,255,255,.14)}
+.f-prog{margin:20px 28px 0;height:4px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}
+.f-prog span{display:block;height:100%;width:14%;border-radius:4px;background:var(--grad-or);transition:width .7s var(--lux)}
+.f-count{margin:12px 28px 0;font-size:12px;letter-spacing:.05em;color:var(--brume)}
+.f-body{padding:8px 28px 8px;overflow:auto;flex:1}
+.f-step{border:0;margin:0;padding:0;min-width:0}
+.f-step[hidden]{display:none}
+.f-title{display:block;font:400 clamp(24px,2.6vw,30px)/1.1 var(--display);letter-spacing:-.02em;padding:0;margin:0 0 6px;color:var(--clair)}
+.f-sub{font-size:14px;color:var(--brume);margin-bottom:6px}
+.f-field{margin-top:20px}
+.f-q{font-size:14px;letter-spacing:.01em;color:rgba(244,241,234,.88);margin-bottom:9px}
+.f-q small{color:var(--brume);font-size:12.5px}
+.f-opts{display:grid;gap:6px}
+.f-opts.cols{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.f-opts.chips{display:flex;flex-wrap:wrap}
+.f-opt{position:relative}
+.f-opt input{position:absolute;opacity:0;pointer-events:none}
+.f-opt span{display:flex;align-items:center;gap:11px;height:100%;padding:12px 15px;border-radius:16px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);font-size:14.5px;line-height:1.3;cursor:pointer;transition:background-color .3s,box-shadow .3s}
+.f-opt span::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 1.2px rgba(255,255,255,.45);transition:box-shadow .3s,background-color .3s}
+.f-opt input[type=checkbox]+span::before{border-radius:5px}
+.chips .f-opt span{border-radius:999px;padding:9px 15px}
+.chips .f-opt span::before{display:none}
+.f-opt span:hover{background:rgba(255,255,255,.09)}
+.f-opt input:checked+span{background:rgba(233,193,107,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(233,193,107,.7)}
+.f-opt input:checked+span::before{background:var(--or);box-shadow:inset 0 0 0 4px #1b1d40,0 0 0 1.2px var(--or)}
+.chips .f-opt input:checked+span{background:var(--grad-or);color:#1A1405;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.f-opt input:focus-visible+span{outline:1.5px solid var(--or);outline-offset:2px}
+.f-note{margin-top:12px;padding:14px 16px;border-radius:18px;background:rgba(233,193,107,.1);box-shadow:inset 0 0 0 1px rgba(233,193,107,.32);font-size:14px;color:rgba(244,241,234,.92)}
+.f-note a{color:var(--or)}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.day{flex:none;min-width:72px;padding:10px 8px;border:0;border-radius:18px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);text-align:center;line-height:1.25}
+.day b{display:block;font:400 22px/1.1 var(--display)}
+.day small{display:block;font-size:11.5px;letter-spacing:.03em;color:var(--brume)}
+.day[aria-pressed="true"]{background:rgba(233,193,107,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(233,193,107,.7)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:6px;margin-top:10px}
+.slot{height:42px;border:0;border-radius:999px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);font-size:14px}
+.slot:disabled{opacity:.28;cursor:not-allowed;text-decoration:line-through}
+.slot[aria-pressed="true"]{background:var(--grad-or);color:#1A1405;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.f-hint{margin-top:10px;font-size:12px;letter-spacing:.01em;color:var(--brume)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:grid;gap:6px;font-size:13px;letter-spacing:.02em;color:rgba(244,241,234,.8)}
+.field.full{grid-column:1/-1}
+.field input,.field textarea{min-height:48px;border:0;border-radius:16px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);color:var(--clair);padding:12px 15px;font:inherit;font-size:15px;letter-spacing:0}
+.field textarea{min-height:84px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;box-shadow:inset 0 0 0 1.2px var(--or)}
+.field [aria-invalid="true"]{box-shadow:inset 0 0 0 1.2px #E8927C}
+.f-field.is-bad .f-opts{outline:1px solid #E8927C;outline-offset:4px;border-radius:18px}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;font-size:12.5px;line-height:1.55;color:var(--brume)}
+.consent input{margin-top:3px;width:16px;height:16px;accent-color:var(--or);flex:none}
+.f-err{margin:0 28px;font-size:13.5px;color:#F2AE9B}
+.f-err:not(:empty){margin-top:10px}
+.f-foot{display:flex;justify-content:space-between;gap:10px;padding:16px 22px 22px;margin-top:12px}
+.f-foot .btn[hidden]{display:none}
+.seal{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,rgba(255,250,232,.55),rgba(255,255,255,0) 52%),var(--grad-or);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 12px 30px -12px rgba(233,193,107,.6);color:#1A1405;margin-bottom:20px}
+.seal svg{width:24px;height:24px}
+.f-done p{color:var(--clair-2)}
+.docs{margin-top:20px;padding:18px 20px;border-radius:20px;background:rgba(255,255,255,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 0 0 1px rgba(255,255,255,.06)}
+.docs p{font-size:13px;letter-spacing:.02em;color:var(--brume)!important;margin-bottom:8px}
+.docs li{display:flex;gap:12px;align-items:baseline;font-size:14.5px;padding:3px 0}
+.docs li::before{content:"";width:12px;height:1px;background:var(--or);flex:none;transform:translateY(-4px)}
+.demo{display:flex;align-items:center;gap:12px;width:100%;margin-top:22px;padding:15px 18px;border:1px dashed rgba(233,193,107,.5);border-radius:20px;background:transparent;text-align:left;font-size:13.5px;color:var(--or)}
+.demo svg{width:18px;height:18px;flex:none}
+.demo:hover{background:rgba(233,193,107,.07)}
+.ck{background:#F6F7FB;color:#1A1D33;border-radius:22px;overflow:hidden;font-size:14px;line-height:1.5;letter-spacing:0}
+.ck-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;background:#fff;border-bottom:1px solid #E6E8F0;font-size:12.5px;color:#5B6078}
+.ck-bar b{font-weight:500;color:#1A1D33}
+.ck-new{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#E9F7EF;color:#1E7A46;font-size:12px;font-weight:500}
+.ck-new::before{content:"";width:6px;height:6px;border-radius:50%;background:#2FB36A}
+.ck-main{padding:16px}
+.ck-id{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px;background:#fff;border:1px solid #E6E8F0;border-radius:14px}
+.ck-av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#0F112D;color:#E9C16B;font-weight:500}
+.ck-id b{display:block;font-size:16px;font-weight:500}
+.ck-id span{display:block;font-size:12.5px;color:#5B6078}
+.ck-score{text-align:center;padding:8px 12px;border-radius:12px;background:#FFF6E0;border:1px solid #F1D79A}
+.ck-score b{font-size:20px;color:#8A5A12}
+.ck-score span{font-size:11.5px;color:#8A5A12}
+.ck-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:10px 0 0;background:#E6E8F0;border:1px solid #E6E8F0;border-radius:14px;overflow:hidden}
+.ck-grid div{background:#fff;padding:9px 13px}
+.ck-grid dt{font-size:11.5px;color:#7A7F96}
+.ck-grid dd{margin:2px 0 0;font-size:13px;font-weight:500;color:#1A1D33}
+.ck-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ck-tags span{padding:4px 10px;border-radius:999px;background:#EEF0FA;color:#2B3A8C;font-size:12px}
+.ck-next{margin-top:10px;padding:12px 15px;background:#fff;border:1px solid #E6E8F0;border-radius:14px}
+.ck-next p{font-size:12px;color:#7A7F96;margin-bottom:5px}
+.ck-next li{display:flex;gap:10px;align-items:center;padding:4px 0;font-size:13px}
+.ck-next li::before{content:"";width:14px;height:14px;border:1.5px solid #B8BDD3;border-radius:4px;flex:none}
+.ck-foot{padding:11px 18px;background:#fff;border-top:1px solid #E6E8F0;font-size:12px;color:#7A7F96}
+.ck-note{margin-top:12px;font-size:12.5px;color:var(--brume)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1180px){.nav a{padding:9px 10px}.head-in{gap:14px}}
+@media (max-width:1040px){
+  :root{--col:48px}
+  .nav,.head-tel,.head-in>.btn{display:none}
+  .burger{display:inline-flex}
+  .head-in{width:calc(100% - 2*var(--gut) + 28px);padding:0 8px 0 14px}
+  .menu{display:block;position:fixed;top:86px;left:calc(var(--gut) - 14px);right:calc(var(--gut) - 14px);z-index:49;padding:10px;transform:translateY(-8px) scale(.98);opacity:0;visibility:hidden;transition:opacity .4s,transform .6s var(--lux),visibility .4s;--rad:28px;--tint:rgba(10,12,32,.62)}
+  .menu.is-open{opacity:1;transform:none;visibility:visible}
+  .menu a{display:block;padding:14px 18px;border-radius:18px;color:var(--clair);text-decoration:none;font-size:16px}
+  .menu a:hover{background:rgba(255,255,255,.07)}
+  .menu .btn{margin-top:8px;width:100%}
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .picker{max-width:580px}
+  .trust{border-radius:28px;justify-content:flex-start}
+  .sec-head{grid-template-columns:minmax(0,1fr)}
+  .sit{grid-template-columns:minmax(0,1fr)}
+  .sit-panel{display:none}
+  .sit-row[aria-current="true"]{padding-left:0;border-bottom-color:transparent}
+  .sit-row[aria-current="true"]+.sit-detail{display:block;border-bottom:1px solid var(--line)}
+  .sit-detail{padding:0 0 24px}
+  .sit-detail img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--ri);background:#1a1d40}
+  .sit-detail p{margin:16px 0 18px;color:var(--clair-2);font-size:15px}
+  .sim,.zone,.faq,.partners,.axes{grid-template-columns:minmax(0,1fr)}
+  .me{grid-template-columns:minmax(0,1fr)}
+  .me figure{max-width:520px}
+  .faq-side{position:static}
+  .steps{grid-template-columns:minmax(0,1fr);max-width:600px;gap:48px}
+  .reviews{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .eng{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .rail span{display:none}
+}
+@media (max-width:720px){
+  :root{--sec:76px;--head:36px;--block:48px;--gap:20px;--col:36px;--gut:22px}
+  body{font-size:16px;padding-bottom:96px}
+  .head{top:10px}
+  .head-in{height:58px}
+  .brand .logo{height:30px}
+  .menu{top:78px}
+  .hero{padding-top:108px}
+  .hero-lead{font-size:16.5px;margin-top:22px}
+  .hero-ctas{margin-top:28px}
+  .hero-ctas .btn{flex:1 1 100%}
+  .hero-proof{gap:10px 24px;margin-top:36px}
+  .hero-proof b{font-size:21px}
+  .hero-grid{padding-bottom:40px}
+  .picker{padding:22px 16px 18px}
+  .trust{padding:16px 20px;gap:10px 20px}
+  .beat{bottom:120px;padding:24px 22px 22px}
+  .beat-p{font-size:15px}
+  .beat-list{font-size:14.5px}
+  .film-ui{bottom:calc(96px + env(safe-area-inset-bottom))}
+  .rail{display:none}
+  .sit-row{padding:18px 0}
+  .axes dl{grid-template-columns:1fr}
+  .partners{padding:22px}
+  .logos{justify-content:flex-start;gap:14px 22px}
+  .facts{grid-template-columns:repeat(3,1fr);gap:10px}
+  .facts dt{font-size:28px}
+  .quote-top{grid-template-columns:1fr;gap:0}
+  .quote-top .qm{font-size:72px;height:40px}
+  .reviews{grid-template-columns:1fr;gap:32px}
+  .eng{gap:24px 14px}
+  .eng figcaption b{font-size:16px}
+  .eng figcaption span{font-size:13px}
+  .cities{grid-template-columns:1fr}
+  .qa p{padding-right:0}
+  .final ul{grid-template-columns:1fr}
+  .final .btn{flex:1 1 100%}
+  .foot-grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:auto 1fr;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;padding:7px;--rad:999px;--tint:rgba(10,12,32,.48);--blur:18px}
+  .mbar .btn{min-height:48px}
+  .mbar .btn-glass{padding:0;width:48px}
+  .mbar .btn-glass span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .mail{flex:1 1 100%;max-width:none}
+  .sim-cta>.btn-or{flex:1 1 100%}
+  .funnel{border-radius:28px}
+  .f-head,.f-body{padding-left:18px;padding-right:18px}
+  .f-foot{padding-left:14px;padding-right:14px}
+  .f-prog,.f-count,.f-err{margin-left:18px;margin-right:18px}
+  .fields,.ck-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{--tint:rgba(16,19,48,.9)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="lpG1" x1="122.408" y1="126.222" x2="183.682" y2="126.222" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd565"/><stop offset="1" stop-color="#c7905e"/></linearGradient>
+<linearGradient id="lpG2" x1="127.973" y1="159.951" x2="258.89" y2="159.951" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd565"/><stop offset="1" stop-color="#c7905e"/></linearGradient>
+<linearGradient id="lpG3" x1="104.358" y1="174.188" x2="131.104" y2="174.188" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd565"/><stop offset="1" stop-color="#c7905e"/></linearGradient>
+<linearGradient id="lpG4" x1="408.633" y1="313.824" x2="1879.306" y2="313.824" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffd565"/><stop offset="1" stop-color="#c7905e"/></linearGradient>
+</defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="lgRefract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.012" numOctaves="2" seed="7" result="noise"/>
+    <feGaussianBlur in="noise" stdDeviation="3" result="soft"/>
+    <feDisplacementMap in="SourceGraphic" in2="soft" scale="34" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div class="ambient" id="ambient" aria-hidden="true"></div>
+
+<!-- Barre de navigation flottante -->
+<header class="head" id="head">
+  <div class="head-in glass lens">
+    <a class="brand" href="#top" aria-label="Leader Patrimoine, retour en haut de page"><svg class="logo" viewBox="30 118 1860 358" role="img" aria-label="Leader Patrimoine"><title>Leader Patrimoine</title><g> <g> <circle cx="153.045" cy="161.604" r="30.637" fill="url(#lpG1)"/> <path d="M320.846 180.812 C316.789 171.038 310.941 162.302 303.299 154.601 C295.599 146.902 286.847 141.037 277.046 137.009 C267.24 132.981 256.949 130.967 246.17 130.967 L210.946 130.967 C211.353 132.148 211.751 133.333 212.143 134.52 L217.576 134.52 C220.892 134.462 225.512 135.024 231.435 136.208 C237.357 137.395 243.016 139.882 248.405 143.672 C257.349 150.663 264.488 160.125 269.818 172.06 C275.15 183.996 277.814 197.22 277.814 211.732 C277.814 226.362 275.089 239.674 269.642 251.669 C264.19 263.664 256.935 273.157 247.872 280.145 C241.89 284.055 235.879 286.529 229.836 287.564 C225.929 288.235 222.853 288.66 220.58 288.848 C219.339 288.95 218.329 288.984 217.576 288.942 L192.713 288.942 C192.695 289.093 192.677 289.243 192.659 289.394 C184.118 359.943 150.728 422.83 101.482 469.033 C160.389 427.55 203.439 365.078 219.789 292.495 L246.17 292.495 C256.949 292.495 267.24 290.468 277.046 286.409 C286.847 282.353 295.599 276.474 303.299 268.773 C310.941 261.074 316.789 252.336 320.846 242.562 C324.904 232.789 326.933 222.512 326.933 211.732 C326.933 200.891 324.904 190.584 320.846 180.812 Z" class="ink"/> <path d="M111.564 372.283 C106.256 372.283 101.235 369.329 99.109 364.467 C99.096 364.437 99.083 364.406 99.07 364.376 C97.765 361.355 96.938 358.512 96.581 355.847 C96.227 353.3 96.078 351.493 96.136 350.427 L96.136 156.29 C96.136 155.401 96.241 153.995 96.449 152.069 C96.655 150.145 97.114 147.998 97.826 145.628 C98.537 143.259 99.647 140.949 101.158 138.697 C102.668 136.447 104.668 134.597 107.154 133.144 C109.643 131.693 112.81 130.967 116.662 130.967 L40.694 130.967 C44.307 130.967 47.345 131.634 49.803 132.967 C52.259 134.299 54.229 135.987 55.712 138.031 C57.19 140.075 58.332 142.238 59.132 144.518 C59.931 146.798 60.478 148.916 60.775 150.87 C61.132 153.418 61.277 155.224 61.22 156.29 L61.22 367.125 C61.277 367.956 61.189 369.334 60.953 371.257 C60.717 373.182 60.242 375.344 59.53 377.744 C58.821 380.142 57.709 382.452 56.201 384.673 C54.69 386.895 52.69 388.746 50.202 390.227 C47.715 391.708 44.545 392.448 40.694 392.448 L40.694 401.94 L126.491 401.94 C131.633 392.224 136.169 382.328 140.056 372.283 Z" class="ink"/> <path d="M272.621 351.849 C272.621 355.935 271.805 359.253 270.178 361.8 C268.547 364.347 266.547 366.361 264.179 367.841 C261.811 369.322 259.383 370.389 256.894 371.04 C254.406 371.693 252.214 372.106 250.318 372.283 L198.001 372.283 C192.199 382.567 185.803 392.468 178.852 401.94 L272.533 401.94 Z" class="ink"/> <path d="M258.89 164.697 C258.89 164.697 148.093 182.647 130.143 248.052 C122.217 276.931 138.017 322.586 145.205 351.849 C155.108 392.17 135.301 401.94 135.301 401.94 C135.301 401.94 164.172 390.169 167.488 342.962 C168.688 325.879 163.31 308.912 159.441 283.318 C156.759 265.574 157.73 231.951 175.947 211.731 C194.364 191.289 258.89 164.697 258.89 164.697 Z" fill="url(#lpG2)"/> <path d="M106.519 178.933 C106.519 178.933 107.477 203.513 117.731 223.19 C122.408 232.165 131.104 235.032 131.104 235.032 C131.104 235.032 121.678 247.085 123.953 268.478 C125.203 280.237 128.071 298.554 128.071 298.554 C128.071 298.554 110.135 263.069 106.497 245.318 C101.671 221.769 106.519 178.933 106.519 178.933 Z" fill="url(#lpG3)"/> </g> <g> <polygon points="418.843,273.453 466.677,273.453 466.677,283.319 408.379,283.319 408.379,178.681 418.843,178.681" fill="#f1c97f"/> <polygon points="492.089,273.453 542.913,273.453 542.913,283.319 481.626,283.319 481.626,178.681 542.166,178.681 542.166,188.547 492.089,188.547 492.089,225.618 538.429,225.618 538.429,235.484 492.089,235.484" fill="#f1c97f"/> <path d="M632.005 283.319 L622.289 257.608 L572.661 257.608 L562.944 283.319 L551.882 283.319 L592.093 178.681 L602.856 178.681 L643.067 283.319 Z M576.398 247.742 L618.552 247.742 L597.475 191.686 Z" fill="#f1c97f"/> <path d="M696.881 178.681 C711.131 178.681 722.916 183.738 732.233 193.853 C741.551 203.968 746.21 216.35 746.21 231 C746.21 245.649 741.551 258.031 732.233 268.146 C722.916 278.261 711.131 283.319 696.881 283.319 L656.52 283.319 L656.52 178.681 Z M696.881 273.453 C708.341 273.453 717.733 269.367 725.058 261.195 C732.383 253.024 736.045 242.958 736.045 231 C736.045 219.041 732.383 208.976 725.058 200.804 C717.733 192.633 708.341 188.547 696.881 188.547 L666.984 188.547 L666.984 273.453 Z" fill="#f1c97f"/> <polygon points="774.612,273.453 825.436,273.453 825.436,283.319 764.148,283.319 764.148,178.681 824.688,178.681 824.688,188.547 774.612,188.547 774.612,225.618 820.951,225.618 820.951,235.484 774.612,235.484" fill="#f1c97f"/> <path d="M907.651 283.319 L883.136 241.464 L853.837 241.464 L853.837 283.319 L843.374 283.319 L843.374 178.681 L885.229 178.681 C893.899 178.681 901.298 181.745 907.427 187.874 C913.556 194.003 916.62 201.402 916.62 210.072 C916.62 217.148 914.503 223.451 910.267 228.982 C906.032 234.513 900.626 238.225 894.048 240.118 L919.61 283.319 Z M853.837 188.547 L853.837 231.598 L885.229 231.598 C891.009 231.598 895.942 229.48 900.028 225.245 C904.113 221.009 906.156 215.952 906.156 210.072 C906.156 204.093 904.113 199.01 900.028 194.825 C895.942 190.639 891.009 188.547 885.229 188.547 Z" fill="#f1c97f"/> <path d="M1009.547 173.458 C1020.637 173.458 1029.949 177.068 1037.483 184.287 C1045.016 191.506 1048.783 200.714 1048.783 211.909 C1048.783 223.104 1045.016 232.312 1037.483 239.531 C1029.949 246.751 1020.637 250.36 1009.547 250.36 L994.951 250.36 L994.951 283.319 L966.858 283.319 L966.858 173.458 Z M1009.547 223.68 C1012.685 223.68 1015.327 222.581 1017.472 220.384 C1019.617 218.187 1020.69 215.362 1020.69 211.909 C1020.69 208.456 1019.617 205.658 1017.472 203.513 C1015.327 201.368 1012.685 200.295 1009.547 200.295 L994.951 200.295 L994.951 223.68 Z" class="ink"/> <path d="M1116.582 283.319 L1111.874 267.467 L1075.306 267.467 L1070.598 283.319 L1040.151 283.319 L1076.405 173.458 L1110.619 173.458 L1146.873 283.319 Z M1082.526 243.298 L1104.655 243.298 L1093.512 205.945 Z" class="ink"/> <polygon points="1222.363,173.458 1222.363,200.609 1195.211,200.609 1195.211,283.319 1167.118,283.319 1167.118,200.609 1139.967,200.609 1139.967,173.458" class="ink"/> <path d="M1289.849 283.319 L1270.702 247.849 L1260.657 247.849 L1260.657 283.319 L1232.564 283.319 L1232.564 173.458 L1276.508 173.458 C1287.704 173.458 1297.094 177.041 1304.68 184.208 C1312.266 191.376 1316.058 200.452 1316.058 211.438 C1316.058 218.03 1314.384 224.072 1311.036 229.565 C1307.688 235.058 1303.137 239.427 1297.382 242.67 L1319.982 283.319 Z M1260.657 199.354 L1260.657 223.994 L1276.195 223.994 C1279.647 224.098 1282.472 223 1284.67 220.698 C1286.867 218.396 1287.965 215.414 1287.965 211.752 C1287.965 208.09 1286.867 205.108 1284.67 202.806 C1282.472 200.505 1279.647 199.354 1276.195 199.354 Z" class="ink"/> <rect x="1329.869" y="173.458" width="28.093" height="109.861" class="ink"/> <polygon points="1487.284,173.458 1487.284,283.319 1459.348,283.319 1459.348,224.151 1432.668,268.252 1429.843,268.252 1403.319,224.308 1403.319,283.319 1375.226,283.319 1375.226,173.458 1403.319,173.458 1431.255,220.384 1459.348,173.458" class="ink"/> <path d="M1598.95 269.115 C1587.807 280.154 1574.179 285.673 1558.066 285.673 C1541.953 285.673 1528.325 280.154 1517.182 269.115 C1506.039 258.077 1500.468 244.501 1500.468 228.388 C1500.468 212.275 1506.039 198.7 1517.182 187.661 C1528.325 176.623 1541.953 171.104 1558.066 171.104 C1574.179 171.104 1587.807 176.623 1598.95 187.661 C1610.093 198.7 1615.665 212.275 1615.665 228.388 C1615.665 244.501 1610.093 258.077 1598.95 269.115 Z M1536.879 249.811 C1542.529 255.409 1549.591 258.208 1558.066 258.208 C1566.541 258.208 1573.604 255.409 1579.254 249.811 C1584.904 244.213 1587.729 237.072 1587.729 228.388 C1587.729 219.704 1584.904 212.563 1579.254 206.965 C1573.604 201.368 1566.541 198.569 1558.066 198.569 C1549.591 198.569 1542.529 201.368 1536.879 206.965 C1531.229 212.563 1528.404 219.704 1528.404 228.388 C1528.404 237.072 1531.229 244.213 1536.879 249.811 Z" class="ink"/> <rect x="1628.691" y="173.458" width="28.093" height="109.861" class="ink"/> <polygon points="1734.628,173.458 1762.564,173.458 1762.564,283.319 1740.906,283.319 1702.141,228.074 1702.141,283.319 1674.048,283.319 1674.048,173.458 1695.863,173.458 1734.628,228.702" class="ink"/> <polygon points="1808.078,256.952 1850.61,256.952 1850.61,283.319 1779.985,283.319 1779.985,173.458 1849.825,173.458 1849.825,199.667 1808.078,199.667 1808.078,214.891 1845.902,214.891 1845.902,240.787 1808.078,240.787" class="ink"/> </g> <path d="M1875.938 325.305 L412.001 325.305 C410.141 325.305 408.633 323.797 408.633 321.937 L408.633 321.937 C408.633 320.077 410.141 318.569 412.001 318.569 L1875.938 318.569 C1877.798 318.569 1879.306 320.077 1879.306 321.937 L1879.306 321.937 C1879.306 323.797 1877.798 325.305 1875.938 325.305 Z" fill="url(#lpG4)"/> <g class="tag"> <polygon points="414.276,390.347 426.317,390.347 426.317,392.831 411.642,392.831 411.642,366.491 414.276,366.491" class="ink"/> <path d="M461.762 392.831 L459.316 386.359 L446.824 386.359 L444.378 392.831 L441.594 392.831 L451.716 366.491 L454.425 366.491 L464.547 392.831 Z M447.765 383.875 L458.376 383.875 L453.07 369.765 Z" class="ink"/> <polygon points="511.205,392.831 501.497,366.491 504.357,366.491 512.56,389.332 520.763,366.491 523.622,366.491 513.914,392.831" class="ink"/> <path d="M556.434 392.831 L553.988 386.359 L541.496 386.359 L539.05 392.831 L536.265 392.831 L546.387 366.491 L549.096 366.491 L559.218 392.831 Z M542.436 383.875 L553.047 383.875 L547.742 369.765 Z" class="ink"/> <polygon points="578.634,390.347 590.675,390.347 590.675,392.831 576,392.831 576,366.491 578.634,366.491" class="ink"/> <polygon points="610.468,390.347 623.261,390.347 623.261,392.831 607.834,392.831 607.834,366.491 623.073,366.491 623.073,368.975 610.468,368.975 610.468,378.307 622.132,378.307 622.132,380.79 610.468,380.79" class="ink"/> <path d="M657.653 390.724 C655.847 392.43 653.489 393.282 650.579 393.282 C647.669 393.282 645.311 392.43 643.505 390.724 C641.699 389.018 640.796 386.735 640.796 383.875 L640.796 366.491 L643.43 366.491 L643.43 383.875 C643.43 385.983 644.057 387.651 645.311 388.88 C646.565 390.109 648.321 390.724 650.579 390.724 C652.836 390.724 654.592 390.109 655.847 388.88 C657.101 387.651 657.728 385.983 657.728 383.875 L657.728 366.491 L660.362 366.491 L660.362 383.875 C660.362 386.735 659.459 389.018 657.653 390.724 Z" class="ink"/> <path d="M695.582 392.831 L689.411 382.295 L682.036 382.295 L682.036 392.831 L679.402 392.831 L679.402 366.491 L689.938 366.491 C692.12 366.491 693.983 367.263 695.525 368.806 C697.068 370.348 697.839 372.211 697.839 374.393 C697.839 376.174 697.306 377.761 696.24 379.153 C695.174 380.545 693.813 381.48 692.158 381.956 L698.592 392.831 Z M682.036 368.975 L682.036 379.812 L689.938 379.812 C691.392 379.812 692.634 379.279 693.663 378.212 C694.691 377.146 695.205 375.873 695.205 374.393 C695.205 372.888 694.691 371.609 693.663 370.555 C692.634 369.502 691.392 368.975 689.938 368.975 Z" class="ink"/> <path d="M748.712 366.491 C752.299 366.491 755.266 367.764 757.611 370.311 C759.957 372.857 761.129 375.974 761.129 379.661 C761.129 383.349 759.957 386.466 757.611 389.012 C755.266 391.558 752.299 392.831 748.712 392.831 L738.553 392.831 L738.553 366.491 Z M748.712 390.347 C751.597 390.347 753.961 389.319 755.805 387.262 C757.649 385.205 758.571 382.671 758.571 379.661 C758.571 376.651 757.649 374.117 755.805 372.06 C753.961 370.003 751.597 368.975 748.712 368.975 L741.187 368.975 L741.187 390.347 Z" class="ink"/> <polygon points="781.674,390.347 794.468,390.347 794.468,392.831 779.04,392.831 779.04,366.491 794.28,366.491 794.28,368.975 781.674,368.975 781.674,378.307 793.339,378.307 793.339,380.79 781.674,380.79" class="ink"/> <polygon points="837.815,390.347 849.856,390.347 849.856,392.831 835.181,392.831 835.181,366.491 837.815,366.491" class="ink"/> <polygon points="867.014,366.491 864.757,374.958 862.499,374.958 864.004,366.491" class="ink"/> <polygon points="902.61,366.491 905.244,366.491 905.244,392.831 902.61,392.831 902.61,380.527 888.312,380.527 888.312,392.831 885.678,392.831 885.678,366.491 888.312,366.491 888.312,378.043 902.61,378.043" class="ink"/> <path d="M941.141 390.724 C939.335 392.43 936.977 393.282 934.067 393.282 C931.157 393.282 928.799 392.43 926.993 390.724 C925.187 389.018 924.284 386.735 924.284 383.875 L924.284 366.491 L926.918 366.491 L926.918 383.875 C926.918 385.983 927.545 387.651 928.799 388.88 C930.053 390.109 931.809 390.724 934.067 390.724 C936.325 390.724 938.081 390.109 939.335 388.88 C940.589 387.651 941.216 385.983 941.216 383.875 L941.216 366.491 L943.85 366.491 L943.85 383.875 C943.85 386.735 942.947 389.018 941.141 390.724 Z" class="ink"/> <polygon points="986.972,366.491 986.972,392.831 984.338,392.831 984.338,370.48 975.119,385.907 974.743,385.907 965.524,370.48 965.524,392.831 962.89,392.831 962.89,366.491 966.164,366.491 974.931,381.166 983.698,366.491" class="ink"/> <path d="M1023.922 392.831 L1021.477 386.359 L1008.984 386.359 L1006.538 392.831 L1003.754 392.831 L1013.876 366.491 L1016.585 366.491 L1026.707 392.831 Z M1009.925 383.875 L1020.536 383.875 L1015.23 369.765 Z" class="ink"/> <rect x="1043.489" y="366.491" width="2.634" height="26.34" class="ink"/> <polygon points="1082.471,366.491 1085.105,366.491 1085.105,392.831 1082.848,392.831 1068.173,371.383 1068.173,392.831 1065.539,392.831 1065.539,366.491 1067.796,366.491 1082.471,387.939" class="ink"/> <polygon points="1108.284,389.633 1106.026,398.099 1103.769,398.099 1105.274,389.633" class="ink"/> <polygon points="1152.384,390.347 1164.425,390.347 1164.425,392.831 1149.75,392.831 1149.75,366.491 1152.384,366.491" class="ink"/> <path d="M1199.87 392.831 L1197.424 386.359 L1184.932 386.359 L1182.486 392.831 L1179.702 392.831 L1189.824 366.491 L1192.533 366.491 L1202.655 392.831 Z M1185.873 383.875 L1196.484 383.875 L1191.178 369.765 Z" class="ink"/> <polygon points="1257.102,368.975 1244.873,368.975 1244.873,378.683 1256.538,378.683 1256.538,381.166 1244.873,381.166 1244.873,392.831 1242.239,392.831 1242.239,366.491 1257.102,366.491" class="ink"/> <path d="M1296.8 389.313 C1294.166 391.959 1290.942 393.282 1287.129 393.282 C1283.316 393.282 1280.093 391.959 1277.459 389.313 C1274.825 386.666 1273.508 383.449 1273.508 379.661 C1273.508 375.873 1274.825 372.656 1277.459 370.01 C1280.093 367.363 1283.316 366.04 1287.129 366.04 C1290.942 366.04 1294.166 367.363 1296.8 370.01 C1299.434 372.656 1300.751 375.873 1300.751 379.661 C1300.751 383.449 1299.434 386.666 1296.8 389.313 Z M1279.303 387.507 C1281.41 389.651 1284.019 390.724 1287.129 390.724 C1290.24 390.724 1292.849 389.651 1294.956 387.507 C1297.063 385.362 1298.117 382.747 1298.117 379.661 C1298.117 376.576 1297.063 373.961 1294.956 371.816 C1292.849 369.671 1290.24 368.599 1287.129 368.599 C1284.019 368.599 1281.41 369.671 1279.303 371.816 C1277.195 373.961 1276.142 376.576 1276.142 379.661 C1276.142 382.747 1277.195 385.362 1279.303 387.507 Z" class="ink"/> <path d="M1334.841 392.831 L1328.67 382.295 L1321.295 382.295 L1321.295 392.831 L1318.661 392.831 L1318.661 366.491 L1329.197 366.491 C1331.38 366.491 1333.242 367.263 1334.785 368.806 C1336.328 370.348 1337.099 372.211 1337.099 374.393 C1337.099 376.174 1336.566 377.761 1335.5 379.153 C1334.434 380.545 1333.073 381.48 1331.417 381.956 L1337.852 392.831 Z M1321.295 368.975 L1321.295 379.812 L1329.197 379.812 C1330.652 379.812 1331.894 379.279 1332.922 378.212 C1333.951 377.146 1334.465 375.873 1334.465 374.393 C1334.465 372.888 1333.951 371.609 1332.922 370.555 C1331.894 369.502 1330.652 368.975 1329.197 368.975 Z" class="ink"/> <path d="M1367.314 393.282 C1363.326 393.282 1360.027 391.965 1357.418 389.332 C1354.809 386.698 1353.505 383.474 1353.505 379.661 C1353.505 375.848 1354.809 372.625 1357.418 369.991 C1360.027 367.357 1363.326 366.04 1367.314 366.04 C1369.747 366.04 1371.98 366.623 1374.012 367.79 C1376.044 368.956 1377.612 370.53 1378.715 372.512 L1376.382 373.866 C1375.555 372.261 1374.326 370.982 1372.695 370.028 C1371.064 369.075 1369.271 368.599 1367.314 368.599 C1364.028 368.599 1361.344 369.665 1359.262 371.797 C1357.18 373.929 1356.139 376.551 1356.139 379.661 C1356.139 382.772 1357.18 385.393 1359.262 387.525 C1361.344 389.658 1364.028 390.724 1367.314 390.724 C1369.271 390.724 1371.064 390.247 1372.695 389.294 C1374.326 388.341 1375.555 387.061 1376.382 385.456 L1378.715 386.773 C1377.637 388.755 1376.075 390.335 1374.031 391.514 C1371.986 392.693 1369.747 393.282 1367.314 393.282 Z" class="ink"/> <polygon points="1399.072,390.347 1411.866,390.347 1411.866,392.831 1396.438,392.831 1396.438,366.491 1411.677,366.491 1411.677,368.975 1399.072,368.975 1399.072,378.307 1410.737,378.307 1410.737,380.79 1399.072,380.79" class="ink"/> <path d="M1462.738 366.491 C1466.326 366.491 1469.292 367.764 1471.637 370.311 C1473.983 372.857 1475.156 375.974 1475.156 379.661 C1475.156 383.349 1473.983 386.466 1471.637 389.012 C1469.292 391.558 1466.326 392.831 1462.738 392.831 L1452.579 392.831 L1452.579 366.491 Z M1462.738 390.347 C1465.623 390.347 1467.988 389.319 1469.831 387.262 C1471.675 385.205 1472.597 382.671 1472.597 379.661 C1472.597 376.651 1471.675 374.117 1469.831 372.06 C1467.988 370.003 1465.623 368.975 1462.738 368.975 L1455.213 368.975 L1455.213 390.347 Z" class="ink"/> <path d="M1509.359 390.724 C1507.553 392.43 1505.195 393.282 1502.285 393.282 C1499.375 393.282 1497.017 392.43 1495.211 390.724 C1493.405 389.018 1492.502 386.735 1492.502 383.875 L1492.502 366.491 L1495.136 366.491 L1495.136 383.875 C1495.136 385.983 1495.763 387.651 1497.017 388.88 C1498.272 390.109 1500.028 390.724 1502.285 390.724 C1504.543 390.724 1506.299 390.109 1507.553 388.88 C1508.807 387.651 1509.435 385.983 1509.435 383.875 L1509.435 366.491 L1512.069 366.491 L1512.069 383.875 C1512.069 386.735 1511.165 389.018 1509.359 390.724 Z" class="ink"/> <path d="M1563.318 366.491 C1565.676 366.491 1567.645 367.282 1569.225 368.862 C1570.806 370.442 1571.596 372.412 1571.596 374.77 C1571.596 377.128 1570.806 379.097 1569.225 380.677 C1567.645 382.257 1565.676 383.048 1563.318 383.048 L1556.545 383.048 L1556.545 392.831 L1553.911 392.831 L1553.911 366.491 Z M1563.318 380.564 C1564.948 380.564 1566.297 380.019 1567.363 378.927 C1568.429 377.836 1568.962 376.45 1568.962 374.77 C1568.962 373.089 1568.429 371.703 1567.363 370.612 C1566.297 369.52 1564.948 368.975 1563.318 368.975 L1556.545 368.975 L1556.545 380.564 Z" class="ink"/> <path d="M1604.407 392.831 L1601.961 386.359 L1589.469 386.359 L1587.023 392.831 L1584.239 392.831 L1594.361 366.491 L1597.07 366.491 L1607.192 392.831 Z M1590.41 383.875 L1601.021 383.875 L1595.715 369.765 Z" class="ink"/> <polygon points="1638.649,366.491 1638.649,368.975 1630.559,368.975 1630.559,392.831 1627.925,392.831 1627.925,368.975 1619.835,368.975 1619.835,366.491" class="ink"/> <path d="M1671.987 392.831 L1665.816 382.295 L1658.441 382.295 L1658.441 392.831 L1655.807 392.831 L1655.807 366.491 L1666.343 366.491 C1668.525 366.491 1670.388 367.263 1671.93 368.806 C1673.473 370.348 1674.245 372.211 1674.245 374.393 C1674.245 376.174 1673.712 377.761 1672.645 379.153 C1671.579 380.545 1670.218 381.48 1668.563 381.956 L1674.997 392.831 Z M1658.441 368.975 L1658.441 379.812 L1666.343 379.812 C1667.798 379.812 1669.039 379.279 1670.068 378.212 C1671.096 377.146 1671.611 375.873 1671.611 374.393 C1671.611 372.888 1671.096 371.609 1670.068 370.555 C1669.039 369.502 1667.798 368.975 1666.343 368.975 Z" class="ink"/> <rect x="1692.155" y="366.491" width="2.634" height="26.34" class="ink"/> <polygon points="1738.287,366.491 1738.287,392.831 1735.653,392.831 1735.653,370.48 1726.434,385.907 1726.058,385.907 1716.839,370.48 1716.839,392.831 1714.205,392.831 1714.205,366.491 1717.479,366.491 1726.246,381.166 1735.014,366.491" class="ink"/> <path d="M1779.49 389.313 C1776.856 391.959 1773.632 393.282 1769.819 393.282 C1766.006 393.282 1762.783 391.959 1760.149 389.313 C1757.515 386.666 1756.198 383.449 1756.198 379.661 C1756.198 375.873 1757.515 372.656 1760.149 370.01 C1762.783 367.363 1766.006 366.04 1769.819 366.04 C1773.632 366.04 1776.856 367.363 1779.49 370.01 C1782.124 372.656 1783.441 375.873 1783.441 379.661 C1783.441 383.449 1782.124 386.666 1779.49 389.313 Z M1761.993 387.507 C1764.1 389.651 1766.709 390.724 1769.819 390.724 C1772.93 390.724 1775.539 389.651 1777.646 387.507 C1779.753 385.362 1780.807 382.747 1780.807 379.661 C1780.807 376.576 1779.753 373.961 1777.646 371.816 C1775.539 369.671 1772.93 368.599 1769.819 368.599 C1766.709 368.599 1764.1 369.671 1761.993 371.816 C1759.886 373.961 1758.832 376.576 1758.832 379.661 C1758.832 382.747 1759.886 385.362 1761.993 387.507 Z" class="ink"/> <rect x="1801.351" y="366.491" width="2.634" height="26.34" class="ink"/> <polygon points="1840.334,366.491 1842.968,366.491 1842.968,392.831 1840.71,392.831 1826.035,371.383 1826.035,392.831 1823.401,392.831 1823.401,366.491 1825.659,366.491 1840.334,387.939" class="ink"/> <polygon points="1865.018,390.347 1877.811,390.347 1877.811,392.831 1862.384,392.831 1862.384,366.491 1877.623,366.491 1877.623,368.975 1865.018,368.975 1865.018,378.307 1876.682,378.307 1876.682,380.79 1865.018,380.79" class="ink"/> </g> </g></svg></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#situations">Situations</a>
+      <a href="#methode">Méthode</a>
+      <a href="#serkan">Qui suis-je ?</a>
+      <a href="#avis">Avis</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="head-tel" href="tel:+33634123955" aria-label="Appeler le 06 34 12 39 55"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></svg></a>
+    <button class="btn btn-or btn-sm" type="button" data-funnel>Demander mon audit offert</button>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 9h14M5 15h14"/></svg></button>
+  </div>
+</header>
+<nav class="menu glass" id="menu" aria-label="Menu mobile">
+  <a href="#situations">Situations</a>
+  <a href="#methode">Méthode</a>
+  <a href="#simulateur">Simulateur</a>
+  <a href="#serkan">Qui suis-je ?</a>
+  <a href="#avis">Avis</a>
+  <a href="#questions">Questions</a>
+  <a href="tel:+33634123955">Appeler le 06 34 12 39 55</a>
+  <button class="btn btn-or" type="button" data-funnel>Demander mon audit offert</button>
+</nav>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="h1" data-amb="flamme" data-dim=".5">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1 id="h1" class="rise">Avant de vous conseiller, je fais le diagnostic.</h1>
+        <p class="hero-lead rise d1">Je suis Serkan Bulut, <strong>conseiller en gestion de patrimoine indépendant près d’Évreux</strong>. J’accompagne chefs d’entreprise, professions libérales, cadres dirigeants et retraités en Normandie, à partir de 150&nbsp;000&nbsp;€ à investir ou à réorganiser.</p>
+        <div class="hero-ctas rise d2">
+          <button class="btn btn-or" type="button" data-funnel>Demander mon audit offert</button>
+          <a class="btn btn-glass" href="tel:+33634123955"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></svg>06 34 12 39 55</a>
+        </div>
+        <ul class="hero-proof rise d3">
+          <li><b>20 ans</b> d’expérience</li>
+          <li><b>200+</b> clients accompagnés</li>
+          <li><b>4</b> piliers audités</li>
+        </ul>
+      </div>
+
+      <aside class="picker glass rise d4" aria-labelledby="picker-title">
+        <div class="who">
+          <img src="https://www.leader-patrimoine.fr/assets/serkan/avatar.webp" alt="Serkan Bulut" width="46" height="46">
+          <div><strong>Votre audit offert</strong><span>Trois minutes pour le préparer, directement avec moi.</span></div>
+        </div>
+        <div class="picker-meta"><span>Étape 1 sur 7</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <h2 id="picker-title">Qu’est-ce qui vous amène ?</h2>
+        <div class="picker-list" id="pickerList"></div>
+        <p class="picker-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Vos réponses restent confidentielles.</p>
+      </aside>
+    </div>
+    <ul class="trust glass clear" aria-label="Garanties">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg>Immatriculé à l’ORIAS n° 21007407</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.5 7.3 5-2.6 5 2.6-1.5-7.3"/></svg>Membre de la CNCGP</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg>Indépendant : plusieurs partenaires, aucun produit maison</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Au cabinet, chez vous ou en visio</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Film au défilement -->
+<section class="film" id="film" aria-label="Le film : de la bougie à la ville éclairée">
+  <div class="film-stage" id="filmStage">
+    <div class="film-segs" id="filmSegs" aria-hidden="true"></div>
+    <div class="film-light" aria-hidden="true"></div>
+    <div class="film-shade" aria-hidden="true"></div>
+    <div class="film-beats wrap">
+      <div class="beat glass" data-seg="0" data-from=".1" data-to=".94">
+        <h2 class="beat-t"><em>Investir,</em> c’est allumer une petite flamme aujourd’hui</h2>
+        <p class="beat-s">qui brillera de plus en plus fort demain.</p>
+      </div>
+      <div class="beat glass" data-seg="2" data-from=".06" data-to=".94">
+        <h2 class="beat-t">Je suis votre <em>médecin des finances.</em></h2>
+        <p class="beat-p">Je commence toujours par un audit offert. Je regarde votre situation sous quatre angles :</p>
+        <ul class="beat-pills"><li>Civile</li><li>Fiscale</li><li>Économique</li><li>Prévoyance</li></ul>
+        <p class="beat-p">Ensuite seulement, je vous dis ce que j’en pense.</p>
+        <div class="beat-links"><a class="link" href="#methode">Voir ma méthode</a></div>
+      </div>
+      <div class="beat glass" data-seg="4" data-from=".06" data-to=".94">
+        <h2 class="beat-t"><em>Votre trésorerie dort.</em> Elle ne profite qu’à votre banque.</h2>
+        <p class="beat-p">SCI, holding, produit de cession : je mets votre capital au travail, et je prépare la vente de votre société avec vos conseils.</p>
+        <div class="beat-links"><button class="link" type="button" data-funnel-sit="tresorerie">Ma trésorerie</button><button class="link" type="button" data-funnel-sit="cession">Ma cession</button></div>
+      </div>
+      <div class="beat glass" data-seg="6" data-from=".06" data-to=".94">
+        <h2 class="beat-t"><em>Un patrimoine</em> finit toujours par porter des prénoms.</h2>
+        <p class="beat-p">Je vous aide à protéger les vôtres et à transmettre sans diviser la famille.</p>
+        <div class="beat-links"><button class="link" type="button" data-funnel-sit="famille">Protéger les miens</button><button class="link" type="button" data-funnel-sit="retraite">Ma retraite</button></div>
+      </div>
+      <div class="beat glass" data-seg="8" data-from=".06" data-to=".94">
+        <h2 class="beat-t">Je mouille le maillot, <em>en dehors du terrain</em> aussi.</h2>
+        <ul class="beat-list"><li>Sponsor du boxeur Benjamin Mendes</li><li>Partenaire de l’Évreux Nétreville Basket Ball</li><li>Mécène du film Prisme</li></ul>
+        <p class="beat-p">Être là quand ça compte, c’est ma façon de travailler.</p>
+        <div class="beat-links"><a class="link" href="#engagements">Mes engagements</a></div>
+      </div>
+      <div class="beat glass" data-seg="10" data-from=".18" data-to="1">
+        <h2 class="beat-t">Allumons <em>la vôtre.</em></h2>
+        <p class="beat-p">Plus de 200 clients accompagnés. 20 ans d’expérience. Un audit offert pour commencer, à partir de 150 000 € à investir.</p>
+        <div class="beat-links"><button class="btn btn-or btn-sm" type="button" data-funnel>Demander mon audit offert</button><a class="link" href="tel:+33634123955">06 34 12 39 55</a></div>
+      </div>
+    </div>
+    <nav class="rail glass lens" id="filmRail" aria-label="Chapitres du film"></nav>
+    <div class="film-ui glass lens">
+      <span class="film-prog" aria-hidden="true"><i id="filmBar"></i></span>
+      <a class="film-skip" href="#situations">Passer le film</a>
+    </div>
+  </div>
+</section>
+
+<!-- Situations -->
+<section class="sec" id="situations" aria-labelledby="sit-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="sit-title">Qu’est-ce qui vous amène ?</h2>
+      <p>Sept situations que je rencontre souvent. Choisissez la vôtre : je vous explique comment je la traite, et l’audit démarre avec elle.</p>
+    </div>
+    <div class="sit">
+      <div class="sit-box" id="sitLists"></div>
+      <aside class="sit-panel card" aria-live="polite">
+        <figure><img id="sitImg" src="" alt=""></figure>
+        <div class="sit-body">
+          <h3 id="sitTitle"></h3>
+          <p id="sitText"></p>
+          <div class="sit-actions">
+            <button class="btn btn-or" type="button" id="sitCta">Demander mon audit offert</button>
+            <a class="link" id="sitLink" href="#">Lire la page complète</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Simulateur -->
+<section class="sec alt" id="simulateur" aria-labelledby="sim-title">
+  <div class="wrap">
+    <div class="sim">
+      <div>
+        <h2 class="h2" id="sim-title">Votre épargne perd-elle de la valeur ?</h2>
+        <p class="sim-intro">Prenez l’argent qui dort et ne rapporte rien. Réglez le montant et la durée : voici ce que l’inflation lui retire.</p>
+        <label class="range" for="amt">
+          <span class="range-top"><span>Épargne qui dort</span><output id="amtOut" for="amt">150 000 €</output></span>
+          <input type="range" id="amt" min="50000" max="2000000" step="10000" value="150000">
+        </label>
+        <label class="range" for="yrs">
+          <span class="range-top"><span>Durée</span><output id="yrsOut" for="yrs">10 ans</output></span>
+          <input type="range" id="yrs" min="1" max="20" step="1" value="10">
+        </label>
+        <div class="sim-out" aria-live="polite">
+          <p class="sim-big" id="lossOut">29 334 €</p>
+          <p>de pouvoir d’achat en moins, soit <strong id="pctOut">20 %</strong>. Environ <strong id="monthOut">244 €</strong> qui s’évaporent chaque mois.</p>
+        </div>
+        <div class="sim-cta">
+          <button class="btn btn-or" type="button" id="simCta">Demander mon audit offert</button>
+          <form class="mail" id="mailForm" novalidate>
+            <label class="sr" for="mailIn">Votre e-mail</label>
+            <input id="mailIn" type="email" placeholder="Recevoir ce calcul par e-mail" autocomplete="email">
+            <button class="btn btn-ghost" type="submit">Envoyer</button>
+          </form>
+          <p class="mail-ok" id="mailOk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Calcul envoyé. Pensez à vérifier vos courriers indésirables.</p>
+        </div>
+        <p class="fine">Calcul illustratif, sans rendement et hors impôts. Hypothèse d’inflation : 2,2 % par an jusqu’à 10 ans (moyenne des 10 dernières années), puis 2 % au-delà. Ce calcul ne constitue ni un conseil ni une promesse de rendement.</p>
+      </div>
+      <figure class="facade card">
+        <div class="street" id="street" role="img" aria-label="Façade d’immeubles dont les fenêtres s’éteignent à mesure que le pouvoir d’achat diminue"></div>
+        <figcaption><i aria-hidden="true"></i>Chaque fenêtre éclairée représente 1 % de votre pouvoir d’achat.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Méthode -->
+<section class="sec" id="methode" aria-labelledby="met-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="met-title">Le diagnostic d’abord. La stratégie ensuite.</h2>
+      <p>Comme un médecin des finances : je ne prescris rien avant d’avoir examiné l’ensemble de votre situation. Mon avis vient après l’analyse, jamais avant.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <figure><img src="https://www.leader-patrimoine.fr/assets/cards/audit.webp" alt="" loading="lazy"></figure>
+        <span class="step-n">1</span>
+        <h3>L’audit offert</h3>
+        <p>Je recueille votre situation sur quatre axes, nous définissons votre profil investisseur et fixons le cap sur vos besoins à moyen et long terme.</p>
+        <p class="gets">Vous repartez avec une vision claire et des préconisations à 360°, sans engagement.</p>
+      </li>
+      <li class="step">
+        <figure><img src="https://www.leader-patrimoine.fr/assets/cards/strategie.webp" alt="" loading="lazy"></figure>
+        <span class="step-n">2</span>
+        <h3>La stratégie</h3>
+        <p>Je sélectionne, parmi les solutions de plusieurs partenaires, celles qui répondent à votre cahier des charges, en lien avec votre notaire, votre expert-comptable et votre avocat fiscaliste.</p>
+        <p class="gets">Une stratégie patrimoniale sur mesure, expliquée sans jargon.</p>
+      </li>
+      <li class="step">
+        <figure><img src="https://www.leader-patrimoine.fr/assets/cards/suivi.webp" alt="" loading="lazy"></figure>
+        <span class="step-n">3</span>
+        <h3>Le suivi</h3>
+        <p>Le même interlocuteur sur la durée. Je vous alerte quand la loi, les marchés ou votre vie changent, et nous ajustons ensemble.</p>
+        <p class="gets">Un patrimoine qui reste réglé, année après année.</p>
+      </li>
+    </ol>
+
+    <div class="axes">
+      <svg viewBox="0 0 380 380" role="img" aria-label="Les quatre axes de l’audit : civil, fiscal, économique et prévoyance, autour de votre situation">
+        <defs><linearGradient id="axG" x1="0" x2="1"><stop offset="0" stop-color="#FFD565"/><stop offset="1" stop-color="#C7905E"/></linearGradient></defs>
+        <circle cx="190" cy="190" r="178" fill="none" stroke="#fff" stroke-opacity=".1"/>
+        <g fill="none" stroke-width="30" stroke-linecap="round">
+          <path d="M200 40.3 A150 150 0 0 1 339.7 180" stroke="#fff" stroke-opacity=".16"/>
+          <path d="M339.7 200 A150 150 0 0 1 200 339.7" stroke="url(#axG)"/>
+          <path d="M180 339.7 A150 150 0 0 1 40.3 200" stroke="#fff" stroke-opacity=".16"/>
+          <path d="M40.3 180 A150 150 0 0 1 180 40.3" stroke="url(#axG)"/>
+        </g>
+        <circle cx="190" cy="190" r="96" fill="#0F112D" fill-opacity=".55" stroke="#fff" stroke-opacity=".16"/>
+        <text x="190" y="184" text-anchor="middle" fill="#F4F1EA" style="font:400 24px var(--display)">Votre</text>
+        <text x="190" y="212" text-anchor="middle" fill="#E9C16B" style="font:400 24px var(--display)">situation</text>
+        <path id="axT1" d="M190 40 A150 150 0 0 1 340 190" fill="none"/>
+        <path id="axT2" d="M190 340 A150 150 0 0 0 340 190" fill="none"/>
+        <path id="axT3" d="M40 190 A150 150 0 0 0 190 340" fill="none"/>
+        <path id="axT4" d="M40 190 A150 150 0 0 1 190 40" fill="none"/>
+        <g style="font:400 12.5px var(--sans);letter-spacing:.06em" text-anchor="middle">
+          <text dy="4.4" fill="#F4F1EA"><textPath href="#axT1" startOffset="50%">Civil</textPath></text>
+          <text dy="4.4" fill="#1A1405"><textPath href="#axT2" startOffset="50%">Fiscal</textPath></text>
+          <text dy="4.4" fill="#F4F1EA"><textPath href="#axT3" startOffset="50%">Économique</textPath></text>
+          <text dy="4.4" fill="#1A1405"><textPath href="#axT4" startOffset="50%">Prévoyance</textPath></text>
+        </g>
+      </svg>
+      <div>
+        <h3>Quatre axes examinés avant le moindre conseil.</h3>
+        <dl>
+          <div><dt>Civil</dt><dd>Situation familiale, régime matrimonial, transmission.</dd></div>
+          <div><dt>Fiscal</dt><dd>Impôt sur le revenu, IFI, fiscalité de la transmission.</dd></div>
+          <div><dt>Économique</dt><dd>Revenus, patrimoine, épargne, endettement, projets.</dd></div>
+          <div><dt>Prévoyance</dt><dd>Protection de vos proches et de vos revenus en cas d’imprévu.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="partners">
+      <p><strong>Indépendant, je ne vends aucun produit maison.</strong> Je compare les solutions de plusieurs partenaires et retiens celles qui vous conviennent.</p>
+      <ul class="logos" aria-label="Partenaires">
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/oddo-bhf.svg" alt="ODDO BHF" loading="lazy"></li>
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/generali.svg" alt="Generali" loading="lazy"></li>
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/amundi.svg" alt="Amundi" loading="lazy"></li>
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/cardif.svg" alt="Cardif" loading="lazy"></li>
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/la-mondiale.svg" alt="AG2R La Mondiale" loading="lazy"></li>
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/oradea.svg" alt="Oradéa Vie" loading="lazy"></li>
+        <li><img src="https://www.leader-patrimoine.fr/assets/partners/carac.png" alt="Carac" loading="lazy"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Serkan -->
+<section class="sec alt" id="serkan" aria-labelledby="me-title">
+  <div class="wrap me">
+    <figure>
+      <img src="https://www.leader-patrimoine.fr/assets/serkan/conference.webp" alt="Serkan Bulut en conférence" loading="lazy">
+      <figcaption><span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/></svg>ORIAS 21007407</span><span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.2-1.5 7.3 5-2.6 5 2.6-1.5-7.3"/></svg>Membre CNCGP</span></figcaption>
+    </figure>
+    <div class="me-card">
+      <h2 id="me-title">Serkan Bulut</h2>
+      <p class="motto">La valeur de l’humain, la force de votre patrimoine.</p>
+      <p class="bio">Quinze ans dans de grands groupes bancaires m’ont appris la technique. Je suis indépendant depuis plus de cinq ans pour une seule raison : conseiller librement, en partant de votre situation et non d’un catalogue.</p>
+      <p class="bio">Vous avez un seul interlocuteur, du premier rendez-vous au suivi. J’écoute, j’explique, et vous décidez en connaissance de cause.</p>
+      <dl class="facts">
+        <div><dt>20 ans</dt><dd>d’expérience</dd></div>
+        <div><dt>200+</dt><dd>clients accompagnés</dd></div>
+        <div><dt>5 ans+</dt><dd>d’indépendance</dd></div>
+      </dl>
+      <div class="me-links">
+        <button class="btn btn-or" type="button" data-funnel>Demander mon audit offert</button>
+        <a class="link" href="https://www.linkedin.com/in/serkan-bulut" target="_blank" rel="noopener">Mon profil LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Avis -->
+<section class="sec" id="avis" aria-labelledby="avis-title">
+  <div class="wrap">
+    <h2 class="sr" id="avis-title">Ce qu’en disent mes clients et partenaires</h2>
+    <figure class="quote-top">
+      <span class="qm" aria-hidden="true">“</span>
+      <div>
+        <blockquote>Il diagnostique rapidement les problèmes et prescrit des solutions efficaces.</blockquote>
+        <cite>Laurent Sanchis</cite>
+      </div>
+    </figure>
+    <div class="reviews" id="reviews"></div>
+    <div class="reviews-foot">
+      <a class="link" href="https://www.linkedin.com/in/serkan-bulut" target="_blank" rel="noopener">Lire toutes les recommandations sur LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- Engagements -->
+<section class="sec alt" id="engagements" aria-labelledby="eng-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="eng-title">Engagé en Normandie, au-delà des chiffres.</h2>
+      <p>Le cabinet soutient celles et ceux qui font vivre Évreux et sa région, sur le terrain comme sur les causes qui comptent.</p>
+    </div>
+    <div class="eng">
+      <figure><div class="ph"><img src="https://www.leader-patrimoine.fr/assets/terrain/mendes-duo.webp" alt="Serkan Bulut aux côtés du boxeur Benjamin Mendes" loading="lazy"></div><figcaption><b>Benjamin Mendes</b><span>Boxeur ébroïcien, sponsorisé par le cabinet.</span></figcaption></figure>
+      <figure><div class="ph"><img src="https://www.leader-patrimoine.fr/assets/terrain/enbb-equipe.webp" alt="Équipe d’Évreux Nétreville Basket Ball" loading="lazy"></div><figcaption><b>Évreux Nétreville Basket</b><span>Partenaire du club, dont les U18 viennent d’accéder à l’Élite.</span></figcaption></figure>
+      <figure><div class="ph"><img src="https://www.leader-patrimoine.fr/assets/terrain/rose-portrait.webp" alt="Maillot Octobre Rose floqué" loading="lazy"></div><figcaption><b>Octobre Rose</b><span>Maillots floqués, ventes reversées à Boobs Tour.</span></figcaption></figure>
+      <figure><div class="ph"><img src="https://www.leader-patrimoine.fr/assets/terrain/prisme-projection.webp" alt="Projection du court-métrage Prisme" loading="lazy"></div><figcaption><b>Prisme</b><span>Mécène de ce court-métrage sur l’après-cancer.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Zone -->
+<section class="sec" id="zone" aria-labelledby="zone-title">
+  <div class="wrap">
+    <div class="zone">
+      <div>
+        <h2 class="h2" id="zone-title">Près d’Évreux, partout en Normandie.</h2>
+        <p class="zone-text">Le cabinet est à Sacquenville, à 12 minutes d’Évreux. Nous choisissons le lieu ensemble : votre bureau, chez vous, ou en visio. J’accompagne aussi des clients dans toute la France, résidents comme non-résidents fiscaux.</p>
+        <ul class="depts" aria-label="Départements couverts"><li>Eure</li><li>Seine-Maritime</li><li>Calvados</li><li>Manche</li><li>Orne</li></ul>
+        <div class="cities">
+          <a href="/gestion-de-patrimoine/evreux.html">Évreux <span>12 min</span></a>
+          <a href="/gestion-de-patrimoine/rouen.html">Rouen <span>env. 1 h</span></a>
+          <a href="/gestion-de-patrimoine/le-havre.html">Le Havre <span>env. 1 h 30</span></a>
+          <a href="/gestion-de-patrimoine/caen.html">Caen <span>env. 1 h 45</span></a>
+        </div>
+      </div>
+      <svg class="map" viewBox="0 0 560 440" role="img" aria-label="Temps de trajet depuis Sacquenville : Évreux 12 minutes, Rouen environ 1 heure, Le Havre environ 1 heure 30, Caen environ 1 heure 45">
+        <defs>
+          <radialGradient id="mapGlow"><stop offset="0" stop-color="#E9C16B" stop-opacity=".32"/><stop offset="1" stop-color="#E9C16B" stop-opacity="0"/></radialGradient>
+          <pattern id="mapDots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#F4F1EA" fill-opacity=".1"/></pattern>
+        </defs>
+        <rect width="560" height="440" rx="24" fill="#0E1030"/>
+        <rect width="560" height="440" rx="24" fill="url(#mapDots)"/>
+        <g fill="none" stroke="#E9C16B" stroke-opacity=".16" stroke-dasharray="2 6"><circle cx="402" cy="258" r="70"/><circle cx="402" cy="258" r="150"/><circle cx="402" cy="258" r="250"/></g>
+        <circle cx="402" cy="258" r="80" fill="url(#mapGlow)"/>
+        <g stroke="#E9C16B" stroke-width="1.2" stroke-opacity=".7" fill="none"><path d="M402 258 L418 276"/><path d="M402 258 Q420 190 410 126"/><path d="M402 258 Q300 160 222 110"/><path d="M402 258 Q260 250 118 218"/></g>
+        <g fill="#F4F1EA"><circle cx="418" cy="276" r="4.5"/><circle cx="410" cy="126" r="4.5"/><circle cx="222" cy="110" r="4.5"/><circle cx="118" cy="218" r="4.5"/></g>
+        <circle cx="402" cy="258" r="8" fill="#E9C16B"/><circle cx="402" cy="258" r="15" fill="none" stroke="#E9C16B" stroke-opacity=".5"/>
+        <g style="font:400 15px var(--sans);letter-spacing:.02em" fill="#F4F1EA"><text x="430" y="300">Évreux</text><text x="424" y="120">Rouen</text><text x="190" y="92">Le Havre</text><text x="78" y="200">Caen</text></g>
+        <g style="font:300 13px var(--sans)" fill="#A9ABC2"><text x="430" y="318">12 min</text><text x="424" y="138">env. 1 h</text><text x="190" y="72">env. 1 h 30</text><text x="78" y="182">env. 1 h 45</text></g>
+        <g text-anchor="end"><text x="390" y="292" fill="#E9C16B" style="font:400 15px var(--sans)">Sacquenville</text><text x="390" y="310" fill="#A9ABC2" style="font:300 13px var(--sans)">le cabinet</text></g>
+        <text x="28" y="412" fill="#E9C16B" fill-opacity=".85" style="font:300 13px var(--sans);letter-spacing:.02em">Et en visio dans toute la France</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec alt" id="questions" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <div class="faq-side">
+      <h2 class="h2" id="faq-title">Vos questions, mes réponses.</h2>
+      <div class="ask">
+        <img src="https://www.leader-patrimoine.fr/assets/serkan/studio.webp" alt="Serkan Bulut" loading="lazy">
+        <div><p>Une autre question ? Appelez-moi directement.</p><a href="tel:+33634123955">06 34 12 39 55</a></div>
+      </div>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="final" aria-labelledby="final-title">
+  <div class="final-bg" aria-hidden="true"><img src="https://www.leader-patrimoine.fr/assets/cards/fin.webp" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <h2 id="final-title">Commençons par le diagnostic.</h2>
+    <p class="lead">Un premier échange pour comprendre votre situation et vous présenter mon accompagnement. Vous repartez avec une vision claire, que vous alliez plus loin ou non.</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Offert et sans engagement</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Vous échangez directement avec moi</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Au cabinet, chez vous ou en visio</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Vos réponses restent confidentielles</li>
+    </ul>
+    <div class="hero-ctas">
+      <button class="btn btn-or" type="button" data-funnel>Demander mon audit offert</button>
+      <a class="btn btn-ghost" href="tel:+33634123955"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></svg>06 34 12 39 55</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Pied de page -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-card">
+      <div class="foot-grid">
+        <div>
+          <svg class="logo" viewBox="30 118 1860 358" role="img" aria-label="Leader Patrimoine"><title>Leader Patrimoine</title><g> <g> <circle cx="153.045" cy="161.604" r="30.637" fill="url(#lpG1)"/> <path d="M320.846 180.812 C316.789 171.038 310.941 162.302 303.299 154.601 C295.599 146.902 286.847 141.037 277.046 137.009 C267.24 132.981 256.949 130.967 246.17 130.967 L210.946 130.967 C211.353 132.148 211.751 133.333 212.143 134.52 L217.576 134.52 C220.892 134.462 225.512 135.024 231.435 136.208 C237.357 137.395 243.016 139.882 248.405 143.672 C257.349 150.663 264.488 160.125 269.818 172.06 C275.15 183.996 277.814 197.22 277.814 211.732 C277.814 226.362 275.089 239.674 269.642 251.669 C264.19 263.664 256.935 273.157 247.872 280.145 C241.89 284.055 235.879 286.529 229.836 287.564 C225.929 288.235 222.853 288.66 220.58 288.848 C219.339 288.95 218.329 288.984 217.576 288.942 L192.713 288.942 C192.695 289.093 192.677 289.243 192.659 289.394 C184.118 359.943 150.728 422.83 101.482 469.033 C160.389 427.55 203.439 365.078 219.789 292.495 L246.17 292.495 C256.949 292.495 267.24 290.468 277.046 286.409 C286.847 282.353 295.599 276.474 303.299 268.773 C310.941 261.074 316.789 252.336 320.846 242.562 C324.904 232.789 326.933 222.512 326.933 211.732 C326.933 200.891 324.904 190.584 320.846 180.812 Z" class="ink"/> <path d="M111.564 372.283 C106.256 372.283 101.235 369.329 99.109 364.467 C99.096 364.437 99.083 364.406 99.07 364.376 C97.765 361.355 96.938 358.512 96.581 355.847 C96.227 353.3 96.078 351.493 96.136 350.427 L96.136 156.29 C96.136 155.401 96.241 153.995 96.449 152.069 C96.655 150.145 97.114 147.998 97.826 145.628 C98.537 143.259 99.647 140.949 101.158 138.697 C102.668 136.447 104.668 134.597 107.154 133.144 C109.643 131.693 112.81 130.967 116.662 130.967 L40.694 130.967 C44.307 130.967 47.345 131.634 49.803 132.967 C52.259 134.299 54.229 135.987 55.712 138.031 C57.19 140.075 58.332 142.238 59.132 144.518 C59.931 146.798 60.478 148.916 60.775 150.87 C61.132 153.418 61.277 155.224 61.22 156.29 L61.22 367.125 C61.277 367.956 61.189 369.334 60.953 371.257 C60.717 373.182 60.242 375.344 59.53 377.744 C58.821 380.142 57.709 382.452 56.201 384.673 C54.69 386.895 52.69 388.746 50.202 390.227 C47.715 391.708 44.545 392.448 40.694 392.448 L40.694 401.94 L126.491 401.94 C131.633 392.224 136.169 382.328 140.056 372.283 Z" class="ink"/> <path d="M272.621 351.849 C272.621 355.935 271.805 359.253 270.178 361.8 C268.547 364.347 266.547 366.361 264.179 367.841 C261.811 369.322 259.383 370.389 256.894 371.04 C254.406 371.693 252.214 372.106 250.318 372.283 L198.001 372.283 C192.199 382.567 185.803 392.468 178.852 401.94 L272.533 401.94 Z" class="ink"/> <path d="M258.89 164.697 C258.89 164.697 148.093 182.647 130.143 248.052 C122.217 276.931 138.017 322.586 145.205 351.849 C155.108 392.17 135.301 401.94 135.301 401.94 C135.301 401.94 164.172 390.169 167.488 342.962 C168.688 325.879 163.31 308.912 159.441 283.318 C156.759 265.574 157.73 231.951 175.947 211.731 C194.364 191.289 258.89 164.697 258.89 164.697 Z" fill="url(#lpG2)"/> <path d="M106.519 178.933 C106.519 178.933 107.477 203.513 117.731 223.19 C122.408 232.165 131.104 235.032 131.104 235.032 C131.104 235.032 121.678 247.085 123.953 268.478 C125.203 280.237 128.071 298.554 128.071 298.554 C128.071 298.554 110.135 263.069 106.497 245.318 C101.671 221.769 106.519 178.933 106.519 178.933 Z" fill="url(#lpG3)"/> </g> <g> <polygon points="418.843,273.453 466.677,273.453 466.677,283.319 408.379,283.319 408.379,178.681 418.843,178.681" fill="#f1c97f"/> <polygon points="492.089,273.453 542.913,273.453 542.913,283.319 481.626,283.319 481.626,178.681 542.166,178.681 542.166,188.547 492.089,188.547 492.089,225.618 538.429,225.618 538.429,235.484 492.089,235.484" fill="#f1c97f"/> <path d="M632.005 283.319 L622.289 257.608 L572.661 257.608 L562.944 283.319 L551.882 283.319 L592.093 178.681 L602.856 178.681 L643.067 283.319 Z M576.398 247.742 L618.552 247.742 L597.475 191.686 Z" fill="#f1c97f"/> <path d="M696.881 178.681 C711.131 178.681 722.916 183.738 732.233 193.853 C741.551 203.968 746.21 216.35 746.21 231 C746.21 245.649 741.551 258.031 732.233 268.146 C722.916 278.261 711.131 283.319 696.881 283.319 L656.52 283.319 L656.52 178.681 Z M696.881 273.453 C708.341 273.453 717.733 269.367 725.058 261.195 C732.383 253.024 736.045 242.958 736.045 231 C736.045 219.041 732.383 208.976 725.058 200.804 C717.733 192.633 708.341 188.547 696.881 188.547 L666.984 188.547 L666.984 273.453 Z" fill="#f1c97f"/> <polygon points="774.612,273.453 825.436,273.453 825.436,283.319 764.148,283.319 764.148,178.681 824.688,178.681 824.688,188.547 774.612,188.547 774.612,225.618 820.951,225.618 820.951,235.484 774.612,235.484" fill="#f1c97f"/> <path d="M907.651 283.319 L883.136 241.464 L853.837 241.464 L853.837 283.319 L843.374 283.319 L843.374 178.681 L885.229 178.681 C893.899 178.681 901.298 181.745 907.427 187.874 C913.556 194.003 916.62 201.402 916.62 210.072 C916.62 217.148 914.503 223.451 910.267 228.982 C906.032 234.513 900.626 238.225 894.048 240.118 L919.61 283.319 Z M853.837 188.547 L853.837 231.598 L885.229 231.598 C891.009 231.598 895.942 229.48 900.028 225.245 C904.113 221.009 906.156 215.952 906.156 210.072 C906.156 204.093 904.113 199.01 900.028 194.825 C895.942 190.639 891.009 188.547 885.229 188.547 Z" fill="#f1c97f"/> <path d="M1009.547 173.458 C1020.637 173.458 1029.949 177.068 1037.483 184.287 C1045.016 191.506 1048.783 200.714 1048.783 211.909 C1048.783 223.104 1045.016 232.312 1037.483 239.531 C1029.949 246.751 1020.637 250.36 1009.547 250.36 L994.951 250.36 L994.951 283.319 L966.858 283.319 L966.858 173.458 Z M1009.547 223.68 C1012.685 223.68 1015.327 222.581 1017.472 220.384 C1019.617 218.187 1020.69 215.362 1020.69 211.909 C1020.69 208.456 1019.617 205.658 1017.472 203.513 C1015.327 201.368 1012.685 200.295 1009.547 200.295 L994.951 200.295 L994.951 223.68 Z" class="ink"/> <path d="M1116.582 283.319 L1111.874 267.467 L1075.306 267.467 L1070.598 283.319 L1040.151 283.319 L1076.405 173.458 L1110.619 173.458 L1146.873 283.319 Z M1082.526 243.298 L1104.655 243.298 L1093.512 205.945 Z" class="ink"/> <polygon points="1222.363,173.458 1222.363,200.609 1195.211,200.609 1195.211,283.319 1167.118,283.319 1167.118,200.609 1139.967,200.609 1139.967,173.458" class="ink"/> <path d="M1289.849 283.319 L1270.702 247.849 L1260.657 247.849 L1260.657 283.319 L1232.564 283.319 L1232.564 173.458 L1276.508 173.458 C1287.704 173.458 1297.094 177.041 1304.68 184.208 C1312.266 191.376 1316.058 200.452 1316.058 211.438 C1316.058 218.03 1314.384 224.072 1311.036 229.565 C1307.688 235.058 1303.137 239.427 1297.382 242.67 L1319.982 283.319 Z M1260.657 199.354 L1260.657 223.994 L1276.195 223.994 C1279.647 224.098 1282.472 223 1284.67 220.698 C1286.867 218.396 1287.965 215.414 1287.965 211.752 C1287.965 208.09 1286.867 205.108 1284.67 202.806 C1282.472 200.505 1279.647 199.354 1276.195 199.354 Z" class="ink"/> <rect x="1329.869" y="173.458" width="28.093" height="109.861" class="ink"/> <polygon points="1487.284,173.458 1487.284,283.319 1459.348,283.319 1459.348,224.151 1432.668,268.252 1429.843,268.252 1403.319,224.308 1403.319,283.319 1375.226,283.319 1375.226,173.458 1403.319,173.458 1431.255,220.384 1459.348,173.458" class="ink"/> <path d="M1598.95 269.115 C1587.807 280.154 1574.179 285.673 1558.066 285.673 C1541.953 285.673 1528.325 280.154 1517.182 269.115 C1506.039 258.077 1500.468 244.501 1500.468 228.388 C1500.468 212.275 1506.039 198.7 1517.182 187.661 C1528.325 176.623 1541.953 171.104 1558.066 171.104 C1574.179 171.104 1587.807 176.623 1598.95 187.661 C1610.093 198.7 1615.665 212.275 1615.665 228.388 C1615.665 244.501 1610.093 258.077 1598.95 269.115 Z M1536.879 249.811 C1542.529 255.409 1549.591 258.208 1558.066 258.208 C1566.541 258.208 1573.604 255.409 1579.254 249.811 C1584.904 244.213 1587.729 237.072 1587.729 228.388 C1587.729 219.704 1584.904 212.563 1579.254 206.965 C1573.604 201.368 1566.541 198.569 1558.066 198.569 C1549.591 198.569 1542.529 201.368 1536.879 206.965 C1531.229 212.563 1528.404 219.704 1528.404 228.388 C1528.404 237.072 1531.229 244.213 1536.879 249.811 Z" class="ink"/> <rect x="1628.691" y="173.458" width="28.093" height="109.861" class="ink"/> <polygon points="1734.628,173.458 1762.564,173.458 1762.564,283.319 1740.906,283.319 1702.141,228.074 1702.141,283.319 1674.048,283.319 1674.048,173.458 1695.863,173.458 1734.628,228.702" class="ink"/> <polygon points="1808.078,256.952 1850.61,256.952 1850.61,283.319 1779.985,283.319 1779.985,173.458 1849.825,173.458 1849.825,199.667 1808.078,199.667 1808.078,214.891 1845.902,214.891 1845.902,240.787 1808.078,240.787" class="ink"/> </g> <path d="M1875.938 325.305 L412.001 325.305 C410.141 325.305 408.633 323.797 408.633 321.937 L408.633 321.937 C408.633 320.077 410.141 318.569 412.001 318.569 L1875.938 318.569 C1877.798 318.569 1879.306 320.077 1879.306 321.937 L1879.306 321.937 C1879.306 323.797 1877.798 325.305 1875.938 325.305 Z" fill="url(#lpG4)"/> <g class="tag"> <polygon points="414.276,390.347 426.317,390.347 426.317,392.831 411.642,392.831 411.642,366.491 414.276,366.491" class="ink"/> <path d="M461.762 392.831 L459.316 386.359 L446.824 386.359 L444.378 392.831 L441.594 392.831 L451.716 366.491 L454.425 366.491 L464.547 392.831 Z M447.765 383.875 L458.376 383.875 L453.07 369.765 Z" class="ink"/> <polygon points="511.205,392.831 501.497,366.491 504.357,366.491 512.56,389.332 520.763,366.491 523.622,366.491 513.914,392.831" class="ink"/> <path d="M556.434 392.831 L553.988 386.359 L541.496 386.359 L539.05 392.831 L536.265 392.831 L546.387 366.491 L549.096 366.491 L559.218 392.831 Z M542.436 383.875 L553.047 383.875 L547.742 369.765 Z" class="ink"/> <polygon points="578.634,390.347 590.675,390.347 590.675,392.831 576,392.831 576,366.491 578.634,366.491" class="ink"/> <polygon points="610.468,390.347 623.261,390.347 623.261,392.831 607.834,392.831 607.834,366.491 623.073,366.491 623.073,368.975 610.468,368.975 610.468,378.307 622.132,378.307 622.132,380.79 610.468,380.79" class="ink"/> <path d="M657.653 390.724 C655.847 392.43 653.489 393.282 650.579 393.282 C647.669 393.282 645.311 392.43 643.505 390.724 C641.699 389.018 640.796 386.735 640.796 383.875 L640.796 366.491 L643.43 366.491 L643.43 383.875 C643.43 385.983 644.057 387.651 645.311 388.88 C646.565 390.109 648.321 390.724 650.579 390.724 C652.836 390.724 654.592 390.109 655.847 388.88 C657.101 387.651 657.728 385.983 657.728 383.875 L657.728 366.491 L660.362 366.491 L660.362 383.875 C660.362 386.735 659.459 389.018 657.653 390.724 Z" class="ink"/> <path d="M695.582 392.831 L689.411 382.295 L682.036 382.295 L682.036 392.831 L679.402 392.831 L679.402 366.491 L689.938 366.491 C692.12 366.491 693.983 367.263 695.525 368.806 C697.068 370.348 697.839 372.211 697.839 374.393 C697.839 376.174 697.306 377.761 696.24 379.153 C695.174 380.545 693.813 381.48 692.158 381.956 L698.592 392.831 Z M682.036 368.975 L682.036 379.812 L689.938 379.812 C691.392 379.812 692.634 379.279 693.663 378.212 C694.691 377.146 695.205 375.873 695.205 374.393 C695.205 372.888 694.691 371.609 693.663 370.555 C692.634 369.502 691.392 368.975 689.938 368.975 Z" class="ink"/> <path d="M748.712 366.491 C752.299 366.491 755.266 367.764 757.611 370.311 C759.957 372.857 761.129 375.974 761.129 379.661 C761.129 383.349 759.957 386.466 757.611 389.012 C755.266 391.558 752.299 392.831 748.712 392.831 L738.553 392.831 L738.553 366.491 Z M748.712 390.347 C751.597 390.347 753.961 389.319 755.805 387.262 C757.649 385.205 758.571 382.671 758.571 379.661 C758.571 376.651 757.649 374.117 755.805 372.06 C753.961 370.003 751.597 368.975 748.712 368.975 L741.187 368.975 L741.187 390.347 Z" class="ink"/> <polygon points="781.674,390.347 794.468,390.347 794.468,392.831 779.04,392.831 779.04,366.491 794.28,366.491 794.28,368.975 781.674,368.975 781.674,378.307 793.339,378.307 793.339,380.79 781.674,380.79" class="ink"/> <polygon points="837.815,390.347 849.856,390.347 849.856,392.831 835.181,392.831 835.181,366.491 837.815,366.491" class="ink"/> <polygon points="867.014,366.491 864.757,374.958 862.499,374.958 864.004,366.491" class="ink"/> <polygon points="902.61,366.491 905.244,366.491 905.244,392.831 902.61,392.831 902.61,380.527 888.312,380.527 888.312,392.831 885.678,392.831 885.678,366.491 888.312,366.491 888.312,378.043 902.61,378.043" class="ink"/> <path d="M941.141 390.724 C939.335 392.43 936.977 393.282 934.067 393.282 C931.157 393.282 928.799 392.43 926.993 390.724 C925.187 389.018 924.284 386.735 924.284 383.875 L924.284 366.491 L926.918 366.491 L926.918 383.875 C926.918 385.983 927.545 387.651 928.799 388.88 C930.053 390.109 931.809 390.724 934.067 390.724 C936.325 390.724 938.081 390.109 939.335 388.88 C940.589 387.651 941.216 385.983 941.216 383.875 L941.216 366.491 L943.85 366.491 L943.85 383.875 C943.85 386.735 942.947 389.018 941.141 390.724 Z" class="ink"/> <polygon points="986.972,366.491 986.972,392.831 984.338,392.831 984.338,370.48 975.119,385.907 974.743,385.907 965.524,370.48 965.524,392.831 962.89,392.831 962.89,366.491 966.164,366.491 974.931,381.166 983.698,366.491" class="ink"/> <path d="M1023.922 392.831 L1021.477 386.359 L1008.984 386.359 L1006.538 392.831 L1003.754 392.831 L1013.876 366.491 L1016.585 366.491 L1026.707 392.831 Z M1009.925 383.875 L1020.536 383.875 L1015.23 369.765 Z" class="ink"/> <rect x="1043.489" y="366.491" width="2.634" height="26.34" class="ink"/> <polygon points="1082.471,366.491 1085.105,366.491 1085.105,392.831 1082.848,392.831 1068.173,371.383 1068.173,392.831 1065.539,392.831 1065.539,366.491 1067.796,366.491 1082.471,387.939" class="ink"/> <polygon points="1108.284,389.633 1106.026,398.099 1103.769,398.099 1105.274,389.633" class="ink"/> <polygon points="1152.384,390.347 1164.425,390.347 1164.425,392.831 1149.75,392.831 1149.75,366.491 1152.384,366.491" class="ink"/> <path d="M1199.87 392.831 L1197.424 386.359 L1184.932 386.359 L1182.486 392.831 L1179.702 392.831 L1189.824 366.491 L1192.533 366.491 L1202.655 392.831 Z M1185.873 383.875 L1196.484 383.875 L1191.178 369.765 Z" class="ink"/> <polygon points="1257.102,368.975 1244.873,368.975 1244.873,378.683 1256.538,378.683 1256.538,381.166 1244.873,381.166 1244.873,392.831 1242.239,392.831 1242.239,366.491 1257.102,366.491" class="ink"/> <path d="M1296.8 389.313 C1294.166 391.959 1290.942 393.282 1287.129 393.282 C1283.316 393.282 1280.093 391.959 1277.459 389.313 C1274.825 386.666 1273.508 383.449 1273.508 379.661 C1273.508 375.873 1274.825 372.656 1277.459 370.01 C1280.093 367.363 1283.316 366.04 1287.129 366.04 C1290.942 366.04 1294.166 367.363 1296.8 370.01 C1299.434 372.656 1300.751 375.873 1300.751 379.661 C1300.751 383.449 1299.434 386.666 1296.8 389.313 Z M1279.303 387.507 C1281.41 389.651 1284.019 390.724 1287.129 390.724 C1290.24 390.724 1292.849 389.651 1294.956 387.507 C1297.063 385.362 1298.117 382.747 1298.117 379.661 C1298.117 376.576 1297.063 373.961 1294.956 371.816 C1292.849 369.671 1290.24 368.599 1287.129 368.599 C1284.019 368.599 1281.41 369.671 1279.303 371.816 C1277.195 373.961 1276.142 376.576 1276.142 379.661 C1276.142 382.747 1277.195 385.362 1279.303 387.507 Z" class="ink"/> <path d="M1334.841 392.831 L1328.67 382.295 L1321.295 382.295 L1321.295 392.831 L1318.661 392.831 L1318.661 366.491 L1329.197 366.491 C1331.38 366.491 1333.242 367.263 1334.785 368.806 C1336.328 370.348 1337.099 372.211 1337.099 374.393 C1337.099 376.174 1336.566 377.761 1335.5 379.153 C1334.434 380.545 1333.073 381.48 1331.417 381.956 L1337.852 392.831 Z M1321.295 368.975 L1321.295 379.812 L1329.197 379.812 C1330.652 379.812 1331.894 379.279 1332.922 378.212 C1333.951 377.146 1334.465 375.873 1334.465 374.393 C1334.465 372.888 1333.951 371.609 1332.922 370.555 C1331.894 369.502 1330.652 368.975 1329.197 368.975 Z" class="ink"/> <path d="M1367.314 393.282 C1363.326 393.282 1360.027 391.965 1357.418 389.332 C1354.809 386.698 1353.505 383.474 1353.505 379.661 C1353.505 375.848 1354.809 372.625 1357.418 369.991 C1360.027 367.357 1363.326 366.04 1367.314 366.04 C1369.747 366.04 1371.98 366.623 1374.012 367.79 C1376.044 368.956 1377.612 370.53 1378.715 372.512 L1376.382 373.866 C1375.555 372.261 1374.326 370.982 1372.695 370.028 C1371.064 369.075 1369.271 368.599 1367.314 368.599 C1364.028 368.599 1361.344 369.665 1359.262 371.797 C1357.18 373.929 1356.139 376.551 1356.139 379.661 C1356.139 382.772 1357.18 385.393 1359.262 387.525 C1361.344 389.658 1364.028 390.724 1367.314 390.724 C1369.271 390.724 1371.064 390.247 1372.695 389.294 C1374.326 388.341 1375.555 387.061 1376.382 385.456 L1378.715 386.773 C1377.637 388.755 1376.075 390.335 1374.031 391.514 C1371.986 392.693 1369.747 393.282 1367.314 393.282 Z" class="ink"/> <polygon points="1399.072,390.347 1411.866,390.347 1411.866,392.831 1396.438,392.831 1396.438,366.491 1411.677,366.491 1411.677,368.975 1399.072,368.975 1399.072,378.307 1410.737,378.307 1410.737,380.79 1399.072,380.79" class="ink"/> <path d="M1462.738 366.491 C1466.326 366.491 1469.292 367.764 1471.637 370.311 C1473.983 372.857 1475.156 375.974 1475.156 379.661 C1475.156 383.349 1473.983 386.466 1471.637 389.012 C1469.292 391.558 1466.326 392.831 1462.738 392.831 L1452.579 392.831 L1452.579 366.491 Z M1462.738 390.347 C1465.623 390.347 1467.988 389.319 1469.831 387.262 C1471.675 385.205 1472.597 382.671 1472.597 379.661 C1472.597 376.651 1471.675 374.117 1469.831 372.06 C1467.988 370.003 1465.623 368.975 1462.738 368.975 L1455.213 368.975 L1455.213 390.347 Z" class="ink"/> <path d="M1509.359 390.724 C1507.553 392.43 1505.195 393.282 1502.285 393.282 C1499.375 393.282 1497.017 392.43 1495.211 390.724 C1493.405 389.018 1492.502 386.735 1492.502 383.875 L1492.502 366.491 L1495.136 366.491 L1495.136 383.875 C1495.136 385.983 1495.763 387.651 1497.017 388.88 C1498.272 390.109 1500.028 390.724 1502.285 390.724 C1504.543 390.724 1506.299 390.109 1507.553 388.88 C1508.807 387.651 1509.435 385.983 1509.435 383.875 L1509.435 366.491 L1512.069 366.491 L1512.069 383.875 C1512.069 386.735 1511.165 389.018 1509.359 390.724 Z" class="ink"/> <path d="M1563.318 366.491 C1565.676 366.491 1567.645 367.282 1569.225 368.862 C1570.806 370.442 1571.596 372.412 1571.596 374.77 C1571.596 377.128 1570.806 379.097 1569.225 380.677 C1567.645 382.257 1565.676 383.048 1563.318 383.048 L1556.545 383.048 L1556.545 392.831 L1553.911 392.831 L1553.911 366.491 Z M1563.318 380.564 C1564.948 380.564 1566.297 380.019 1567.363 378.927 C1568.429 377.836 1568.962 376.45 1568.962 374.77 C1568.962 373.089 1568.429 371.703 1567.363 370.612 C1566.297 369.52 1564.948 368.975 1563.318 368.975 L1556.545 368.975 L1556.545 380.564 Z" class="ink"/> <path d="M1604.407 392.831 L1601.961 386.359 L1589.469 386.359 L1587.023 392.831 L1584.239 392.831 L1594.361 366.491 L1597.07 366.491 L1607.192 392.831 Z M1590.41 383.875 L1601.021 383.875 L1595.715 369.765 Z" class="ink"/> <polygon points="1638.649,366.491 1638.649,368.975 1630.559,368.975 1630.559,392.831 1627.925,392.831 1627.925,368.975 1619.835,368.975 1619.835,366.491" class="ink"/> <path d="M1671.987 392.831 L1665.816 382.295 L1658.441 382.295 L1658.441 392.831 L1655.807 392.831 L1655.807 366.491 L1666.343 366.491 C1668.525 366.491 1670.388 367.263 1671.93 368.806 C1673.473 370.348 1674.245 372.211 1674.245 374.393 C1674.245 376.174 1673.712 377.761 1672.645 379.153 C1671.579 380.545 1670.218 381.48 1668.563 381.956 L1674.997 392.831 Z M1658.441 368.975 L1658.441 379.812 L1666.343 379.812 C1667.798 379.812 1669.039 379.279 1670.068 378.212 C1671.096 377.146 1671.611 375.873 1671.611 374.393 C1671.611 372.888 1671.096 371.609 1670.068 370.555 C1669.039 369.502 1667.798 368.975 1666.343 368.975 Z" class="ink"/> <rect x="1692.155" y="366.491" width="2.634" height="26.34" class="ink"/> <polygon points="1738.287,366.491 1738.287,392.831 1735.653,392.831 1735.653,370.48 1726.434,385.907 1726.058,385.907 1716.839,370.48 1716.839,392.831 1714.205,392.831 1714.205,366.491 1717.479,366.491 1726.246,381.166 1735.014,366.491" class="ink"/> <path d="M1779.49 389.313 C1776.856 391.959 1773.632 393.282 1769.819 393.282 C1766.006 393.282 1762.783 391.959 1760.149 389.313 C1757.515 386.666 1756.198 383.449 1756.198 379.661 C1756.198 375.873 1757.515 372.656 1760.149 370.01 C1762.783 367.363 1766.006 366.04 1769.819 366.04 C1773.632 366.04 1776.856 367.363 1779.49 370.01 C1782.124 372.656 1783.441 375.873 1783.441 379.661 C1783.441 383.449 1782.124 386.666 1779.49 389.313 Z M1761.993 387.507 C1764.1 389.651 1766.709 390.724 1769.819 390.724 C1772.93 390.724 1775.539 389.651 1777.646 387.507 C1779.753 385.362 1780.807 382.747 1780.807 379.661 C1780.807 376.576 1779.753 373.961 1777.646 371.816 C1775.539 369.671 1772.93 368.599 1769.819 368.599 C1766.709 368.599 1764.1 369.671 1761.993 371.816 C1759.886 373.961 1758.832 376.576 1758.832 379.661 C1758.832 382.747 1759.886 385.362 1761.993 387.507 Z" class="ink"/> <rect x="1801.351" y="366.491" width="2.634" height="26.34" class="ink"/> <polygon points="1840.334,366.491 1842.968,366.491 1842.968,392.831 1840.71,392.831 1826.035,371.383 1826.035,392.831 1823.401,392.831 1823.401,366.491 1825.659,366.491 1840.334,387.939" class="ink"/> <polygon points="1865.018,390.347 1877.811,390.347 1877.811,392.831 1862.384,392.831 1862.384,366.491 1877.623,366.491 1877.623,368.975 1865.018,368.975 1865.018,378.307 1876.682,378.307 1876.682,380.79 1865.018,380.79" class="ink"/> </g> </g></svg>
+          <div class="foot-contact">
+            <span>2 rue Pierre Corneille, 27930 Sacquenville</span>
+            <a href="tel:+33634123955">06 34 12 39 55</a>
+            <a href="mailto:s.bulut@leader-patrimoine.fr">s.bulut@leader-patrimoine.fr</a>
+          </div>
+        </div>
+        <div>
+          <h3>Situations</h3>
+          <ul>
+            <li><a href="/situations/cession-entreprise.html">Cession d’entreprise</a></li>
+            <li><a href="/situations/tresorerie-entreprise.html">Trésorerie dormante</a></li>
+            <li><a href="/situations/placer-un-capital.html">Placer un capital</a></li>
+            <li><a href="/situations/preparer-sa-retraite.html">Préparer sa retraite</a></li>
+            <li><a href="/situations/proteger-transmettre.html">Protéger et transmettre</a></li>
+            <li><a href="/situations/battre-inflation.html">Battre l’inflation</a></li>
+            <li><a href="/situations/bilan-et-suivi.html">Bilan et suivi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Gestion de patrimoine</h3>
+          <ul>
+            <li><a href="/gestion-de-patrimoine/normandie.html">En Normandie</a></li>
+            <li><a href="/gestion-de-patrimoine/evreux.html">À Évreux</a></li>
+            <li><a href="/gestion-de-patrimoine/rouen.html">À Rouen</a></li>
+            <li><a href="/gestion-de-patrimoine/le-havre.html">Au Havre</a></li>
+            <li><a href="/gestion-de-patrimoine/caen.html">À Caen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Le cabinet</h3>
+          <ul>
+            <li><a href="/serkan-bulut.html">Qui suis-je ?</a></li>
+            <li><a href="#engagements">Engagements</a></li>
+            <li><a href="https://www.linkedin.com/in/serkan-bulut" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <p>Leader Patrimoine, conseil en gestion de patrimoine indépendant. Immatriculé à l’ORIAS sous le n° 21007407 (vérifiable sur orias.fr). Membre de la CNCGP, adhésion n° MB12387BUSE.</p>
+        <p>Les investissements présentent un risque de perte en capital. Les performances passées ne préjugent pas des performances futures.</p>
+        <div class="legal-row"><span>© 2026 Leader Patrimoine</span><span>La valeur de l’humain, la force de votre patrimoine.</span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Barre d'action mobile -->
+<div class="mbar glass lens" aria-label="Actions rapides">
+  <a class="btn btn-glass" href="tel:+33634123955" aria-label="Appeler le 06 34 12 39 55"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></svg><span>Appeler</span></a>
+  <button class="btn btn-or" type="button" data-funnel>Demander mon audit offert</button>
+</div>
+
+<!-- Demande d'audit : 7 étapes -->
+<dialog class="funnel" id="funnel" aria-labelledby="fTitle1" data-lenis-prevent>
+  <form class="f-form" id="fForm" novalidate>
+    <div class="f-head">
+      <div class="who">
+        <img src="https://www.leader-patrimoine.fr/assets/serkan/avatar.webp" alt="" width="46" height="46">
+        <div><strong>Serkan Bulut</strong><span>Vous échangez directement avec moi.</span></div>
+      </div>
+      <button class="f-close" type="button" id="fClose" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="f-prog" aria-hidden="true"><span id="fBar"></span></div>
+    <p class="f-count" id="fCount">Étape 1 sur 7</p>
+    <div class="f-body" id="fBody"></div>
+    <p class="f-err" id="fErr" role="alert"></p>
+    <div class="f-foot">
+      <button class="btn btn-glass btn-sm" type="button" id="fBack">Retour</button>
+      <button class="btn btn-or btn-sm" type="button" id="fNext">Continuer</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/lenis.min.js"></script>
+<script>
+(()=>{
+const A='https://www.leader-patrimoine.fr/assets/';
+const chev='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>Math.round(n).toLocaleString('fr-FR').replace(/ | /g,' ')+' €';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const coarse=matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+const SIT=[
+ {id:'cession',g:'pro',t:'Je vends mon entreprise',h:'Un capital qui doit tenir pour le reste de votre vie.',d:'Je prépare la vente en amont avec vos conseils, puis j’organise le produit de cession pour qu’il vous accompagne durablement, sans décision dans l’urgence.',img:'cards/sit-cession.webp',url:'/situations/cession-entreprise.html'},
+ {id:'tresorerie',g:'pro',t:'Ma société a de la trésorerie qui dort',h:'Elle ne rapporte rien, sauf à votre banque.',d:'SCI, holding, excédent de trésorerie : je mets ce capital au travail, au bon niveau de risque et de disponibilité pour votre société.',img:'cards/sit-tresorerie.webp',url:'/situations/tresorerie-entreprise.html'},
+ {id:'capital',g:'perso',t:'Je viens de recevoir un capital',h:'L’argent arrive sur un compte courant. Et il y reste.',d:'Héritage, donation, vente d’un bien : nous prenons le temps de décider avant de placer, puis nous structurons ce capital selon vos objectifs.',img:'cards/sit-capital.webp',url:'/situations/placer-un-capital.html'},
+ {id:'retraite',g:'perso',t:'Je prépare ma retraite',h:'À quel âge, et avec quel revenu ?',d:'Nous chiffrons le revenu dont vous aurez besoin, l’écart avec vos pensions, et la façon de le combler dès maintenant.',img:'cards/sit-retraite.webp',url:'/situations/preparer-sa-retraite.html'},
+ {id:'famille',g:'perso',t:'Ma famille change, je veux protéger les miens',h:'Qui reçoit quoi, et quand.',d:'Mariage, naissance, famille recomposée, transmission : protéger vos proches et transmettre sans diviser la famille.',img:'cards/sit-famille.webp',url:'/situations/proteger-transmettre.html'},
+ {id:'inflation',g:'perso',t:'Je ne veux plus perdre face à l’inflation',h:'Un appauvrissement silencieux.',d:'Une épargne qui ne rapporte pas assez perd du pouvoir d’achat chaque année. Mesurez-le avec le simulateur, puis voyons comment y remédier.',img:'cards/sit-inflation.webp',url:'/situations/battre-inflation.html'},
+ {id:'suivi',g:'perso',t:'Je veux un regard extérieur et un suivi',h:'Un patrimoine peut se dérégler sans événement particulier.',d:'Un bilan complet, puis un suivi dans la durée avec le même interlocuteur, et une alerte dès que quelque chose change.',img:'cards/sit-suivi.webp',url:'/situations/bilan-et-suivi.html'}
+];
+const REV=[
+ ['Enfin quelqu’un avec qui tout est clair, très bien expliqué, et authentique.','Sabine Clerc',''],
+ ['Son écoute attentive et ses recommandations sur mesure ont renforcé ma confiance.','Zohra Marrakchi',''],
+ ['Pas de jargon inutile, juste des solutions claires et adaptées à ta situation.','Laurine Bemer','Accompagne des femmes entrepreneures'],
+ ['Ses conseils et sa pédagogie permettent de comprendre facilement quels leviers activer.','Nicolas Rivière',''],
+ ['De l’écoute, de la clarté et une vraie intention derrière chaque échange.','Dan Loysier','Fondateur de By Mon Atelier'],
+ ['Il a su m’éclairer et me conseiller très justement dans un domaine pointu.','Véronica Wassmer',''],
+ ['Très compétent, il vous accompagnera avec bienveillance et technicité.','Camille Lipani','Partenaire sur certains dossiers'],
+ ['En plus d’avoir un don pour les chiffres, Serkan est une personne adorable.','Julie Mandon',''],
+ ['Il a le cœur dans la main et la main sur le cœur.','Alice Cathelineau','Mentor et conférencière']
+];
+const FAQ=[
+ ['Qu’est-ce qu’un conseiller en gestion de patrimoine indépendant ?','Un professionnel qui analyse l’ensemble de votre situation (civile, fiscale, économique et de prévoyance), prend en compte vos objectifs à court, moyen et long terme, puis sélectionne, parmi les solutions de plusieurs partenaires, celles qui sont les plus adaptées.'],
+ ['À partir de quel montant faire appel à Leader Patrimoine ?','Mon accompagnement démarre à 150 000 € à investir ou à réorganiser. Ce seuil me permet de rester disponible pour chacun de mes clients.'],
+ ['L’audit patrimonial est-il vraiment offert ?','Oui, il est offert et sans engagement. Vous repartez avec une vision claire de votre situation, et des préconisations faites avec une approche conseil à 360°.'],
+ ['Comment se déroule l’audit ?','Je recueille votre situation sur quatre axes : civil, fiscal, économique et prévoyance. Nous déterminons ensuite votre profil investisseur, puis fixons le cap sur vos besoins à moyen et long terme. Enfin, je vous préconise une stratégie patrimoniale sur mesure.'],
+ ['Qui accompagnez-vous ?','Des chefs d’entreprise, des professions libérales, des cadres dirigeants et supérieurs, à titre privé comme pour leur société, et des retraités.'],
+ ['Où êtes-vous situé ?','Le siège de Leader Patrimoine est à Sacquenville, à côté d’Évreux, dans l’Eure, en Normandie.'],
+ ['Intervenez-vous dans toute la Normandie ?','Oui : Eure, Seine-Maritime, Calvados, Manche et Orne. Nous fixons le lieu ensemble : votre bureau, chez vous, ou en visio. J’interviens aussi dans toute la France en visio, pour les résidents fiscaux français comme pour les non-résidents.'],
+ ['Quelles solutions proposez-vous ?','Des enveloppes (assurance-vie, plan d’épargne retraite, contrat de capitalisation, assurance-vie luxembourgeoise ou suisse), du financement (crédit lombard) et des placements (fonds en euros, actions, obligations, private equity, produits structurés), sélectionnés en fonction de votre cahier des charges.']
+];
+
+/* Défilement fluide */
+let lenis=null;
+if(!reduce&&window.Lenis){lenis=new Lenis({lerp:.085,wheelMultiplier:.9,anchors:{offset:-70},autoRaf:true})}
+const scrollToY=(y,d=1.6)=>lenis?lenis.scrollTo(y,{duration:d}):scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+
+/* En-tête */
+const head=$('#head');
+const onScroll=()=>head.classList.toggle('is-solid',scrollY>40);
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+const burger=$('.burger'),menu=$('#menu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('is-open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu')});
+menu.addEventListener('click',e=>{if(e.target.closest('a,button')){menu.classList.remove('is-open');burger.setAttribute('aria-expanded','false')}});
+
+/* Sélecteur du hero */
+$('#pickerList').innerHTML=SIT.map(s=>`<button class="opt" type="button" data-pick="${s.id}"><span>${s.t}</span>${chev}</button>`).join('');
+$('#pickerList').addEventListener('click',e=>{const b=e.target.closest('[data-pick]');if(b)openFunnel({situation:b.dataset.pick})});
+
+/* Film au défilement : le scroll pilote la caméra, plan par plan */
+(()=>{
+  const film=$('#film');if(!film)return;
+  const PACE=1; /* 1 = rythme du site actuel ; 0,8 = 20 % plus court */
+  const portrait=matchMedia('(max-aspect-ratio: 1/1)').matches;
+  const F=A+'film/',sfx=portrait?'-m':'';
+  const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x)};
+  /* cartes de vitesse reprises du site actuel : la caméra avance à vitesse régulière */
+  const SEG=[
+    {n:'flamme',w:2.2,scene:'La flamme',map:[0,.0621,.1242,.1863,.2484,.3106,.3727,.4348,.4969,.559,.6211,.6832,1]},
+    {n:'conn1',w:.45,map:[0,.1122,.2238,.3244,.4096,.4894,.5605,.6252,.6872,.7483,.8098,.8832,1]},
+    {n:'cabinet',w:2.4,scene:'Le cabinet',map:[0,.0583,.2243,.458,.5721,.6396,.7006,.7632,.8163,.8622,.9068,.9553,1]},
+    {n:'conn2',w:1.35,map:[0,.1018,.1783,.2413,.3033,.3577,.4187,.4965,.68,.7709,.851,.9216,1]},
+    {n:'entreprise',w:2.6,scene:'L’entreprise',map:[0,.0399,.0801,.1363,.1934,.2394,.3026,.3916,.4501,.5354,.7569,.92,1]},
+    {n:'conn3',w:1.05,map:[0,.1156,.2237,.3243,.3867,.4457,.527,.6201,.7029,.7887,.8781,.9419,1]},
+    {n:'maison',w:2.4,scene:'La famille',map:[0,.0529,.119,.1913,.258,.3103,.367,.4328,.5074,.5983,.7889,.9082,1]},
+    {n:'conn4',w:1.05,map:[0,.0907,.1686,.2369,.3252,.4276,.537,.6378,.7258,.8052,.8831,.9431,1]},
+    {n:'arene',w:2.4,scene:'Le terrain',map:[0,.0417,.0973,.1532,.2196,.317,.4549,.5668,.6704,.777,.8605,.935,1]},
+    {n:'conn5',w:.4,map:[0,.1357,.2474,.3405,.4323,.5033,.5616,.6134,.6617,.726,.8049,.9034,1]},
+    {n:'aube',w:2.2,scene:'L’aube',map:null}
+  ];
+  const segsEl=$('#filmSegs');
+  SEG.forEach((s,i)=>{const el=document.createElement('div');el.className='seg';segsEl.appendChild(el);
+    Object.assign(s,{el,video:null,img:null,ready:false,painted:false,local:0,on:false});
+    if(i===0)poster(s)});
+  SEG[0].el.style.opacity=1;SEG[0].on=true;
+  function poster(s){if(!s.scene||s.img)return;const im=new Image();im.alt='';im.decoding='async';im.onload=()=>{s.painted=true};im.src=F+s.n+sfx+'.webp';s.el.prepend(im);s.img=im}
+  if(reduce){film.classList.add('is-static');return}
+  const beats=$$('.beat'),bar=$('#filmBar'),stage=$('#filmStage'),rail=$('#filmRail');
+  const scenes=SEG.map((s,i)=>s.scene?i:-1).filter(i=>i>=0);
+  rail.innerHTML=scenes.map(i=>`<button type="button" data-go="${i}"><span>${SEG[i].scene}</span><i></i></button>`).join('');
+  const railBtns=$$('#filmRail button');
+  let vh=innerHeight,top=0,total=0,smoothY=null,shown=0,visible=false,armed=false;
+  function layout(){vh=innerHeight;let off=0;SEG.forEach(s=>{s.start=off*vh;off+=s.w*PACE;s.end=off*vh});total=off*vh;
+    film.style.height=(off+1)*vh+'px';top=film.getBoundingClientRect().top+scrollY;smoothY=null;if(lenis)lenis.resize()}
+  const warp=(m,x)=>{if(!m)return x;const p=clamp(x)*(m.length-1),k=Math.min(m.length-2,Math.floor(p));return m[k]+(m[k+1]-m[k])*(p-k)};
+  function attach(s){if(s.video)return;const v=document.createElement('video');
+    v.muted=true;v.playsInline=true;v.preload='auto';v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('aria-hidden','true');
+    v.addEventListener('loadedmetadata',()=>{s.ready=true});
+    v.addEventListener('loadeddata',()=>{v.pause();s.painted=true;v.classList.add('is-on')});
+    v.src=F+s.n+sfx+'.mp4';s.el.appendChild(v);s.video=v}
+  /* sur téléphone, on libère les décodeurs éloignés */
+  function detach(s){if(!s.video)return;s.video.removeAttribute('src');s.video.load();s.video.remove();s.video=null;s.ready=false;s.painted=!!(s.img&&s.img.complete)}
+  function render(y){
+    let want=0;
+    SEG.forEach((s,i)=>{s.local=clamp((y-s.start)/(s.end-s.start));if(y>=s.start)want=i});
+    if(armed)SEG.forEach((s,i)=>{const d=i-want,near=d>=-1&&d<=(coarse?2:3);if(near){poster(s);attach(s)}else if(coarse)detach(s)});
+    /* un plan à la fois, jamais vers un plan sans image : ni saut ni flash */
+    if(want!==shown&&SEG[shown+Math.sign(want-shown)].painted)shown+=Math.sign(want-shown);
+    SEG.forEach((s,i)=>{const on=i===shown;if(on!==s.on){s.on=on;s.el.style.opacity=on?1:0}});
+    beats.forEach(b=>{const k=+b.dataset.seg,p=SEG[k].local,from=+b.dataset.from,to=+b.dataset.to,f=.1;
+      const a=smooth((p-from)/f),z=to>=1?1:smooth((to-p)/f),op=a*z;
+      b.style.opacity=op;b.style.transform=`translate3d(0,${((1-a)*26-(1-z)*26).toFixed(1)}px,0)`;
+      b.style.visibility=op<.01?'hidden':'visible';b.style.pointerEvents=op>.5?'auto':'none'});
+    bar.style.width=(clamp(y/total)*100).toFixed(2)+'%';
+    const cur=SEG[want],lit=cur.scene?want:(cur.local>.5?want+1:want-1);
+    railBtns.forEach(btn=>{const i=+btn.dataset.go;btn.classList.toggle('is-lit',i<=lit);btn.setAttribute('aria-current',i===lit?'step':'false')});
+  }
+  rail.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(!b)return;const s=SEG[+b.dataset.go];scrollToY(top+s.start+(s.end-s.start)*.5,2.2)});
+  new IntersectionObserver(([e])=>{visible=e.isIntersecting},{rootMargin:'50% 0px'}).observe(film);
+  if(!coarse)addEventListener('pointermove',e=>{stage.style.setProperty('--mx',(e.clientX/innerWidth*100).toFixed(1)+'%');stage.style.setProperty('--my',(e.clientY/innerHeight*100).toFixed(1)+'%')},{passive:true});
+  let last=performance.now();
+  function raf(t){const dt=Math.min(.05,(t-last)/1000);last=t;
+    if(visible){const y=scrollY-top;
+      smoothY=smoothY===null?y:smoothY+(y-smoothY)*(1-Math.exp(-13*dt));
+      if(Math.abs(y-smoothY)<.15)smoothY=y;
+      render(smoothY);
+      SEG.forEach((s,i)=>{const v=s.video;if(!s.ready||!v||v.seeking||Math.abs(i-shown)>2)return;
+        const time=clamp(warp(s.map,s.local),0,.999)*(v.duration||1);
+        if(Math.abs(v.currentTime-time)>(coarse?.02:.006))v.currentTime=time});
+    }
+    requestAnimationFrame(raf)}
+  const prime=()=>SEG.forEach(s=>{const p=s.video&&s.video.play();if(p&&p.then)p.then(()=>s.video.pause()).catch(()=>{})});
+  addEventListener('touchstart',prime,{once:true,passive:true});
+  addEventListener('resize',()=>{if(!coarse)layout()});
+  addEventListener('load',()=>{layout();setTimeout(()=>{armed=true},250)});
+  document.fonts&&document.fonts.ready.then(layout);
+  layout();requestAnimationFrame(raf);
+})();
+
+/* Situations */
+const group=(g,label)=>`<h3 class="sit-group">${label}</h3><ul class="sit-list">`+SIT.filter(s=>s.g===g).map(s=>`<li><button class="sit-row" type="button" data-sit="${s.id}" aria-controls="det-${s.id}"><span class="t">${s.t}</span><span class="h">${s.h}</span><span class="ic">${chev}</span></button><div class="sit-detail" id="det-${s.id}"><img src="${A+s.img}" alt="" loading="lazy"><p>${s.d}</p><button class="btn btn-or btn-sm" type="button" data-funnel-sit="${s.id}">Demander mon audit offert</button></div></li>`).join('')+'</ul>';
+$('#sitLists').innerHTML=group('pro','Votre entreprise')+group('perso','Vous et vos proches');
+let curSit='cession';
+function showSit(id){
+  const s=SIT.find(x=>x.id===id);if(!s)return;curSit=id;
+  $$('.sit-row').forEach(r=>{const on=r.dataset.sit===id;r.setAttribute('aria-current',on?'true':'false');r.setAttribute('aria-expanded',on?'true':'false')});
+  const img=$('#sitImg');img.style.opacity=.15;img.onload=()=>img.style.opacity=1;img.src=A+s.img;
+  $('#sitTitle').textContent=s.t;$('#sitText').textContent=s.d;$('#sitLink').href=s.url;
+}
+$('#sitLists').addEventListener('click',e=>{const r=e.target.closest('.sit-row');if(r)showSit(r.dataset.sit)});
+if(matchMedia('(hover:hover)').matches){$('#sitLists').addEventListener('mouseover',e=>{const r=e.target.closest('.sit-row');if(r&&r.dataset.sit!==curSit&&innerWidth>1040)showSit(r.dataset.sit)})}
+$('#sitCta').addEventListener('click',()=>openFunnel({situation:curSit}));
+showSit('cession');
+
+/* Simulateur : façade de 100 fenêtres */
+const street=$('#street');
+let html='';
+for(let b=0;b<4;b++){
+  html+='<div class="bldg"><div class="roof"><i></i><i></i><i></i></div><div class="cornice"></div><div class="floors">';
+  for(let f=0;f<5;f++){html+=`<div class="floor${f===1||f===4?' balcony':''}">`;for(let w=0;w<5;w++)html+='<span class="win on"></span>';html+='</div>'}
+  html+='</div><div class="ground"><i></i><i></i><i></i></div></div>';
+}
+street.innerHTML=html;
+const wins=$$('.win');
+let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const order=wins.map((_,i)=>i).sort(()=>rnd()-.5);
+const amt=$('#amt'),yrs=$('#yrs');
+const loss=(a,y)=>a*(1-1/(Math.pow(1.022,Math.min(y,10))*Math.pow(1.02,Math.max(0,y-10))));
+const setP=el=>el.style.setProperty('--p',((el.value-el.min)/(el.max-el.min)*100)+'%');
+function sim(){
+  const a=+amt.value,y=+yrs.value,l=loss(a,y),pct=Math.round(l/a*100);
+  $('#amtOut').textContent=fmt(a);$('#yrsOut').textContent=y+(y>1?' ans':' an');
+  $('#lossOut').innerHTML=fmt(l).replace('\u00a0€','<span class="cur">\u00a0€</span>');$('#pctOut').textContent=pct+' %';$('#monthOut').textContent=fmt(l/(y*12));
+  const off=new Set(order.slice(0,pct));wins.forEach((w,i)=>w.classList.toggle('on',!off.has(i)));
+  setP(amt);setP(yrs);
+}
+amt.addEventListener('input',sim);yrs.addEventListener('input',sim);sim();
+const bucket=a=>a<150000?'low':a<300000?'150-300':a<750000?'300-750':'750+';
+$('#simCta').addEventListener('click',()=>openFunnel({situation:'inflation',montant:bucket(+amt.value)}));
+$('#mailForm').addEventListener('submit',e=>{e.preventDefault();const i=$('#mailIn');if(!/^\S+@\S+\.\S+$/.test(i.value)){i.focus();i.placeholder='Indiquez une adresse e-mail valide';return}$('#mailForm').style.display='none';$('#mailOk').style.display='flex'});
+
+/* Avis */
+const ini=n=>n.split(' ').map(x=>x[0]).join('').slice(0,2).toUpperCase();
+$('#reviews').innerHTML=REV.map(([q,n,r])=>`<figure class="review"><blockquote>${q}</blockquote><figcaption><span class="ini" aria-hidden="true">${ini(n)}</span><span><b>${n}</b>${r}</span></figcaption></figure>`).join('');
+
+/* FAQ */
+$('#faqList').innerHTML=FAQ.map(([q,a],i)=>`<details class="qa"${i===1?' open':''}><summary>${q}<i aria-hidden="true"></i></summary><p>${a}</p></details>`).join('');
+
+/* ---------- Demande d'audit : 7 étapes, structurée comme une fiche prospect ---------- */
+const AMOUNTS=[['low','Moins de 150 000 €'],['150-300','150 000 à 300 000 €'],['300-750','300 000 à 750 000 €'],['750+','Plus de 750 000 €']];
+const STEPS=[
+ {title:'Qu’est-ce qui vous amène ?',auto:true,fields:[{n:'situation',type:'radio',opts:SIT.map(s=>[s.id,s.t])}]},
+ {title:'Parlons de vous',sub:'Pour préparer un échange qui vous ressemble.',fields:[
+   {n:'profil',e:'votre profil',q:'Vous êtes',type:'radio',cols:1,opts:['Chef d’entreprise','Profession libérale','Cadre dirigeant','Cadre','Retraité','Autre']},
+   {n:'age',e:'votre âge',q:'Votre âge',type:'radio',cols:1,opts:['Moins de 40 ans','40 à 54 ans','55 à 64 ans','65 ans et plus']},
+   {n:'famille',e:'votre situation familiale',q:'Situation familiale',type:'radio',cols:1,opts:['Célibataire','Marié ou pacsé','Divorcé ou séparé','Veuf ou veuve']},
+   {n:'enfants',e:'le nombre d’enfants',q:'Enfants',type:'radio',chips:1,opts:['Aucun','1','2','3 ou plus']}]},
+ {title:'Votre patrimoine, en grandes lignes',sub:'Des ordres de grandeur suffisent.',fields:[
+   {n:'montant',e:'le montant à investir',q:'Montant à investir ou à réorganiser',type:'radio',opts:AMOUNTS},
+   {n:'global',e:'votre patrimoine global',q:'Patrimoine global estimé',type:'radio',cols:1,opts:['Moins de 500 000 €','500 000 € à 1 M€','1 à 3 M€','Plus de 3 M€']},
+   {n:'actifs',e:'la composition de votre patrimoine',q:'Il se compose de',hint:'plusieurs choix possibles',type:'checkbox',chips:1,opts:['Immobilier','Épargne bancaire','Assurance-vie','PER','Actions et titres','Société ou holding','Trésorerie d’entreprise']}]},
+ {title:'Ce que vous attendez',fields:[
+   {n:'objectifs',e:'vos priorités',q:'Vos priorités',hint:'jusqu’à 3',type:'checkbox',chips:1,max:3,opts:['Préparer ma retraite','Réduire mes impôts','Transmettre','Protéger mes proches','Faire fructifier mon capital','Percevoir des revenus complémentaires','Organiser une cession']},
+   {n:'horizon',e:'votre horizon de placement',q:'Horizon de placement',type:'radio',cols:1,opts:['Moins de 3 ans','3 à 8 ans','Plus de 8 ans']},
+   {n:'risque',e:'votre rapport au risque',q:'Votre rapport au risque',type:'radio',cols:1,opts:['Prudent','Équilibré','Dynamique']}]},
+ {title:'Quelques repères',sub:'Ils m’évitent de vous poser ces questions en rendez-vous.',fields:[
+   {n:'precaution',e:'votre épargne de précaution',q:'Avez-vous déjà une épargne de précaution ?',type:'radio',cols:1,opts:['Oui','Pas encore']},
+   {n:'tmi',e:'votre tranche d’imposition',q:'Votre tranche marginale d’imposition',type:'radio',chips:1,opts:['11 % ou moins','30 %','41 %','45 %','Je ne sais pas']},
+   {n:'ifi',e:'l’IFI',q:'Êtes-vous concerné par l’IFI ?',type:'radio',chips:1,opts:['Oui','Non','Je ne sais pas']},
+   {n:'conseils',q:'Vos conseils actuels',hint:'facultatif',type:'checkbox',chips:1,opt:1,opts:['Expert-comptable','Notaire','Avocat','Banquier privé','Aucun']}]},
+ {title:'Où et quand nous rencontrer ?',custom:'rdv'},
+ {title:'Comment vous joindre ?',custom:'contact'}
+];
+const TOTAL=STEPS.length;
+const opt=(f,v,l,type)=>`<label class="f-opt"><input type="${type}" name="${f}" value="${v}"><span>${l}</span></label>`;
+function stepHTML(s,i){
+  let h=`<fieldset class="f-step" data-step="${i+1}" hidden><legend class="f-title" id="fTitle${i+1}">${s.title}</legend>${s.sub?`<p class="f-sub">${s.sub}</p>`:''}`;
+  if(s.fields)s.fields.forEach(f=>{
+    const cls=f.chips?'f-opts chips':f.cols?'f-opts cols':'f-opts';
+    h+=`<div class="f-field" data-field="${f.n}">${f.q?`<p class="f-q" id="q-${f.n}">${f.q}${f.hint?` <small>(${f.hint})</small>`:''}</p>`:''}<div class="${cls}" role="${f.type==='radio'?'radiogroup':'group'}"${f.q?` aria-labelledby="q-${f.n}"`:` aria-labelledby="fTitle${i+1}"`}>`+
+      f.opts.map(o=>Array.isArray(o)?opt(f.n,o[0],o[1],f.type):opt(f.n,o,o,f.type)).join('')+`</div>`+
+      (f.n==='montant'?`<div class="f-note" id="fLow" hidden>Mon accompagnement démarre à 150 000 € à investir ou à réorganiser : ce seuil me permet de rester disponible pour chacun de mes clients. Si votre situation évolue, appelez-moi au <a href="tel:+33634123955">06 34 12 39 55</a>.</div>`:'')+`</div>`});
+  if(s.custom==='rdv')h+=`<div class="f-field" data-field="lieu"><p class="f-q" id="q-lieu">Lieu du rendez-vous</p><div class="f-opts cols" role="radiogroup" aria-labelledby="q-lieu">${opt('lieu','Au cabinet, à Sacquenville','Au cabinet','radio')}${opt('lieu','Chez vous ou à votre bureau','Chez vous ou au bureau','radio')}${opt('lieu','En visio','En visio','radio')}</div></div>
+    <div class="f-field"><p class="f-q">Votre créneau préféré</p><div class="days" id="fDays" role="group" aria-label="Jour"></div><div class="slots" id="fSlots" role="group" aria-label="Heure"></div><p class="f-hint">Je vous confirme le créneau par téléphone ou par e-mail.</p></div>`;
+  if(s.custom==='contact')h+=`<div class="fields" style="margin-top:20px">
+      <label class="field">Prénom<input name="prenom" autocomplete="given-name"></label>
+      <label class="field">Nom<input name="nom" autocomplete="family-name"></label>
+      <label class="field">Téléphone<input name="tel" type="tel" autocomplete="tel" inputmode="tel"></label>
+      <label class="field">E-mail<input name="email" type="email" autocomplete="email"></label>
+      <label class="field full">Ville ou code postal<input name="ville" autocomplete="address-level2"></label>
+    </div>
+    <div class="f-field" data-field="source"><p class="f-q" id="q-source">Comment m’avez-vous connu ? <small>(facultatif)</small></p><div class="f-opts chips" role="radiogroup" aria-labelledby="q-source">${['Recherche Google','LinkedIn','Recommandation','Événement ou partenariat','Autre'].map(o=>opt('source',o,o,'radio')).join('')}</div></div>
+    <label class="field full" style="margin-top:20px">Un mot pour préparer notre échange <small style="color:var(--brume)">(facultatif)</small><textarea name="message" rows="3"></textarea></label>
+    <label class="consent"><input type="checkbox" name="rgpd"><span>J’accepte que Leader Patrimoine utilise ces informations pour me recontacter au sujet de ma demande. Elles ne sont jamais transmises à des tiers.</span></label>`;
+  return h+'</fieldset>';
+}
+const dlg=$('#funnel'),form=$('#fForm'),body=$('#fBody');
+body.innerHTML=STEPS.map(stepHTML).join('')+`
+  <div class="f-step f-done" data-step="${TOTAL+1}" hidden>
+    <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+    <p class="f-title" id="fDoneTitle" tabindex="-1">Demande envoyée.</p>
+    <p id="fDoneText"></p>
+    <div class="docs"><p>Pour gagner du temps, préparez si possible :</p><ul id="fDocs"></ul></div>
+    <button class="demo" type="button" id="fDemo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg><span>Démo rendez-vous : voir la fiche reçue par le cabinet dans son cockpit</span></button>
+  </div>
+  <div class="f-step" data-step="${TOTAL+2}" hidden>
+    <p class="f-title">Côté cabinet</p>
+    <p class="f-sub">La demande arrive instantanément dans le cockpit personnalisé de Leader Patrimoine, déjà qualifiée.</p>
+    <div class="ck" id="fCockpit"></div>
+    <p class="ck-note">Écran de démonstration, non visible par les visiteurs du site.</p>
+  </div>`;
+
+/* créneaux indicatifs : 6 prochains jours ouvrés */
+const days=[];let dd=new Date();dd.setHours(12);
+while(days.length<6){dd=new Date(dd.getTime()+864e5);if(dd.getDay()%6)days.push(new Date(dd))}
+const DN=['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'],MN=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const HOURS=['9 h 00','10 h 30','14 h 00','15 h 30','17 h 00','18 h 30'];
+const state={step:1,day:0,slot:null};
+$('#fDays').innerHTML=days.map((x,i)=>`<button type="button" class="day" data-day="${i}" aria-pressed="false"><small>${DN[x.getDay()]}</small><b>${x.getDate()}</b><small>${MN[x.getMonth()]}</small></button>`).join('');
+function renderSlots(i){$('#fSlots').innerHTML=HOURS.map((h,k)=>{const busy=((days[i].getDate()*3+k*5)%7)<2;return `<button type="button" class="slot" data-slot="${h}" aria-pressed="false"${busy?` disabled aria-label="${h}, indisponible"`:''}>${h}</button>`}).join('')}
+$('#fDays').addEventListener('click',e=>{const b=e.target.closest('.day');if(!b)return;$$('.day').forEach(x=>x.setAttribute('aria-pressed',x===b));state.day=+b.dataset.day;state.slot=null;renderSlots(state.day)});
+$('#fSlots').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;$$('.slot').forEach(x=>x.setAttribute('aria-pressed',x===b));state.slot=b.dataset.slot;err('')});
+$$('.day')[0].click();
+
+const err=m=>{$('#fErr').textContent=m};
+const val=n=>{const els=form.elements[n];if(!els)return '';if(els instanceof RadioNodeList||els.length){return [...els].filter(e=>e.checked).map(e=>e.value).join(', ')}return els.type==='checkbox'?(els.checked?els.value:''):els.value};
+const label=(n,v)=>{const i=form.querySelector(`input[name="${n}"][value="${CSS.escape(v)}"]`);return i?i.nextElementSibling.textContent:v};
+function go(n){
+  state.step=n;err('');
+  $$('.f-step').forEach(s=>s.hidden=+s.dataset.step!==n);
+  $$('.f-field.is-bad').forEach(f=>f.classList.remove('is-bad'));
+  const done=n>TOTAL;
+  $('#fBar').style.width=(done?100:n/TOTAL*100)+'%';
+  $('#fCount').textContent=n===TOTAL+2?'Démonstration':done?'Demande envoyée':'Étape '+n+' sur '+TOTAL;
+  $('#fBack').hidden=n===1||n===TOTAL+1;
+  $('#fNext').textContent=done?'Fermer':n===TOTAL?'Envoyer ma demande':'Continuer';
+  $('#fNext').hidden=n===1;
+  if(n===3)$('#fLow').hidden=val('montant')!=='low';
+  const t=done?$(`.f-step[data-step="${n}"] .f-title`):$(`.f-step[data-step="${n}"] input:checked`)||$(`.f-step[data-step="${n}"] input, .f-step[data-step="${n}"] button`);
+  if(t){if(done)t.setAttribute('tabindex','-1');setTimeout(()=>t.focus(),40)}
+  body.scrollTop=0;
+}
+function openFunnel(pre={}){
+  form.reset();state.slot=null;
+  $$('.slot').forEach(x=>x.setAttribute('aria-pressed','false'));
+  $$('.field [aria-invalid]').forEach(i=>i.removeAttribute('aria-invalid'));
+  let start=1;
+  if(pre.situation){form.querySelector(`input[name=situation][value="${pre.situation}"]`).checked=true;start=2}
+  if(pre.montant){const r=form.querySelector(`input[name=montant][value="${pre.montant}"]`);if(r)r.checked=true}
+  if(!dlg.open){dlg.showModal();lenis&&lenis.stop()}
+  go(start);
+}
+window.openFunnel=openFunnel;
+document.addEventListener('click',e=>{const b=e.target.closest('[data-funnel],[data-funnel-sit]');if(!b)return;openFunnel(b.dataset.funnelSit?{situation:b.dataset.funnelSit}:{})});
+$('#fClose').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener('close',()=>{lenis&&lenis.start()});
+
+form.addEventListener('change',e=>{
+  const t=e.target,f=t.closest('.f-field');if(f)f.classList.remove('is-bad');err('');
+  if(t.name==='situation')setTimeout(()=>go(2),260);
+  if(t.name==='montant')$('#fLow').hidden=t.value!=='low';
+  if(t.name==='objectifs'&&form.querySelectorAll('input[name=objectifs]:checked').length>3){t.checked=false;err('Choisissez jusqu’à 3 priorités.')}
+  if(t.name==='conseils'&&t.value==='Aucun'&&t.checked)form.querySelectorAll('input[name=conseils]').forEach(i=>{if(i!==t)i.checked=false});
+  if(t.name==='conseils'&&t.value!=='Aucun'&&t.checked)form.querySelector('input[name=conseils][value=Aucun]').checked=false;
+});
+$('#fBack').addEventListener('click',()=>go(state.step===TOTAL+2?TOTAL+1:state.step-1));
+$('#fDemo').addEventListener('click',()=>go(TOTAL+2));
+
+function check(n){
+  const s=STEPS[n-1];
+  if(s.fields){for(const f of s.fields){if(f.opt)continue;if(!val(f.n)){const el=$(`[data-field="${f.n}"]`);el.classList.add('is-bad');el.scrollIntoView({block:'center',behavior:'smooth'});return 'Il manque une réponse : '+(f.e||f.q.toLowerCase())+'.'}}
+    if(n===3&&val('montant')==='low')return 'Mon accompagnement démarre à 150 000 € : voir la note ci-dessus.'}
+  if(s.custom==='rdv'){if(!val('lieu')){$('[data-field="lieu"]').classList.add('is-bad');return 'Choisissez un lieu de rendez-vous.'}if(!state.slot)return 'Choisissez un créneau horaire.'}
+  if(s.custom==='contact'){
+    const rules={prenom:v=>v.trim().length>1,nom:v=>v.trim().length>1,tel:v=>v.replace(/\D/g,'').length>=10,email:v=>/^\S+@\S+\.\S+$/.test(v)};
+    let bad=null;for(const k in rules){const i=form.elements[k],ok=rules[k](i.value);i.setAttribute('aria-invalid',!ok);if(!ok&&!bad)bad=i}
+    if(bad){bad.focus();return bad.name==='tel'?'Indiquez un numéro de téléphone à 10 chiffres pour que je puisse vous rappeler.':bad.name==='email'?'Indiquez une adresse e-mail valide.':'Indiquez votre prénom et votre nom.'}
+    if(!form.elements.rgpd.checked)return 'Cochez la case d’accord pour que je puisse vous recontacter.';
+  }
+  return '';
+}
+$('#fNext').addEventListener('click',()=>{
+  const n=state.step;
+  if(n>TOTAL){dlg.close();return}
+  const m=check(n);if(m){err(m);return}
+  if(n===TOTAL)finish();
+  go(n+1);
+});
+
+/* Récapitulatif visiteur et fiche cockpit */
+const DOCS={cession:'Les trois derniers bilans de votre société',tresorerie:'Les derniers bilans et l’état de la trésorerie de votre société',capital:'Le justificatif du capital reçu (acte, relevé)',retraite:'Votre relevé de carrière (info-retraite.fr)',famille:'Votre contrat de mariage ou de PACS, le cas échéant',inflation:'Vos relevés de comptes d’épargne',suivi:'Vos derniers relevés de placements'};
+function score(){
+  let p={'150-300':2,'300-750':3,'750+':4}[val('montant')]||0;
+  p+={'500 000 € à 1 M€':1,'1 à 3 M€':2,'Plus de 3 M€':3}[val('global')]||0;
+  if(val('horizon')==='Plus de 8 ans')p++;
+  if(val('precaution')==='Oui')p++;
+  if(/41|45/.test(val('tmi')))p++;
+  return Math.min(10,p);
+}
+function finish(){
+  const sit=SIT.find(s=>s.id===val('situation')),d=days[state.day];
+  const when=`${DN[d.getDay()].replace('.','')} ${d.getDate()} ${MN[d.getMonth()]}, ${state.slot}`;
+  const prenom=form.elements.prenom.value.trim(),nom=form.elements.nom.value.trim();
+  $('#fDoneTitle').textContent=`Demande envoyée, merci ${prenom}.`;
+  $('#fDoneText').textContent=`Je reviens vers vous pour confirmer notre rendez-vous du ${when} (${val('lieu').toLowerCase()}).`;
+  $('#fDocs').innerHTML=['Votre dernier avis d’imposition','Vos contrats d’assurance-vie et relevés d’épargne',DOCS[sit.id]].map(x=>`<li>${x}</li>`).join('');
+  const sc=score(),lvl=sc>=7?'Prioritaire':sc>=4?'Qualifié':'À accompagner';
+  const now=new Date(),hh=now.getHours()+' h '+String(now.getMinutes()).padStart(2,'0');
+  const rows=[['Situation',sit.t],['Profil',`${val('profil')}, ${val('age').toLowerCase()}`],['Famille',`${val('famille')}, enfants : ${val('enfants').toLowerCase()}`],['À investir',label('montant',val('montant'))],['Patrimoine global',val('global')],['Composé de',val('actifs')],['Priorités',val('objectifs')],['Horizon et risque',`${val('horizon')}, ${val('risque').toLowerCase()}`],['Fiscalité',`TMI ${val('tmi')}, IFI : ${val('ifi').toLowerCase()}`],['Épargne de précaution',val('precaution')],['Rendez-vous souhaité',`${when}, ${val('lieu').toLowerCase()}`],['Ville',form.elements.ville.value||'Non précisée']];
+  const TAG={cession:'Cession',tresorerie:'Trésorerie',capital:'Capital reçu',retraite:'Retraite',famille:'Famille',inflation:'Inflation',suivi:'Suivi'};
+  const tags=[TAG[sit.id],val('profil'),...(val('objectifs')?val('objectifs').split(', '):[])];
+  if(val('conseils'))tags.push('Conseils : '+val('conseils'));
+  $('#fCockpit').innerHTML=`
+    <div class="ck-bar"><span><b>Leader Patrimoine</b> &nbsp;Prospects</span><span class="ck-new">Nouvelle demande</span></div>
+    <div class="ck-main">
+      <div class="ck-id"><div class="ck-av">${ini(prenom+' '+nom)}</div><div><b>${prenom} ${nom}</b><span>${form.elements.tel.value}</span><span>${form.elements.email.value}</span></div><div class="ck-score"><b>${sc}/10</b><span>${lvl}</span></div></div>
+      <dl class="ck-grid">${rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${v||'-'}</dd></div>`).join('')}</dl>
+      <div class="ck-tags">${tags.map(t=>`<span>${t}</span>`).join('')}</div>
+      <div class="ck-next"><p>Prochaines actions</p><ul><li>Confirmer le rendez-vous du ${when}</li><li>Envoyer la liste des documents à préparer</li><li>Préparer le pré-audit : ${sit.t.toLowerCase()}</li></ul></div>
+      ${form.elements.message.value?`<div class="ck-next"><p>Message du prospect</p><div>${form.elements.message.value.replace(/</g,'&lt;')}</div></div>`:''}
+    </div>
+    <div class="ck-foot">Reçue à ${hh} via le formulaire « Audit offert » du site${val('source')?`, source : ${val('source').toLowerCase()}`:''}.</div>`;
+}
+})();
+</script>
+<script>
+/* Ambiance, reflets et réfraction de la matière verre */
+(()=>{
+  const A='https://www.leader-patrimoine.fr/assets/';
+  const portrait=matchMedia('(max-aspect-ratio: 1/1)').matches;
+  const SRC={flamme:'film/flamme',cabinet:'film/cabinet',entreprise:'film/entreprise',maison:'film/maison',arene:'film/arene',aube:'film/aube',fin:'cards/fin'};
+  const amb=document.getElementById('ambient'),layers={};
+  const layer=k=>{if(layers[k])return layers[k];const d=document.createElement('div');d.className='amb';const p=SRC[k];
+    d.style.backgroundImage=`url(${A+p+(portrait&&p.startsWith('film/')?'-m':'')}.webp)`;amb.appendChild(d);return layers[k]=d};
+  let cur=null;
+  const set=(k,dim)=>{amb.style.setProperty('--dim',dim);if(k===cur||!SRC[k])return;if(cur)layers[cur].classList.remove('on');const l=layer(k);requestAnimationFrame(()=>requestAnimationFrame(()=>l.classList.add('on')));cur=k};
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)set(e.target.dataset.amb,+e.target.dataset.dim||.72)}),{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('[data-amb]').forEach(s=>io.observe(s));
+  set('flamme',.5);
+  addEventListener('load',()=>setTimeout(()=>Object.keys(SRC).forEach(layer),1500));
+  /* le reflet suit le pointeur sur la surface de verre */
+  if(matchMedia('(hover:hover)').matches){let last=null;
+    addEventListener('pointermove',e=>{const g=e.target.closest&&e.target.closest('.glass');
+      if(last&&last!==g)last.classList.remove('is-lit');if(!g){last=null;return}
+      const r=g.getBoundingClientRect();g.style.setProperty('--gx',(e.clientX-r.left).toFixed(0)+'px');g.style.setProperty('--gy',(e.clientY-r.top).toFixed(0)+'px');g.classList.add('is-lit');last=g},{passive:true})}
+  /* réfraction : moteur Chromium seulement, les autres navigateurs gardent le verre dépoli */
+  const brands=(navigator.userAgentData&&navigator.userAgentData.brands)||[];
+  if(brands.some(x=>/Chromium/.test(x.brand))&&!matchMedia('(prefers-reduced-transparency: reduce)').matches)document.documentElement.classList.add('refract');
+})();
+</script>
+</body>
+</html>
