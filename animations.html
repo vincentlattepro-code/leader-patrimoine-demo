@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr" data-theme="nuit">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Leader Patrimoine · Automatismes en images</title>
+  <link rel="icon" href="assets/mono.svg">
+  <link rel="stylesheet" href="css/commun.css">
+  <link rel="stylesheet" href="css/cockpit.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>.integre .lien-retour { display: none; }</style>
+</head>
+<body>
+  <div class="fond-vivant"><i></i><i></i><i></i><i></i></div>
+  <div class="anim-app">
+    <header class="anim-haut">
+      <a href="./" title="Revenir au cockpit"><img src="assets/logo-clair.svg" alt="Leader Patrimoine"></a>
+      <h1>Ce que votre cockpit fait pour vous, en images</h1>
+      <span class="espace"></span>
+      <a class="btn lien-retour" href="./"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Retour au cockpit</a>
+    </header>
+    <nav class="scenes" id="scenes"></nav>
+    <main class="anim-corps">
+      <div class="texte-scene">
+        <div class="surtitre">Automatisme</div>
+        <h2 id="titre-scene"></h2>
+        <div class="legende-etape" id="legende"></div>
+        <div class="gain verre"><span class="rond"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><div><span>Ce que vous y gagnez</span><strong id="gain"></strong></div></div>
+      </div>
+      <div class="plateau-anim verre" id="plateau"></div>
+    </main>
+    <footer class="frise">
+      <div class="frise-ligne" id="frise"></div>
+      <div class="commandes">
+        <button class="btn btn-icone" id="precedent" aria-label="Étape précédente"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="btn btn-icone btn-or" id="lecture" aria-label="Lecture / pause"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 5v14M16 5v14"/></svg></button>
+        <button class="btn btn-icone" id="suivant" aria-label="Étape suivante"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg></button>
+        <span class="barre-etape" id="barre-etape"><i></i></span>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="js/animations.js"></script>
+  <script type="module" src="js/vers-presentation.js"></script>
+</body>
+</html>

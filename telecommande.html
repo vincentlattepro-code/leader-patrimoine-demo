@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr" data-theme="nuit">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Leader Patrimoine · Télécommande</title>
+  <link rel="icon" href="assets/mono.svg">
+  <link rel="stylesheet" href="css/commun.css">
+  <link rel="stylesheet" href="css/presentation.css">
+  <style>body { overflow: auto; } .tc { position: relative; inset: auto; width: auto; transform: none; margin: 12px; min-height: calc(100% - 24px); }</style>
+</head>
+<body>
+  <div class="fond-vivant"><i></i><i></i><i></i><i></i></div>
+  <aside class="tc verre">
+    <img src="assets/logo-clair.svg" alt="Leader Patrimoine" style="width:220px;display:block;margin:4px 0 10px">
+    <p style="margin:0;color:var(--texte-2);font-size:12.5px">Télécommande : pilote les écrans du cockpit ouverts dans ce navigateur (présentation, plein écran).</p>
+    <div id="tc-zone"></div>
+  </aside>
+  <script type="module">
+    import { monterTelecommande } from "./js/telecommande.js";
+    monterTelecommande(document.getElementById("tc-zone"), { avecFenetre: false });
+  </script>
+  <script type="module" src="js/vers-presentation.js"></script>
+</body>
+</html>

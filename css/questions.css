@@ -1,0 +1,48 @@
+/* Page « Questions du rendez-vous » : simple, lisible, rapide à remplir pendant le rendez-vous. */
+body.page-questions { overflow: auto; }
+.questionnaire { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 18px 18px 90px; }
+.q-tete { position: sticky; top: 12px; z-index: 5; display: flex; align-items: center; gap: 14px; padding: 12px 18px; margin-bottom: 12px; background: var(--verre-dense); }
+.q-logo img { height: 38px; display: block; }
+.q-titre { flex: 1; min-width: 0; border-left: 1px solid var(--lisere); padding-left: 14px; line-height: 1.3; }
+.q-titre strong { display: block; font-size: 16px; }
+.q-titre span { font-size: 12px; color: var(--texte-3); }
+.q-etat { font-size: 12px; font-weight: 650; padding: 5px 11px; border-radius: 999px; background: var(--verre-2); color: var(--texte-2); white-space: nowrap; }
+.q-etat.ok { background: var(--vert-doux); color: var(--vert); }
+.q-etat.attention { background: var(--orange-doux); color: var(--orange); white-space: normal; }
+.q-sommaire { position: sticky; top: 84px; z-index: 4; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+.q-sommaire a { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; text-decoration: none; background: var(--verre-dense); border: 1px solid var(--lisere); color: var(--texte-2); }
+.q-sommaire a.fait { background: var(--or-degrade); color: #1a1306; border-color: transparent; }
+.q-avance { font-size: 12.5px; font-weight: 700; color: var(--texte-2); margin-right: 6px; padding: 6px 10px; border-radius: 999px; background: var(--verre-dense); }
+.q-bloc { padding: 20px 22px; margin-bottom: 14px; scroll-margin-top: 140px; }
+.q-entete { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+.q-num { width: 34px; height: 34px; border-radius: 12px; flex: none; display: grid; place-items: center; font-weight: 800; background: rgba(230, 184, 106, 0.16); color: var(--or-texte); }
+.q-entete h2 { margin: 2px 0 4px; font-size: 18px; }
+.q-entete p { margin: 0; font-size: 12.5px; color: var(--texte-3); }
+.q-champs { display: grid; gap: 14px; }
+.q-champ { display: flex; flex-direction: column; gap: 7px; }
+.q-libelle { font-size: 12.5px; font-weight: 650; color: var(--texte-2); }
+.q-puces { display: flex; flex-wrap: wrap; gap: 8px; }
+.q-puce { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 15px; border-radius: 999px; font-size: 13.5px; font-weight: 600; background: var(--verre-2); border: 1px solid var(--lisere); color: var(--texte); transition: all 0.2s var(--ressort); }
+.q-puce:hover { background: var(--verre-3); }
+.q-puce:active { transform: scale(0.96); }
+.q-puce i { width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid var(--texte-3); flex: none; }
+.q-puce.actif { background: var(--or-degrade); color: #1a1306; border-color: transparent; box-shadow: 0 8px 20px -10px rgba(230, 184, 106, 0.9); }
+.q-puce.actif i { border-color: #1a1306; background: #1a1306 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23ffd565' stroke-width='2'/%3E%3C/svg%3E") center / 100% no-repeat; }
+.q-champ input, .q-champ textarea { width: 100%; min-height: 42px; border-radius: 12px; border: 1px solid var(--lisere); background: var(--verre); padding: 10px 13px; color: var(--texte); outline: none; font-size: 14px; line-height: 1.5; resize: vertical; }
+.q-champ input:focus, .q-champ textarea:focus { border-color: var(--or); box-shadow: 0 0 0 3px rgba(230, 184, 106, 0.18); }
+.q-pied { text-align: center; font-size: 12px; color: var(--texte-3); margin-top: 18px; }
+@media (max-width: 640px) {
+  .questionnaire { padding: 10px 10px 110px; }
+  .q-tete { top: 6px; padding: 10px 12px; gap: 10px; flex-wrap: wrap; }
+  .q-logo img { height: 28px; }
+  .q-titre { padding-left: 10px; }
+  .q-titre strong { font-size: 14.5px; }
+  .q-etat { order: 3; }
+  .q-sommaire { top: auto; position: static; }
+  .q-bloc { padding: 16px 14px; scroll-margin-top: 110px; }
+  .q-entete h2 { font-size: 16px; }
+}
+.q-telecharger { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 999px; font-size: 12.5px; font-weight: 650; background: var(--verre-2); border: 1px solid var(--lisere); color: var(--texte); }
+.q-telecharger:hover { background: var(--verre-3); }
+.q-telecharger svg { width: 16px; height: 16px; }
+@media (max-width: 640px) { .q-telecharger { order: 4; } }

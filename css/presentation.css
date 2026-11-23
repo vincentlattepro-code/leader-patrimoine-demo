@@ -1,0 +1,79 @@
+/* Page de présentation : ordinateur + téléphone côte à côte, télécommande. */
+body { overflow: hidden; }
+.scene { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
+.barre { display: flex; align-items: center; gap: 14px; padding: 14px 22px; }
+.barre .logo { height: 46px; }
+.barre .titre { font-size: 13px; color: var(--texte-2); border-left: 1px solid var(--lisere); padding-left: 14px; line-height: 1.3; }
+.barre .titre strong { display: block; color: var(--texte); font-size: 15px; }
+.barre .espace { flex: 1; }
+.segments { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--verre); border: 1px solid var(--lisere); -webkit-backdrop-filter: var(--flou); backdrop-filter: var(--flou); }
+.segments button { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 13px; color: var(--texte-2); transition: all 0.3s var(--doux); }
+.segments button.actif { background: var(--verre-3); color: var(--texte); box-shadow: inset 0 1px 0 var(--lisere-haut), 0 6px 16px -8px rgba(0, 0, 0, 0.6); }
+.segments svg { width: 17px; height: 17px; }
+
+.plateau { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; gap: 4vw; padding: 8px 30px 34px; }
+.appareil { position: relative; flex: none; transition: all 0.6s var(--doux); }
+.portable { padding: 14px 14px 0; border-radius: 22px 22px 6px 6px; background: linear-gradient(160deg, #2b2d45, #12132a); box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
+.portable .ecran { border-radius: 10px; overflow: hidden; position: relative; background: #05061a; }
+.portable::after { content: ""; position: absolute; left: -7%; right: -7%; bottom: -16px; height: 16px; border-radius: 0 0 22px 22px; background: linear-gradient(180deg, #3a3c58, #17182e); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8); }
+.portable .camera { position: absolute; top: 5px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #0a0b18; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.telephone { padding: 12px; border-radius: 54px; background: linear-gradient(150deg, #3b3d57, #11122a 60%, #2a2b44); box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.95), inset 0 0 0 2px rgba(255, 255, 255, 0.12); }
+.telephone .ecran { border-radius: 43px; overflow: hidden; position: relative; background: #05061a; }
+.telephone .ilot { position: absolute; z-index: 5; top: 11px; left: 50%; transform: translateX(-50%); width: 34%; height: 30px; border-radius: 20px; background: #000; pointer-events: none; }
+.ecran iframe { border: 0; display: block; transform-origin: 0 0; background: #05061a; }
+.legende-appareil { position: absolute; left: 0; right: 0; bottom: -46px; text-align: center; font-size: 12px; color: var(--texte-3); letter-spacing: 0.08em; text-transform: uppercase; }
+.plateau[data-mode="pc"] .telephone, .plateau[data-mode="tel"] .portable { display: none; }
+
+/* Télécommande */
+.tc { position: fixed; z-index: 40; top: 12px; right: 12px; bottom: 12px; width: 360px; padding: 16px; overflow-y: auto; transform: translateX(calc(100% + 24px)); transition: transform 0.5s var(--ressort); background: var(--verre-dense); }
+.tc.ouverte { transform: none; }
+.tc-tete { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.tc-tete h2 { margin: 0; font-size: 16px; flex: 1; }
+.tc-section { margin-bottom: 16px; }
+.tc-section h3 { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--texte-3); margin: 14px 0 8px; }
+.tc-scenario { display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 10px; border-radius: 16px; text-align: left; margin-bottom: 6px; background: var(--verre); border: 1px solid var(--lisere); transition: all 0.2s var(--ressort); }
+.tc-scenario:hover { background: var(--verre-2); transform: translateX(-2px); }
+.tc-scenario strong { display: block; font-size: 13px; }
+.tc-scenario small { display: block; font-size: 11.5px; color: var(--texte-3); }
+.tc-num { width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center; font-size: 11px; font-weight: 700; border: 1px solid var(--lisere); color: var(--texte-3); flex: none; }
+.tc-ico { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: rgba(230, 184, 106, 0.16); color: var(--or-texte); flex: none; }
+.tc-ico svg { width: 17px; height: 17px; }
+.tc-puces { display: flex; flex-wrap: wrap; gap: 6px; }
+.tc-puces button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px; background: var(--verre-2); border: 1px solid var(--lisere); font-size: 12.5px; font-weight: 600; }
+.tc-puces svg { width: 15px; height: 15px; }
+.tc-ok { box-shadow: 0 0 0 2px var(--or-1) !important; }
+.tc-champ { display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; color: var(--texte-2); margin-bottom: 10px; }
+.tc-champ input { height: 38px; border-radius: 12px; border: 1px solid var(--lisere); background: var(--verre); padding: 0 12px; outline: none; }
+.tc-lien { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12.5px; color: var(--or-texte); font-weight: 600; }
+.tc-lien svg { width: 17px; height: 17px; }
+
+/* Animations ouvertes par-dessus la présentation */
+.calque-anim { position: fixed; inset: 0; z-index: 60; background: rgba(3, 4, 16, 0.6); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); display: grid; place-items: center; padding: 3vh 3vw; animation: fondu 0.3s both; }
+@keyframes fondu { from { opacity: 0; } }
+.calque-anim iframe { width: 100%; height: 100%; border: 0; border-radius: 28px; box-shadow: 0 40px 100px -30px #000; }
+.calque-anim .fermer { position: absolute; top: 18px; right: 22px; z-index: 2; }
+.pied { position: fixed; left: 22px; bottom: 12px; font-size: 11px; letter-spacing: 0.1em; color: var(--texte-3); z-index: 2; }
+
+@media (max-width: 900px) {
+  .barre { flex-wrap: wrap; padding: 12px; }
+  .barre .titre { display: none; }
+  .plateau { gap: 20px; padding: 10px; }
+  .tc { width: auto; left: 12px; }
+}
+
+/* Le haut de page ne déborde jamais : la télécommande et son bouton « fermer » restent toujours visibles. */
+html, body { overflow-x: hidden; }
+.barre { flex-wrap: wrap; row-gap: 10px; }
+.lien-logo { display: block; line-height: 0; }
+.tc { max-width: calc(100vw - 24px); }
+.tc-tete { position: sticky; top: -16px; z-index: 2; margin: -16px -16px 8px; padding: 16px 16px 10px; background: inherit; border-radius: 24px 24px 0 0; }
+@media (max-width: 1500px) {
+  .barre .titre { display: none; }
+}
+@media (max-width: 1200px) {
+  .barre .btn { padding: 0 12px; }
+  .segments button { padding: 8px 12px; }
+}
+
+/* Boutons-liens de la barre : jamais soulignés */
+a.btn { text-decoration: none; }

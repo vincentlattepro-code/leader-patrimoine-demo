@@ -1,0 +1,179 @@
+/* Charte Leader Patrimoine : marine profond + or (dégradé du logo), matière « verre liquide ». */
+:root {
+  --or-1: #ffd565;
+  --or-2: #c7905e;
+  --or: #e6b86a;
+  --or-degrade: linear-gradient(120deg, #ffd565 0%, #e6b86a 45%, #c7905e 100%);
+  --marine: #0f112d;
+  --police: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --police-titre: "Segoe UI Variable Display", "Segoe UI", -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --rayon: 24px;
+  --rayon-m: 16px;
+  --rayon-p: 11px;
+  --ressort: cubic-bezier(0.22, 1.25, 0.36, 1);
+  --doux: cubic-bezier(0.22, 0.8, 0.24, 1);
+
+  /* Nuit (par défaut) */
+  --fond: #05061a;
+  --fond-2: #0b0d2a;
+  --texte: #f5f0e6;
+  --texte-2: rgba(245, 240, 230, 0.7);
+  --texte-3: rgba(245, 240, 230, 0.46);
+  --verre: rgba(255, 255, 255, 0.055);
+  --verre-2: rgba(255, 255, 255, 0.09);
+  --verre-3: rgba(255, 255, 255, 0.14);
+  --verre-dense: rgba(18, 20, 52, 0.82);
+  --lisere: rgba(255, 255, 255, 0.13);
+  --lisere-haut: rgba(255, 255, 255, 0.22);
+  --flou: blur(22px) saturate(1.7);
+  --ombre: 0 24px 60px -28px rgba(0, 0, 0, 0.8), 0 2px 8px -4px rgba(0, 0, 0, 0.4);
+  --or-texte: #f1c97f;
+  --vert: #5ee6a0;
+  --vert-doux: rgba(94, 230, 160, 0.14);
+  --rouge: #ff8a8a;
+  --rouge-doux: rgba(255, 138, 138, 0.14);
+  --orange: #ffc46b;
+  --orange-doux: rgba(255, 196, 107, 0.14);
+  --bleu: #8cc8ff;
+  --bleu-doux: rgba(140, 200, 255, 0.14);
+  --violet: #b9a2ff;
+  --violet-doux: rgba(185, 162, 255, 0.14);
+  color-scheme: dark;
+}
+
+:root[data-theme="jour"] {
+  --fond: #f1ece2;
+  --fond-2: #e7e0d2;
+  --texte: #11132f;
+  --texte-2: rgba(17, 19, 47, 0.7);
+  --texte-3: rgba(17, 19, 47, 0.48);
+  --verre: rgba(255, 255, 255, 0.5);
+  --verre-2: rgba(255, 255, 255, 0.66);
+  --verre-3: rgba(255, 255, 255, 0.82);
+  --verre-dense: rgba(252, 250, 245, 0.92);
+  --lisere: rgba(255, 255, 255, 0.75);
+  --lisere-haut: rgba(255, 255, 255, 0.95);
+  --flou: blur(20px) saturate(1.8);
+  --ombre: 0 22px 50px -26px rgba(15, 17, 45, 0.35), 0 2px 8px -4px rgba(15, 17, 45, 0.12);
+  --or-texte: #9a6a2c;
+  --vert: #14803f;
+  --vert-doux: rgba(20, 128, 63, 0.1);
+  --rouge: #c0362c;
+  --rouge-doux: rgba(192, 54, 44, 0.1);
+  --orange: #b0650d;
+  --orange-doux: rgba(176, 101, 13, 0.11);
+  --bleu: #1f6fb5;
+  --bleu-doux: rgba(31, 111, 181, 0.1);
+  --violet: #6b4fd0;
+  --violet-doux: rgba(107, 79, 208, 0.1);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: var(--police);
+  color: var(--texte);
+  background: var(--fond);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: none; padding: 0; }
+a { color: inherit; }
+.num { font-variant-numeric: tabular-nums; }
+[hidden] { display: none !important; }
+
+/* Fond vivant : taches d'or et de bleu nuit qui dérivent lentement sous le verre */
+.fond-vivant { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: radial-gradient(120% 90% at 50% 0%, var(--fond-2), var(--fond) 70%); }
+.fond-vivant i { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.55; animation: deriver 26s ease-in-out infinite alternate; }
+.fond-vivant i:nth-child(1) { width: 46vmax; height: 46vmax; left: -12vmax; top: -14vmax; background: radial-gradient(circle, rgba(230, 184, 106, 0.55), transparent 65%); }
+.fond-vivant i:nth-child(2) { width: 40vmax; height: 40vmax; right: -10vmax; top: 10vh; background: radial-gradient(circle, rgba(70, 86, 210, 0.5), transparent 65%); animation-duration: 32s; animation-delay: -8s; }
+.fond-vivant i:nth-child(3) { width: 38vmax; height: 38vmax; left: 30vw; bottom: -18vmax; background: radial-gradient(circle, rgba(199, 144, 94, 0.45), transparent 65%); animation-duration: 29s; animation-delay: -14s; }
+.fond-vivant i:nth-child(4) { width: 26vmax; height: 26vmax; left: 8vw; bottom: 6vh; background: radial-gradient(circle, rgba(120, 90, 220, 0.32), transparent 65%); animation-duration: 36s; }
+:root[data-theme="jour"] .fond-vivant i { opacity: 0.5; }
+:root[data-theme="jour"] .fond-vivant i:nth-child(2) { background: radial-gradient(circle, rgba(60, 80, 190, 0.3), transparent 65%); }
+:root[data-theme="jour"] .fond-vivant i:nth-child(4) { background: radial-gradient(circle, rgba(255, 213, 101, 0.4), transparent 65%); }
+@keyframes deriver {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(6vw, 4vh, 0) scale(1.12); }
+  100% { transform: translate3d(-4vw, 8vh, 0) scale(0.94); }
+}
+
+/* Matière verre */
+.verre {
+  background: linear-gradient(160deg, var(--verre-2), var(--verre) 55%);
+  -webkit-backdrop-filter: var(--flou);
+  backdrop-filter: var(--flou);
+  border: 1px solid var(--lisere);
+  box-shadow: inset 0 1px 0 var(--lisere-haut), var(--ombre);
+  border-radius: var(--rayon);
+}
+
+.texte-or { background: var(--or-degrade); -webkit-background-clip: text; background-clip: text; color: transparent; }
+:root[data-theme="jour"] .texte-or { background: linear-gradient(120deg, #b8862e, #8e5f2c); -webkit-background-clip: text; background-clip: text; }
+
+/* Boutons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 38px; padding: 0 16px; border-radius: 999px; font-weight: 600; font-size: 13.5px; white-space: nowrap;
+  background: var(--verre-2); border: 1px solid var(--lisere); box-shadow: inset 0 1px 0 var(--lisere-haut);
+  transition: transform 0.2s var(--ressort), background 0.2s;
+}
+.btn:hover { background: var(--verre-3); }
+.btn:active { transform: scale(0.96); }
+.btn-or { color: #1a1306; background: var(--or-degrade); border-color: rgba(255, 230, 170, 0.6); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 26px -12px rgba(230, 184, 106, 0.9); }
+.btn-or:hover { background: var(--or-degrade); filter: brightness(1.06); }
+.btn-petit { height: 30px; padding: 0 12px; font-size: 12.5px; }
+.btn-icone { width: 38px; padding: 0; }
+.btn svg { width: 17px; height: 17px; }
+
+.pastille { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 600; white-space: nowrap; background: var(--verre-2); color: var(--texte-2); }
+.pastille.vert { background: var(--vert-doux); color: var(--vert); }
+.pastille.rouge { background: var(--rouge-doux); color: var(--rouge); }
+.pastille.orange { background: var(--orange-doux); color: var(--orange); }
+.pastille.bleu { background: var(--bleu-doux); color: var(--bleu); }
+.pastille.violet { background: var(--violet-doux); color: var(--violet); }
+.pastille.or { background: rgba(230, 184, 106, 0.16); color: var(--or-texte); }
+.point { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; }
+
+.ico { width: 18px; height: 18px; flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* Signature des e-mails automatiques (aperçus sur fond clair) */
+.signature-mail { display: flex; align-items: center; gap: 12px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #e6dfcf; }
+.signature-mono { width: 46px; height: 46px; flex: none; }
+.signature-texte { display: flex; flex-direction: column; gap: 1px; padding-left: 12px; border-left: 2px solid #c7905e; line-height: 1.35; }
+.signature-texte strong { font-size: 13.5px; color: #0f112d; letter-spacing: 0.02em; }
+.signature-fonction { font-size: 11.5px; color: #5b5c70; }
+.signature-cabinet { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; color: #9a6a2c; margin-top: 2px; }
+.signature-coord { font-size: 11px; color: #5b5c70; }
+.signature-coord u { color: #9a6a2c; text-decoration-color: #e6b86a; }
+.signature-legal { margin: 10px 0 0; font-size: 9.5px; line-height: 1.4; color: #8a8b9c; }
+
+/* Fond photo : le salon du site du cabinet, flouté et voilé pour ne jamais gêner la lecture.
+   Même famille visuelle que le site (bleu marine, moulures, or). Version portrait sur téléphone. */
+.fond-vivant::before { content: ""; position: absolute; inset: -40px; z-index: 0; background: url("../assets/fond-pc.webp") center 40% / cover no-repeat; filter: blur(5px) saturate(1.1); transform: scale(1.03); }
+.fond-vivant::after { content: ""; position: absolute; inset: 0; z-index: 0; background: radial-gradient(120% 90% at 50% 10%, rgba(11, 13, 42, 0.38), rgba(5, 6, 26, 0.62) 75%), linear-gradient(180deg, rgba(5, 6, 26, 0.1), rgba(5, 6, 26, 0.35)); }
+.fond-vivant i { z-index: 1; opacity: 0.28; }
+:root[data-theme="jour"] .fond-vivant::before { filter: blur(5px) saturate(0.95) brightness(1.2); }
+:root[data-theme="jour"] .fond-vivant::after { background: radial-gradient(120% 90% at 50% 0%, rgba(241, 236, 226, 0.6), rgba(241, 236, 226, 0.78) 75%); }
+:root[data-theme="jour"] .fond-vivant i { opacity: 0.3; }
+@media (max-aspect-ratio: 4/5), (max-width: 700px) {
+  .fond-vivant::before { background-image: url("../assets/fond-mobile.webp"); background-position: center 30%; }
+}
+
+/* Bouton « Présentation » (pages ouvertes seules) : toujours visible, en bas à droite */
+.vers-presentation { position: fixed; z-index: 200; bottom: 18px; right: 18px; display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 14px; border-radius: 999px; font-size: 12.5px; font-weight: 650; text-decoration: none; color: #1a1306; background: var(--or-degrade); box-shadow: 0 10px 26px -10px rgba(230, 184, 106, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.6); opacity: 0.92; transition: opacity 0.2s, transform 0.2s var(--ressort); }
+.vers-presentation:hover { opacity: 1; transform: scale(1.04); }
+.vers-presentation svg { width: 17px; height: 17px; }
+@media (max-width: 760px) {
+  .vers-presentation { bottom: 96px; right: 12px; height: 40px; padding: 0 12px; }
+  .vers-presentation span { display: none; }
+}

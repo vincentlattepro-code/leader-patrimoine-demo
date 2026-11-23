@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr" data-theme="nuit">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Leader Patrimoine · Votre cockpit</title>
+  <link rel="icon" href="assets/mono.svg">
+  <link rel="stylesheet" href="css/commun.css">
+  <link rel="stylesheet" href="css/presentation.css">
+</head>
+<body>
+  <div class="fond-vivant"><i></i><i></i><i></i><i></i></div>
+  <div class="scene">
+    <header class="barre">
+      <button class="lien-logo" id="logo-accueil" title="Revenir à l'accueil"><img class="logo" id="logo" src="assets/logo-clair.svg" alt="Leader Patrimoine"></button>
+      <div class="titre"><strong>Votre cockpit</strong>sur ordinateur et sur téléphone</div>
+      <span class="espace"></span>
+      <button class="btn" id="tout-accueil" title="Revenir à l'accueil sur les deux écrans"><span data-ico="accueil"></span>Accueil</button>
+      <div class="segments" id="modes">
+        <button data-mode="deux" class="actif"><span data-ico="ecran2"></span>Les deux</button>
+        <button data-mode="pc"><span data-ico="ordinateur"></span>Ordinateur</button>
+        <button data-mode="tel"><span data-ico="mobile"></span>Téléphone</button>
+      </div>
+      <a class="btn" href="questions.html" id="lien-questions" title="Les questions à poser à Serkan, réponses enregistrées toutes seules"><span data-ico="document"></span>Questions</a>
+      <a class="btn" href="animations.html" id="lien-anim"><span data-ico="film"></span>Automatismes en images</a>
+      <a class="btn" href="cockpit.html" target="_blank" rel="noopener"><span data-ico="ordinateur"></span>Plein écran</a>
+      <button class="btn btn-or" id="ouvrir-tc"><span data-ico="telecommande"></span><span class="tc-libelle">Télécommande</span></button>
+    </header>
+    <main class="plateau" id="plateau" data-mode="deux">
+      <div class="appareil portable" id="portable"><div class="ecran"><span class="camera"></span><iframe id="if-pc" title="Cockpit sur ordinateur" src="cockpit.html?ecran=pc&sync=1"></iframe></div><div class="legende-appareil">Ordinateur</div></div>
+      <div class="appareil telephone" id="telephone"><div class="ecran"><span class="ilot"></span><iframe id="if-tel" title="Cockpit sur téléphone" src="cockpit.html?ecran=tel&sync=1"></iframe></div><div class="legende-appareil">iPhone</div></div>
+    </main>
+  </div>
+  <aside class="tc verre" id="tc">
+    <div class="tc-tete"><span class="tc-ico" data-ico="telecommande"></span><h2>Télécommande</h2><button class="btn btn-petit btn-or" id="fermer-tc" aria-label="Fermer la télécommande"><span data-ico="fermer"></span>Fermer</button></div>
+    <p style="margin:0;color:var(--texte-2);font-size:12.5px">Pilote les deux écrans en même temps. Touche <b>T</b> pour ouvrir ou fermer.</p>
+    <div id="tc-zone"></div>
+  </aside>
+  <div class="pied">UNE RÉALISATION SYNIUM</div>
+  <script type="module">
+    import { icone } from "./js/icones.js";
+    import { monterTelecommande, ecouter, envoyer } from "./js/telecommande.js";
+    document.querySelectorAll("[data-ico]").forEach((s) => (s.outerHTML = icone(s.dataset.ico)));
+
+    const plateau = document.getElementById("plateau");
+    const PC = { l: 1440, h: 900 };
+    const TEL = { l: 390, h: 844 };
+    function ajuster() {
+      const mode = plateau.dataset.mode;
+      const W = plateau.clientWidth - 60;
+      const H = plateau.clientHeight - 70;
+      const ifPc = document.getElementById("if-pc");
+      const ifTel = document.getElementById("if-tel");
+      // Échelle du téléphone : toute la hauteur disponible.
+      const sTel = Math.min((H - 24) / TEL.h, mode === "tel" ? 1.1 : 1);
+      const largeurTel = mode === "pc" ? 0 : TEL.l * sTel + 24 + 40;
+      const sPc = Math.min((W - largeurTel - 28) / PC.l, (H - 30) / PC.h, 1);
+      for (const [f, d, s] of [[ifPc, PC, sPc], [ifTel, TEL, sTel]]) {
+        f.style.width = `${d.l}px`;
+        f.style.height = `${d.h}px`;
+        f.style.transform = `scale(${s})`;
+        f.parentElement.style.width = `${d.l * s}px`;
+        f.parentElement.style.height = `${d.h * s}px`;
+      }
+    }
+    window.addEventListener("resize", ajuster);
+    ajuster();
+    // Toujours repartir de la page du code sur les deux écrans, même si le navigateur ressort la page de sa mémoire.
+    window.addEventListener("pageshow", (e) => e.persisted && location.reload());
+
+    document.getElementById("modes").addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      document.querySelectorAll("#modes button").forEach((x) => x.classList.toggle("actif", x === b));
+      plateau.dataset.mode = b.dataset.mode;
+      ajuster();
+    });
+
+    const tc = document.getElementById("tc");
+    monterTelecommande(document.getElementById("tc-zone"));
+    const boutonTc = document.getElementById("ouvrir-tc");
+    // Ouvrir / fermer : le bouton du haut change de texte pour qu'on sache toujours comment la refermer.
+    function montrerTelecommande(ouverte) {
+      // Sur ordinateur, la télécommande s'ouvre SOUS la barre du haut : le bouton qui l'a ouverte reste visible
+      // et un second clic dessus la referme.
+      const barre = document.querySelector(".barre").getBoundingClientRect();
+      tc.style.top = innerWidth > 900 ? `${Math.round(barre.bottom) + 4}px` : "";
+      tc.classList.toggle("ouverte", ouverte);
+      boutonTc.querySelector(".tc-libelle").textContent = ouverte ? "Fermer la télécommande" : "Télécommande";
+    }
+    const basculer = () => montrerTelecommande(!tc.classList.contains("ouverte"));
+    window.fermerTelecommande = () => montrerTelecommande(false);
+    boutonTc.onclick = basculer;
+    document.getElementById("fermer-tc").onclick = window.fermerTelecommande;
+    // Un clic en dehors de la télécommande la referme (les écrans du cockpit le font de leur côté).
+    document.addEventListener("pointerdown", (e) => {
+      if (tc.classList.contains("ouverte") && !e.target.closest("#tc, #ouvrir-tc")) window.fermerTelecommande();
+    });
+    // Logo : retour à l'accueil du cockpit sur les deux écrans.
+    // Logo et bouton « Accueil » : les deux écrans reviennent à l'accueil, tout ce qui était ouvert se ferme.
+    const toutAccueil = () => {
+      document.querySelector(".calque-anim")?.remove();
+      window.fermerTelecommande?.();
+      envoyer({ t: "aller", vue: "accueil" });
+    };
+    document.getElementById("logo-accueil").onclick = toutAccueil;
+    document.getElementById("tout-accueil").onclick = toutAccueil;
+    document.addEventListener("keydown", (e) => {
+      if (e.key.toLowerCase() === "t" && !e.target.closest("input")) basculer();
+      if (e.key === "Escape") {
+        document.querySelector(".calque-anim")?.remove();
+        window.fermerTelecommande();
+      }
+    });
+
+    // Une animation demandée depuis un écran du cockpit s'ouvre par-dessus la présentation.
+    function ouvrirAnimation(id) {
+      document.querySelector(".calque-anim")?.remove();
+      const c = document.createElement("div");
+      c.className = "calque-anim";
+      c.innerHTML = `<button class="btn btn-icone fermer" aria-label="Fermer">${icone("fermer")}</button><iframe src="animations.html?seul=1#${id}" title="Animation"></iframe>`;
+      c.querySelector(".fermer").onclick = () => c.remove();
+      document.body.append(c);
+    }
+    let derniere = 0;
+    ecouter((m) => {
+      if (m?.t === "theme") {
+        document.documentElement.dataset.theme = m.v;
+        document.getElementById("logo").src = `assets/${m.v === "jour" ? "logo" : "logo-clair"}.svg`;
+      }
+      if (m?.t === "ouvrir-animation" && Date.now() - derniere > 800) {
+        derniere = Date.now();
+        ouvrirAnimation(m.id);
+      }
+    });
+  </script>
+</body>
+</html>
