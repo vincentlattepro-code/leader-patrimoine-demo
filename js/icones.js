@@ -44,6 +44,7 @@ const P = {
   etoile: '<path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/>',
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
   globe: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/>',
+  support: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.6"/><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"/>',
   cadenas: '<rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>',
   faceid: '<path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M9 9.5v1M15 9.5v1M12 9.5v4h-1M9.5 16c1.5 1.2 3.5 1.2 5 0"/>',
   pdf: '<path d="M6 3h8.5L19 7.5V21H6z"/><path d="M14 3v5h5"/><path d="M8.5 16.5v-4h1.3a1.3 1.3 0 0 1 0 2.6H8.5M13 12.5v4h1a2 2 0 0 0 0-4z"/>',

@@ -6,6 +6,7 @@ import { esc, eur, meur, keur, nomComplet, pastilleNature, clientDe, encoursClie
 import { JOURS } from "./donnees.js";
 import { acces, lienComptable, changerCode, changerActif, changerCodeMail, nouveauLien, codeTropSimple, COMPTABLE, changerDuree, finLisible } from "./acces-comptable.js";
 import { formulaireClient, sirenValide, chercherSiren, SIREN_DEMO, suggestionsAdresse, ficheNouvelle } from "./nouveau-client.js";
+import { DEMANDES_SUPPORT, formulaireSupport, detailDemande, AGENCE } from "./support.js";
 import { avatarProfil, changerPhoto, preparerPhoto, signature as maSignature, changerSignature, TARIFS } from "./profil.js";
 import { AIDE_REGLAGES, THEMES_REGLAGES, trouverAide, demandeReglagesGenerale } from "./aide-reglages.js";
 
@@ -45,6 +46,8 @@ const st = {
   rdv: RDV.map((r) => ({ ...r })),
   signatures: SIGNATURES.map((s) => ({ ...s })),
   automatismes: AUTOMATISMES.map((a) => ({ ...a })),
+  support: DEMANDES_SUPPORT.map((d) => ({ ...d })),
+  supportNature: "probleme",
   appareils: [
     { nom: "PC du cabinet", detail: "Lyon · utilisé aujourd'hui", ico: "ordinateur" },
     { nom: "iPhone de Serkan", detail: "Face ID · utilisé aujourd'hui", ico: "mobile" },
@@ -583,6 +586,30 @@ function action(a, el) {
     case "assistant":
       fermerFeuille();
       return ouvrirAssistant();
+
+    /* ---------------- Support : nouvelle demande, détail */
+    case "support-nouvelle":
+      st.supportNature = "probleme";
+      return feuille(formulaireSupport(icone, st.supportNature), true);
+    case "support-nature":
+      st.supportNature = el.dataset.v;
+      document.querySelectorAll(".support-nature").forEach((b) => b.classList.toggle("actif", b.dataset.v === el.dataset.v));
+      return;
+    case "support-envoyer": {
+      const titre = ($("#support-titre")?.value ?? "").trim();
+      const texte = ($("#support-texte")?.value ?? "").trim();
+      const err = $("#support-erreur");
+      if (!titre) return (err.textContent = "Écrivez en quelques mots de quoi il s'agit.");
+      if (!texte) return (err.textContent = "Expliquez-nous en quelques lignes.");
+      st.support.unshift({ id: `n${st.support.length + 1}`, nature: st.supportNature, titre, texte, creeLe: new Date().toISOString(), statut: null });
+      fermerFeuille();
+      toast(`Demande envoyée. ${AGENCE} vous répond ici.`);
+      return st.vue === "support" ? rendre() : aller("support", {}, "scenario");
+    }
+    case "support-ouvrir": {
+      const d = st.support.find((x) => x.id === el.dataset.id);
+      return d && feuille(detailDemande(d, icone), true);
+    }
 
     /* ---------------- Mon profil */
     case "profil":

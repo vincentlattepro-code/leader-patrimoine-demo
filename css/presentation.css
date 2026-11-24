@@ -77,3 +77,10 @@ html, body { overflow-x: hidden; }
 
 /* Boutons-liens de la barre : jamais soulignés */
 a.btn { text-decoration: none; }
+/* Barre du haut : tous les boutons sur une ligne (Accueil, écrans, Questions, Refonte site, Animations, Plein écran, Télécommande) */
+@media (max-width: 1800px) {
+  .barre .titre { display: none; }
+  .barre { gap: 8px; }
+  .barre .btn { padding: 0 12px; font-size: 13px; }
+  .segments button { padding: 8px 11px; }
+}

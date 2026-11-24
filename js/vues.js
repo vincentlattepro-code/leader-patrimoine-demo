@@ -3,6 +3,7 @@ import { CLIENTS, CABINET_CHIFFRES as K, DEMANDES, PARTENAIRES, PROFILS, AUTOMAT
 import { icone } from "./icones.js";
 import { signatureMail } from "./signature.js";
 import { avatarProfil, photoProfil, signature, TARIFS } from "./profil.js";
+import { AGENCE, ligneDemande, VISITES_AGENCE, ligneVisite } from "./support.js";
 import { acces, lienComptable, COMPTABLE, CONNEXIONS, DUREES, finLisible } from "./acces-comptable.js";
 import * as S from "./calculs.js";
 import { eur, meur, keur, pct, esc, dateFr, moisDepuis, anneesDepuis, nomComplet, clientParId, pastilleNature, clientDe, encoursClient, bilan, COULEURS_CAT, opportunites, etatConformite, syntheseConformite, tousContrats, etincelle, courbe, anneau, montantCourt, HEURE_DEMO } from "./outils.js";
@@ -909,6 +910,11 @@ function reglages(st, p = {}) {
       </section>
     </div>
     <section class="carte verre mt">
+      ${tete("Visites de l'agence", `lecture seule : ${AGENCE} regarde, ne modifie rien`, "", "bouclier")}
+      <div class="liste">${VISITES_AGENCE.map(ligneVisite).join("")}</div>
+      <p style="margin:10px 0 0;font-size:12px;color:var(--texte-3)">Pendant une visite, un bandeau l'indique en haut de l'écran. Elle dure 30 minutes au plus et rien ne peut y être modifié.</p>
+    </section>
+    <section class="carte verre mt">
       ${tete("Mes données", "", "", "bouclier")}
       <div class="liste">
         ${ligne("Sauvegardes", "Chaque nuit, copie de secours verrouillée 30 jours", `<span class="pastille vert">04:00 ✓</span>`)}
@@ -980,6 +986,22 @@ function reglages(st, p = {}) {
   </div>`;
 }
 
+/* ================================================================ SUPPORT ================================================================ */
+
+function support(st) {
+  return `
+  <div class="vue">
+    <section class="carte verre support-intro">
+      <div><h2>Besoin d'aide ou d'une nouveauté ?</h2><p>Décrivez-nous votre problème ou votre idée : ${AGENCE} l'étudie et vous répond ici, en général sous 24 heures ouvrées.</p></div>
+      <button class="btn btn-or" data-action="support-nouvelle">${icone("plus")} Nouvelle demande</button>
+    </section>
+    <section class="carte verre mt">
+      ${tete("Mes demandes", `${st.support.length} demande${st.support.length > 1 ? "s" : ""}`, "", "support")}
+      <div class="support-liste">${st.support.map(ligneDemande).join("")}</div>
+    </section>
+  </div>`;
+}
+
 /** Réglages → Accès comptable : un lien personnel + un code, en lecture seule, limité à la rémunération. */
 function ongletComptable() {
   const a = acces();
@@ -1042,5 +1064,6 @@ export const VUES = {
   remuneration: { titre: "Rémunération", sous: "Commissions, honoraires, factures", ico: "remuneration", html: remuneration, groupe: "Cabinet" },
   communication: { titre: "Relances", sous: "Le suivi client qui tourne tout seul", ico: "campagnes", html: communication, groupe: "Cabinet" },
   site: { titre: "Mon site", sous: "D'où viennent vos clients", ico: "site", html: site, groupe: "Cabinet" },
+  support: { titre: "Support", sous: `Un souci, une idée ? ${AGENCE} vous répond`, ico: "support", html: support, groupe: "Cabinet" },
   reglages: { titre: "Réglages", sous: "Cabinet, sécurité, connexions", ico: "reglages", html: reglages, groupe: "Cabinet" },
 };

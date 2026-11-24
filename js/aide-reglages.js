@@ -39,11 +39,13 @@ export const AIDE_REGLAGES = [
   { id: "site", siReglage: true, titre: "Mon site", cles: ["site", "formulaire", "page reservation", "reservation en ligne", "articles"], reponse: "L'écran « Mon site » montre d'où viennent vos clients. Le formulaire de contact et la page de réservation en ligne sont reliés au cockpit : les demandes arrivent toutes seules.", aller: "site" },
   { id: "connexions", siReglage: true, titre: "Connexions", cles: ["connexion", "connexions", "brancher", "relier", "connecter"], reponse: "Réglages → Connexions : agenda, e-mails et SMS, signature électronique, facturation, paiement, relevés des partenaires, site et visio. Pour en relier un nouveau, demandez-le à l'agence.", aller: "reglages", params: {onglet: "connexions"} },
   { id: "comptable", titre: "Accès comptable", cles: ["comptable", "expert comptable", "comptabilite", "acces comptable"], reponse: "Réglages → Accès comptable : votre comptable reçoit un lien personnel et un code à 6 chiffres que vous choisissez. Il ne voit que vos commissions et vos honoraires, sans rien pouvoir modifier. Vous pouvez changer le code ou couper l'accès en un clic.", aller: "reglages", params: { onglet: "comptable" } },
+  { id: "support", titre: "Signaler un problème", cles: ["support", "signaler", "probleme technique", "bug", "ca ne marche pas", "demander un ajout", "nouvelle fonction", "contacter synium", "contacter l agence"], reponse: "Écran « Support », bouton « Nouvelle demande » : choisissez de quoi il s'agit, écrivez en quelques mots, expliquez, puis « Envoyer à SYNIUM ». La réponse arrive ici, avec un statut en couleur.", aller: "support" },
+  { id: "visites", titre: "Visites de l'agence", cles: ["visite", "visites", "lecture seule", "agence regarde", "qui s est connecte"], reponse: "Réglages → Sécurité, « Visites de l'agence » : chaque fois que SYNIUM consulte votre cockpit (en lecture seule, sans rien modifier), vous voyez qui, quand, pourquoi et combien de temps.", aller: "reglages", params: { onglet: "securite" } },
   { id: "export", titre: "Mes données", cles: ["export", "exporter", "sauvegarde", "sauvegardes", "telecharger donnees", "mes donnees", "rgpd"], reponse: "Réglages → Sécurité, « Export complet de vos données », bouton « Télécharger ». Le cockpit est aussi sauvegardé chaque nuit, en Europe.", aller: "reglages", params: {onglet: "securite"} },
 ];
 
 /** Thèmes proposés quand on demande de l'aide pour régler le cockpit sans préciser quoi. */
-export const THEMES_REGLAGES = ["theme", "code", "signature", "horaires", "rappels", "notifications", "agenda-google", "comptable"];
+export const THEMES_REGLAGES = ["theme", "code", "signature", "horaires", "rappels", "notifications", "comptable", "support"];
 
 const sans = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
